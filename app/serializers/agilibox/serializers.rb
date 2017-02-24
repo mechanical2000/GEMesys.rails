@@ -1,0 +1,2 @@
+module Agilibox::Serializers
+end

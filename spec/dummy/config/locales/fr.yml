@@ -1,0 +1,10 @@
+fr:
+  activerecord:
+    models:
+      dummy_model:
+        one: "Mon model"
+        other: "Mes models"
+
+    attributes:
+      dummy_model/state:
+        draft: "Brouillon"
