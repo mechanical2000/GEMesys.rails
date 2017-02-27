@@ -10,5 +10,5 @@ group :development, :test do
 
   gem "rspec-rails"
   gem "timecop"
-  gem "sqlite3"
+  gem "pg"
 end
