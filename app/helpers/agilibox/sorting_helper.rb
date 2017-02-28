@@ -4,45 +4,47 @@ module Agilibox::SortingHelper
       raise ArgumentError, "invalid column, please use symbol"
     end
 
-    current_column, current_order = sortable_column_order
+    current_column, current_direction = sortable_column_order
 
-    if current_column == column.to_s
-      if current_order == :asc
+    if current_column == column
+      if current_direction == :asc
         name           = "#{name} ↓"
         new_sort_param = "-#{column}"
       end
 
-      if current_order == :desc
+      if current_direction == :desc
         name           = "#{name} ↑"
         new_sort_param = column
       end
 
-      klass = "sort #{current_order}"
+      klass = "sort #{current_direction}"
     else
       new_sort_param = column
       klass          = "sort"
     end
 
-    link_to(name, params.merge(sort: new_sort_param), class: klass)
+    url_params = params.to_h.symbolize_keys.merge(sort: new_sort_param)
+
+    link_to(name, url_params, class: klass)
   end
 
-  def sortable_column_order
-    sort_param = params[:sort].to_s
+  def sortable_column_order(sort_param = params[:sort])
+    sort_param = sort_param.to_s
 
     if sort_param.present?
       if sort_param.start_with?("-")
-        column = sort_param[1..-1]
-        order  = :desc
+        column     = sort_param[1..-1].to_sym
+        direction  = :desc
       else
-        column = sort_param
-        order  = :asc
+        column     = sort_param.to_sym
+        direction  = :asc
       end
     end
 
     if block_given?
-      yield(column, order)
+      yield(column, direction)
     else
-      [column, order]
+      [column, direction]
     end
   end
 end

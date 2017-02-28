@@ -49,12 +49,12 @@ describe Agilibox::SortingHelper, type: :helper do
 
     it "should parse asc column" do
       @params = {sort: "col"}
-      expect(sortable_column_order).to eq ["col", :asc]
+      expect(sortable_column_order).to eq [:col, :asc]
     end
 
     it "should parse desc column" do
       @params = {sort: "-col"}
-      expect(sortable_column_order).to eq ["col", :desc]
+      expect(sortable_column_order).to eq [:col, :desc]
     end
 
     it "should parse nil" do
@@ -65,10 +65,16 @@ describe Agilibox::SortingHelper, type: :helper do
     it "should accept block" do
       @params = {sort: "-col"}
 
-      sortable_column_order do |column, order|
-        expect(column).to eq "col"
-        expect(order).to eq :desc
+      sortable_column_order do |column, direction|
+        expect(column).to eq :col
+        expect(direction).to eq :desc
       end
+    end
+
+    it "should accept sort argument" do
+      column, direction = sortable_column_order("-col")
+      expect(column).to eq :col
+      expect(direction).to eq :desc
     end
   end # describe "#sortable_column_order"
 end
