@@ -69,12 +69,15 @@ window.modal =
       type: type
       data: data
       dataType: "html"
+      processData: false
+      contentType: false
 
       success: (data, textStatus, xhr) ->
         contentType = xhr.getResponseHeader("Content-Type")
 
         if contentType.match(/html/)
           modal.open(data)
+          $(document).trigger("modal:load")
         else if contentType.match(/javascript/)
           eval(data)
         else
@@ -91,7 +94,7 @@ window.modal =
       return false
 
     forms: ->
-      modal.openUrl(this.action, this.method, $(this).serialize())
+      modal.openUrl(this.action, this.method, new FormData(this))
       modal._set_closable_for_element(this)
       return false
 
@@ -108,7 +111,7 @@ window.modal =
       .off("click", modal.autoclose)
       .on("click", modal.autoclose)
 
-    $("a[data-modal=1], #modal-body a")
+    $("a[href][data-modal=1], #modal-body a[href]")
       .not("[data-modal=0]")
       .not("[data-method]")
       .not("[data-remote]")

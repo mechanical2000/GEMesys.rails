@@ -4,3 +4,4 @@
 
 - First version
 - `sortable_column_order` now returns symbols
+- modal fixes + allow upload
