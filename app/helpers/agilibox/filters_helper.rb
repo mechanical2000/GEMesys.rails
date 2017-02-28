@@ -1,6 +1,6 @@
 module Agilibox::FiltersHelper
   def filter_submit_button(options = {})
-    options[:class] ||= "btn submit filter-submit"
+    options[:class] ||= "btn btn-default submit filter-submit"
     options[:type]  ||= "submit"
     options[:value] ||= "submit"
 
@@ -13,7 +13,7 @@ module Agilibox::FiltersHelper
   end
 
   def filter_reset_button(options = {})
-    options[:class] ||= "btn reset filter-reset"
+    options[:class] ||= "btn btn-default reset filter-reset"
     options[:type]  ||= "submit"
     options[:value] ||= "reset"
 
