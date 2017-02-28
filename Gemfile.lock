@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    agilibox (1.0.0)
+    agilibox (1.0.1)
       rails-i18n
 
 GEM
