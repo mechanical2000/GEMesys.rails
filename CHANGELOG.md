@@ -2,7 +2,7 @@
 
 ## Next version
 
-Nothing.
+- Button helper changes
 
 ## 1.0.1
 
