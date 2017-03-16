@@ -8,7 +8,7 @@ module Agilibox::ButtonHelper
     text   = "#{icon icon} <span>#{text}</span>".html_safe
 
     options = {
-      :class => "btn btn-xs link_#{action}",
+      :class => "btn btn-xs btn-default link_#{action}",
       :title => title,
     }.deep_merge(options)
 
