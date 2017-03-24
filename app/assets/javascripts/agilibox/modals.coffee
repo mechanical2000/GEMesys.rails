@@ -103,27 +103,11 @@ window.modal =
       return true
 
   setup: ->
-    $(document)
-      .off("keyup", modal._callbacks.escape)
-      .on("keyup", modal._callbacks.escape)
+    $(document).on("keyup", modal._callbacks.escape)
+    $(document).on("click", "#modal-overlay, #modal-close", modal.autoclose)
+    $(document).on("click", "a[data-modal=1], #modal a[href]:not([data-modal=0]):not([data-remote]):not([data-method])", modal._callbacks.links)
+    $(document).on("submit", "form[data-modal=1], #modal form:not([data-modal=0]):not([data-remote])", modal._callbacks.forms)
+    # Forms created by jquery_ujs for remote links
+    $(document).on("submit", "body.modal-open > form", modal._callbacks.forms)
 
-    $("#modal-overlay, #modal-close")
-      .off("click", modal.autoclose)
-      .on("click", modal.autoclose)
-
-    $("a[href][data-modal=1], #modal-body a[href]")
-      .not("[data-modal=0]")
-      .not("[data-method]")
-      .not("[data-remote]")
-      .off("click", modal._callbacks.links)
-      .on("click", modal._callbacks.links)
-
-    $("form[data-modal=1], #modal-body form")
-      .not("[data-modal=0]")
-      .not("[data-remote]")
-      .off("submit", modal._callbacks.forms)
-      .on("submit", modal._callbacks.forms)
-
-
-$(document).on "turbolinks:load modal:open", ->
-  modal.setup()
+modal.setup()

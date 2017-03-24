@@ -3,6 +3,7 @@
 ## Next version
 
 - Button helper changes
+- Modals use event delegation
 
 ## 1.0.1
 
