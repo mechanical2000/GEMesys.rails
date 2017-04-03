@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    agilibox (1.0.1)
+    agilibox (1.0.2)
       rails-i18n
 
 GEM
@@ -158,4 +158,4 @@ DEPENDENCIES
   timecop
 
 BUNDLED WITH
-   1.14.3
+   1.14.6
