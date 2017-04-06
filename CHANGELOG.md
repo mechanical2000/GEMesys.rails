@@ -4,6 +4,7 @@
 
 - Add `ta` (translate action) helper
 - Add `blank` css class to `info` helper
+- Add autocomplete.coffee
 
 ## 1.0.2
 
