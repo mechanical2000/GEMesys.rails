@@ -99,12 +99,19 @@ module Agilibox::TextHelper
     value = l(value)                          if value.is_a?(Date)
     value = value.to_s
 
+
     html_label     = content_tag(:strong, class: "info-label") { label }
     span_css_class = "info-value #{object_type}-#{attribute}"
     html_value     = content_tag(:span, class: span_css_class) { value }
     separator_html = content_tag(:span, class: "info-separator") { separator }
 
-    content_tag(tag, class: "info") do
+    if value.blank?
+      container_css_class = "info blank"
+    else
+      container_css_class = "info"
+    end
+
+    content_tag(tag, class: container_css_class) do
       [html_label, separator_html, html_value].join.html_safe
     end
   end # def info

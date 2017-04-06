@@ -110,6 +110,11 @@ describe Agilibox::TextHelper, type: :helper do
       expect(info dummy_instance, :string_field, default: "hello").to eq %(<div class="info"><strong class="info-label">String field</strong><span class="info-separator"> : </span><span class="info-value dummy_model-string_field">hello</span></div>)
     end
 
+    it "should add blank class" do
+      dummy_instance.string_field = nil
+      expect(info dummy_instance, :string_field).to eq %(<div class="info blank"><strong class="info-label">String field</strong><span class="info-separator"> : </span><span class="info-value dummy_model-string_field"></span></div>)
+    end
+
     it "should accept :hide as default value" do
       dummy_instance.string_field = nil
       expect(info dummy_instance, :string_field, default: :hide).to eq nil

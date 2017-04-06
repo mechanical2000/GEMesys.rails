@@ -3,6 +3,7 @@
 ## Next version
 
 - Add `ta` (translate action) helper
+- Add `blank` css class to `info` helper
 
 ## 1.0.2
 
