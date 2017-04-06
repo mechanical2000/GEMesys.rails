@@ -1,5 +1,9 @@
 # Changelog
 
+## Next version
+
+- Add `ta` (translate action) helper
+
 ## 1.0.2
 
 - Button helper changes
