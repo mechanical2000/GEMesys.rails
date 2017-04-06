@@ -1,6 +1,6 @@
 # Changelog
 
-## Next version
+## 1.0.3
 
 - Add `ta` (translate action) helper
 - Add `blank` css class to `info` helper
