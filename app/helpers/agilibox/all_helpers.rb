@@ -8,6 +8,7 @@ module Agilibox::AllHelpers
   include Agilibox::RoutesHelper
   include Agilibox::SortingHelper
   include Agilibox::TextHelper
+  include Agilibox::I18nHelper
 
   extend self
 end

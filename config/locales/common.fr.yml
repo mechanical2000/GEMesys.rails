@@ -85,6 +85,7 @@ fr:
     submit     : "Soumettre"
     accept     : "Accepter"
     refuse     : "Refuser"
+    show_more  : "Afficher plus"
 
   attributes: &attributes
     id                    : "Id"
