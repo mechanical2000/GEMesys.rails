@@ -14,7 +14,7 @@ module Agilibox::Search
 
       sql_query = words.map.with_index do |word, index|
         fields.map do |field|
-          "(LOWER(CAST(#{field} AS TEXT)) LIKE :w#{index})"
+          "(UNACCENT(CAST(#{field} AS TEXT)) ILIKE :w#{index})"
         end.join(" OR ")
       end.map{ |e| "(#{e})" }.join(" AND ")
 
