@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.0.4
+
+- Search now ignore accents
+- Add Sorter class
+
 ## 1.0.3
 
 - Add `ta` (translate action) helper
