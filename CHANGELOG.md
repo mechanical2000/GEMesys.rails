@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.0.5
+
+- Fix `import_button` helper
+- Add mime types
+
 ## 1.0.4
 
 - Search now ignore accents
