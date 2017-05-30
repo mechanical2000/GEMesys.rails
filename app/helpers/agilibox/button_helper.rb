@@ -87,7 +87,6 @@ module Agilibox::ButtonHelper
     options = {
       :icon     => "cloud-upload",
       :action   => :import,
-      :download => url,
     }.merge(options)
 
     bs_button(url, options)
