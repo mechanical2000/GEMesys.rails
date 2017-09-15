@@ -46,4 +46,13 @@ module Agilibox::FormHelper
     render "agilibox/search/form", action: action
   end
 
+  def checkboxes_dropdown(f, input, collection, label = t("actions.select"))
+    render("agilibox/forms/checkboxes_dropdown",
+      :f          => f,
+      :input      => input,
+      :collection => collection,
+      :label      => label,
+    )
+  end
+
 end
