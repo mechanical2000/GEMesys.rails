@@ -8,6 +8,7 @@
 - Add Filter#any? and Filter#empty?
 - Add i18n actions
 - Add ModelI18n#tv
+- Split i18n files
 
 ## 1.0.5
 
