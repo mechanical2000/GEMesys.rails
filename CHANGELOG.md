@@ -2,6 +2,8 @@
 
 ## Next version
 
+## 1.0.6
+
 - Add checkboxes_dropdown helper
 - Add FilterStrategyByKeyValues
 - bs_button improvements
