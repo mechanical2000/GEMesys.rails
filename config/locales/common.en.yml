@@ -78,6 +78,7 @@ en:
     accept     : "Accept"
     refuse     : "Refuse"
     show_more  : "Show more"
+    select     : "Select"
 
   attributes: &attributes
     id                    : "Id"
