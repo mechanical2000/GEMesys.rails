@@ -18,4 +18,7 @@ RSpec.describe Agilibox::ModelI18n, type: :model do
   it "should translate attributes on instances" do
     expect(DummyModel.new.t :name).to eq "Nom"
   end
+  it "should translate attribute values on instances" do
+    expect(DummyModel.new.tv :state).to eq "Brouillon"
+  end
 end

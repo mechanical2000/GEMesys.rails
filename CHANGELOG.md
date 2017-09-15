@@ -7,6 +7,7 @@
 - bs_button improvements
 - Add Filter#any? and Filter#empty?
 - Add i18n actions
+- Add ModelI18n#tv
 
 ## 1.0.5
 
