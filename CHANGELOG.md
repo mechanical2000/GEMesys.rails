@@ -1,5 +1,15 @@
 # Changelog
 
+## Next version
+
+- Add checkboxes_dropdown helper
+- Add FilterStrategyByKeyValues
+- bs_button improvements
+- Add Filter#any? and Filter#empty?
+- Add i18n actions
+- Add ModelI18n#tv
+- Split i18n files
+
 ## 1.0.5
 
 - Fix `import_button` helper

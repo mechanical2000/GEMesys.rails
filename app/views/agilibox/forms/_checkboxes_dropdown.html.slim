@@ -1,0 +1,14 @@
+.dropdown.checkboxes-dropdown
+  button(
+    class       = "btn btn-default dropdown-toggle"
+    type        = "button"
+    data-toggle = "dropdown"
+  )
+    = label
+    = " ("
+    span.number
+    = ") "
+    span.caret
+
+  .dropdown-menu: .container-fluid
+    = f.input input, collection: collection, as: :check_boxes, label: false

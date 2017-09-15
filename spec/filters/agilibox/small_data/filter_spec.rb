@@ -5,6 +5,12 @@ describe Agilibox::SmallData::Filter do
   let(:filter) { {"name" => "bidule"} }
   let(:f)      { Agilibox::SmallData::Filter.new(jar) }
 
+  class TestFilter < Agilibox::SmallData::Filter
+    STRATEGIES = {
+      "state" => ::Agilibox::SmallData::FilterStrategyByKeyValue.new(:state),
+    }
+  end
+
   describe "write" do
     it "should write the provided hash as json in the jar" do
       f.write(filter)
@@ -29,15 +35,35 @@ describe Agilibox::SmallData::Filter do
   end
 
   it "should set/get values" do
-    class TestFilter < Agilibox::SmallData::Filter
-      STRATEGIES = {
-        "state" => ::Agilibox::SmallData::FilterStrategyByKeyValue.new(:state),
-      }
-    end
-
     filter = TestFilter.new({})
     filter.state = "truc"
     expect(filter.state).to eq "truc"
   end
+
+  describe "#any? / #empty?" do
+    it "should work with value" do
+      filter = TestFilter.new("filters" => {state: "value"}.to_json)
+      expect(filter.any?).to be true
+      expect(filter.empty?).to be false
+    end
+
+    it "should work with blank value" do
+      filter = TestFilter.new("filters" => {state: ""}.to_json)
+      expect(filter.any?).to be false
+      expect(filter.empty?).to be true
+    end
+
+    it "should work without value" do
+      filter = TestFilter.new("filters" => {}.to_json)
+      expect(filter.any?).to be false
+      expect(filter.empty?).to be true
+    end
+
+    it "should ignore other filters strategies" do
+      filter = TestFilter.new("filters" => {other: "value"}.to_json)
+      expect(filter.any?).to be false
+      expect(filter.empty?).to be true
+    end
+  end # describe "#any? / #empty?"
 
 end

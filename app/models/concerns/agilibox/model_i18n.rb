@@ -9,6 +9,12 @@ module Agilibox::ModelI18n
     self.class.ts
   end
 
+  def tv(attribute)
+    key   = attribute
+    value = public_send(attribute)
+    t("#{key}.#{value}")
+  end
+
   class_methods do
     def t(*args)
       if args.any?

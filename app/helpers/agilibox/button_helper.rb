@@ -5,7 +5,7 @@ module Agilibox::ButtonHelper
     text   = options.delete(:text) || t("actions.#{action}")
     title  = options.delete(:title) || text
 
-    text   = "#{icon icon} <span>#{text}</span>".html_safe
+    text   = %(#{icon icon} <span class="text">#{text}</span>).html_safe
 
     options = {
       :class => "btn btn-xs btn-default link_#{action}",

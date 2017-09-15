@@ -27,7 +27,8 @@
   .btn
     @extend .btn-sm
 
-  input[id*=date]
+  input[type=date],
+  input[type=text][id*=date],
     width: 8em
 
   .select2-container
