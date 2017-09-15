@@ -56,6 +56,14 @@ class Agilibox::SmallData::Filter
     write read.merge(new_filters)
   end
 
+  def any?
+    read.select { |k, v| strategies.keys.include?(k.to_s) && v.present? }.any?
+  end
+
+  def empty?
+    ! any?
+  end
+
   private
 
   def get(key)
