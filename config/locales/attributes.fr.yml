@@ -67,7 +67,6 @@ fr:
     avatar                : "Avatar"
     current_avatar        : "Avatar actuel"
     logo                  : "Logo"
-    active                : "Actif ?"
     user                  : "Utilisateur"
     category              : "Catégorie"
     corporation_name      : "Nom"
@@ -83,7 +82,9 @@ fr:
     email_to              : "Destinataire"
     email_attachment      : "Pièce jointe"
     email_body            : "Message"
+    active                : "Actif ?"
     is_active             : "Actif ?"
+    actions               : "Actions"
 
   labels:
     <<: *attributes

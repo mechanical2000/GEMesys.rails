@@ -67,7 +67,6 @@ en:
     avatar                : "Avatar"
     current_avatar        : "Current avatar"
     logo                  : "Logo"
-    active                : "Active ?"
     user                  : "User"
     category              : "Category"
     corporation_name      : "Name"
@@ -83,7 +82,9 @@ en:
     email_to              : "Recipient"
     email_attachment      : "Attachment"
     email_body            : "Message"
+    active                : "Active ?"
     is_active             : "Active ?"
+    actions               : "Actions"
 
   labels:
     <<: *attributes
