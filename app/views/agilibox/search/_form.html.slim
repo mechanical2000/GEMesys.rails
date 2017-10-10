@@ -1,6 +1,12 @@
 form.search method="get" action=action
+  = form_hidden_submit
+
   p.input-group.search
     input.form-control name="q" placeholder=t("actions.search") size=25 value=params[:q]
-    span.input-group-addon
-      button.nostyle.search-submit type="submit"
+
+    span.input-group-btn
+      button.btn.btn-default.search-reset.reset type="submit"
+        = icon :times
+
+      button.btn.btn-default.search-submit type="submit"
         = icon :search

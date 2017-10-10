@@ -8,3 +8,13 @@
     input[type=checkbox]
       position: static
       margin: 0 0.5em 0 0
+
+// Chrome and Safari does not trigger display:none submit buttons on <enter> key press
+.hidden-submit
+  position: absolute
+  top: -9999px
+  left: -9999px
+  opacity: 0
+  height: 0
+  width: 0
+  visibility: hidden

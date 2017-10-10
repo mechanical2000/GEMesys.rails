@@ -2,6 +2,9 @@
 
 ## Next version
 
+- Search form add reset button
+- Filter form fix default submit button
+
 ## 1.0.6
 
 - Add checkboxes_dropdown helper

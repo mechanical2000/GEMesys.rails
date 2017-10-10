@@ -44,7 +44,7 @@ module Agilibox::FiltersHelper
     html = simple_form_for(:filters, options, &block)
 
     if buttons
-      html = html.gsub("</form>", "#{filter_buttons}</form>").html_safe
+      html = html.gsub("</form>", "#{form_hidden_submit + filter_buttons}</form>").html_safe
     end
 
     html

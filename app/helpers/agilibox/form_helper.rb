@@ -1,4 +1,9 @@
 module Agilibox::FormHelper
+  # Hidden submit to be the default triggered on <enter> keypress on a form
+  def form_hidden_submit
+    tag(:input, type: "submit", class: "hidden-submit")
+  end
+
   def form_buttons(opts = {})
    back_url = opts[:back_url]
    back_url = url_for(:back).html_safe if back_url.blank?
