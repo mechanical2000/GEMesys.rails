@@ -2,6 +2,8 @@
 
 ## Next version
 
+## 1.0.7
+
 - Search form add reset button
 - Filter form fix default submit button
 
