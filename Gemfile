@@ -7,6 +7,7 @@ group :development, :test do
   gem "pry-rails"
   gem "awesome_print"
   gem "axlsx"
+  gem "launchy"
 
   gem "rspec-rails"
   gem "timecop"

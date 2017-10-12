@@ -12,6 +12,8 @@ RSpec.describe Agilibox::Serializers::XLSX do
     Agilibox::Serializers::XLSX.new(data)
   }
 
+  let(:tempfile) { Tempfile.new(["xlsx", ".xlsx"]) }
+
   describe "#render_inline" do
     it "should return xlsx content" do
       str = serializer.render_inline
@@ -23,10 +25,29 @@ RSpec.describe Agilibox::Serializers::XLSX do
 
   describe "#render_file" do
     it "should write xlsx content" do
-      file_path = Tempfile.new("xlsx")
-      serializer.render_file(file_path)
-      file_content = File.open(file_path, "rb").read
+      serializer.render_file(tempfile)
+      file_content = File.open(tempfile, "rb").read
       expect(file_content).to eq serializer.render_inline
+    end
+  end
+
+  describe "in real life" do
+    xit "open it in Excel" do
+      data = [
+        ["Integer"  , 123],
+        ["Decimal"  , (0.1 + 0.2)],
+        ["True"     , true],
+        ["False"    , false],
+        ["Date"     , Date.current],
+        ["DateTime" , Time.zone.now],
+        ["nil"      , nil],
+        ["String"   , "i'm a string"],
+        ["Object"   , described_class],
+      ]
+
+      described_class.new(data).render_file(tempfile)
+      Launchy.open(tempfile.path)
+      sleep 60 # let Launchy open file before deleting it
     end
   end
 

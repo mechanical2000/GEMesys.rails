@@ -44,6 +44,8 @@ GEM
       i18n (~> 0.7)
       minitest (~> 5.1)
       tzinfo (~> 1.1)
+    addressable (2.5.2)
+      public_suffix (>= 2.0.2, < 4.0)
     arel (7.1.4)
     awesome_print (1.7.0)
     axlsx (2.0.1)
@@ -59,6 +61,8 @@ GEM
       activesupport (>= 4.2.0)
     htmlentities (4.3.4)
     i18n (0.8.1)
+    launchy (2.4.3)
+      addressable (~> 2.3)
     loofah (2.0.3)
       nokogiri (>= 1.5.9)
     mail (2.6.5)
@@ -79,6 +83,7 @@ GEM
       slop (~> 3.4)
     pry-rails (0.3.6)
       pry (>= 0.10.4)
+    public_suffix (3.0.0)
     rack (2.0.3)
     rack-test (0.6.3)
       rack (>= 1.0)
@@ -151,6 +156,7 @@ DEPENDENCIES
   agilibox!
   awesome_print
   axlsx
+  launchy
   pg
   pry-rails
   rails (~> 5.0.0)
