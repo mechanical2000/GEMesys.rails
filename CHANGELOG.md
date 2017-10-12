@@ -2,6 +2,10 @@
 
 ## Next version
 
+## 1.0.8
+
+- Serializers improvements
+
 ## 1.0.7
 
 - Search form add reset button
