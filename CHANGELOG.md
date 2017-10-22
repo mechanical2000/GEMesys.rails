@@ -2,6 +2,8 @@
 
 ## Next version
 
+- Fix Model#tv
+
 ## 1.0.8
 
 - Serializers improvements
