@@ -3,6 +3,7 @@
 ## Next version
 
 - Fix Model#tv
+- Add cucumber helpers
 
 ## 1.0.8
 
