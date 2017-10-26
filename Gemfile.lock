@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    agilibox (1.0.8)
+    agilibox (1.0.9)
       awesome_print
       pry-rails
       rails-i18n
@@ -309,7 +309,6 @@ PLATFORMS
 
 DEPENDENCIES
   agilibox!
-  awesome_print
   axlsx
   better_errors
   byebug
@@ -328,7 +327,6 @@ DEPENDENCIES
   minitest
   pg
   poltergeist
-  pry-rails
   puma
   pundit-matchers
   rails
