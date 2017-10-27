@@ -2,6 +2,9 @@
 
 ## Next version
 
+- Add TokenGenerator
+- Add PhoneNumberSanitizer
+
 ## 1.0.9
 
 - Fix Model#tv
