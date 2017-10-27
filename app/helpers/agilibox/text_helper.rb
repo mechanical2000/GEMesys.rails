@@ -27,7 +27,7 @@ module Agilibox::TextHelper
 
     opts = {}
 
-    if n.class.to_s.match?(/Float|Decimal/i)
+    if n.class.to_s =~ /Float|Decimal/i
       opts[:precision] = 2
     else
       opts[:precision] = 0
