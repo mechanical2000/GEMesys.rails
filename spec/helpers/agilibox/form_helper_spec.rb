@@ -1,4 +1,4 @@
-require 'rails_helper'
+require "rails_helper"
 
 describe Agilibox::FormHelper, type: :helper do
   describe "form_buttons" do

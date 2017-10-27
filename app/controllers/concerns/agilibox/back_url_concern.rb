@@ -3,7 +3,8 @@ module Agilibox::BackUrlConcern
 
   private
 
-  def default_back_url; end
+  def default_back_url
+  end
 
   def back_url
     [
@@ -14,5 +15,4 @@ module Agilibox::BackUrlConcern
       "/",
     ].select(&:present?).first
   end
-
 end

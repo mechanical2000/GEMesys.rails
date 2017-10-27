@@ -10,7 +10,7 @@ class Agilibox::Serializers::Base
     raise NotImplementedError
   end
 
-  def render_file(file_path)
+  def render_file(_file_path)
     raise NotImplementedError
   end
 

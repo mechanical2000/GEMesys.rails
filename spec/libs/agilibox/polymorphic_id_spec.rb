@@ -31,5 +31,4 @@ RSpec.describe Agilibox::PolymorphicId do
     instance = OtherDummyModel.create!
     expect(instance.guid).to eq "DummyModel-#{instance.id}"
   end
-
 end

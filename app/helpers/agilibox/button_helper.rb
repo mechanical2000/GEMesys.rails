@@ -12,13 +12,13 @@ module Agilibox::ButtonHelper
       :title => title,
     }.deep_merge(options)
 
-    if confirm = options.delete(:confirm)
+    if (confirm = options.delete(:confirm))
       confirm = t("actions.confirm") if confirm == true
 
       options.deep_merge!(
         :data => {
           :confirm => confirm,
-        }
+        },
       )
     end
 
@@ -40,7 +40,7 @@ module Agilibox::ButtonHelper
     options = {
       :icon   => :plus,
       :action => :create,
-      :class  =>"btn btn-xs btn-success link_create"
+      :class  =>"btn btn-xs btn-success link_create",
     }.merge(options)
 
     bs_button(url, options)

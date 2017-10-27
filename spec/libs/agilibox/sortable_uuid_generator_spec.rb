@@ -1,4 +1,4 @@
-require 'rails_helper'
+require "rails_helper"
 
 RSpec.describe Agilibox::SortableUUIDGenerator do
   it "should generate a valid uuid" do

@@ -1,4 +1,8 @@
-require 'rails_helper'
+require "rails_helper"
+
+# rubocop:disable Metrics/LineLength
+# rubocop:disable Style/SingleLineMethods
+# rubocop:disable Layout/EmptyLineBetweenDefs
 
 describe Agilibox::TextHelper, type: :helper do
   it "hours" do
@@ -14,7 +18,7 @@ describe Agilibox::TextHelper, type: :helper do
     expect(number(1)).to eq "1"
     expect(number(1.2)).to eq "1,20"
     expect(number(1.234)).to eq "1,23"
-    expect(number(123456.789)).to eq "123 456,79"
+    expect(number(123_456.789)).to eq "123 456,79"
   end
 
   it "percentage" do
@@ -51,12 +55,12 @@ describe Agilibox::TextHelper, type: :helper do
     let(:dummy_instance) {
       l = DummyModel.create!(
         :string_field  => "abc",
-        :decimal_field => 1000.17,
+        :decimal_field => 1_000.17,
       )
 
       def l.date; Date.parse("2015-01-25"); end
-      def l.time; Time.parse("2015-01-25  17:09:23"); end
-      def l.paid?; true end
+      def l.time; Time.zone.parse("2015-01-25  17:09:23"); end
+      def l.paid?; true; end
       l
     }
 
@@ -125,5 +129,4 @@ describe Agilibox::TextHelper, type: :helper do
       expect(info dummy_instance, :string_field, default: :hide).to eq nil
     end
   end
-
 end

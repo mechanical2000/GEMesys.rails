@@ -23,8 +23,9 @@ class Agilibox::SmallData::FiltersController < ::Agilibox::ApplicationController
     url = [
       params[:form_url],
       request.referer,
-      (main_app.root_path rescue "/"),
-    ].select(&:present?).first
+      main_app.try(:root_path),
+      "/",
+    ].find(&:present?)
 
     # Delete page param
     base, query_string = url.split("?")
@@ -32,5 +33,4 @@ class Agilibox::SmallData::FiltersController < ::Agilibox::ApplicationController
     query_string = "?#{query_string}" if query_string.present?
     base + query_string
   end
-
 end

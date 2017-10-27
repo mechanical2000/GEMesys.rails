@@ -5,6 +5,7 @@
 - Add TokenGenerator
 - Add PhoneNumberSanitizer
 - Add engine_file helper to Kernel
+- Syntax improvements and refactors
 
 ## 1.0.9
 

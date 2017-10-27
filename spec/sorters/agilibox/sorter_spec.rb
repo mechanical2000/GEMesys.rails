@@ -5,8 +5,6 @@ class DummySorter < Agilibox::Sorter
     case column
     when :string_field
       {column => direction}
-    else
-      nil
     end
   end
 end

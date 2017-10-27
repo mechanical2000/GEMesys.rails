@@ -1,5 +1,5 @@
 class Agilibox::SmallData::FilterStrategyByTimePeriod < ::Agilibox::SmallData::FilterStrategyByKeyValue
-  def apply(query, value)
+  def apply(query, value) # rubocop:disable Metrics/MethodLength
     if value == "today"
       a = Time.zone.now.beginning_of_day
       b = Time.zone.now.end_of_day

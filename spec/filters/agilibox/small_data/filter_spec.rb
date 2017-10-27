@@ -34,11 +34,31 @@ describe Agilibox::SmallData::Filter do
     end
   end
 
-  it "should set/get values" do
-    filter = TestFilter.new({})
-    filter.state = "truc"
-    expect(filter.state).to eq "truc"
-  end
+  describe "get/set values" do
+    let(:filter) { TestFilter.new({}) }
+
+    it "should work" do
+      filter.state = "truc"
+      expect(filter.state).to eq "truc"
+    end
+
+    it "should not work with invalid attributes" do
+      expect {
+        filter.invalid
+      }.to raise_error(NoMethodError)
+
+      expect {
+        filter.invalid = "truc"
+      }.to raise_error(NoMethodError)
+    end
+
+    it "should defined respond_to_missing?" do
+      expect(filter.send(:respond_to_missing?, :state)).to be true
+      expect(filter.send(:respond_to_missing?, :state=)).to be true
+      expect(filter.send(:respond_to_missing?, :invalid)).to be false
+      expect(filter.send(:respond_to_missing?, :invalid=)).to be false
+    end
+  end # describe "get/set values"
 
   describe "#any? / #empty?" do
     it "should work with value" do
@@ -65,5 +85,4 @@ describe Agilibox::SmallData::Filter do
       expect(filter.empty?).to be true
     end
   end # describe "#any? / #empty?"
-
 end
