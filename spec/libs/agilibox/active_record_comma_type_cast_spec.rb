@@ -15,26 +15,26 @@ describe Agilibox::ActiveRecordCommaTypeCast, type: :model do
 
   it "should accept space as group separator" do
     record.update!(decimal_field: "123 456,78")
-    expect(record.reload.decimal_field).to eq 123456.78
+    expect(record.reload.decimal_field).to eq 123_456.78
 
     record.update!(decimal_field: "123 456.78")
-    expect(record.reload.decimal_field).to eq 123456.78
+    expect(record.reload.decimal_field).to eq 123_456.78
   end
 
   it "should accept nbsp as group separator" do
     record.update!(decimal_field: "123 456,78")
-    expect(record.reload.decimal_field).to eq 123456.78
+    expect(record.reload.decimal_field).to eq 123_456.78
 
     record.update!(decimal_field: "123 456.78")
-    expect(record.reload.decimal_field).to eq 123456.78
+    expect(record.reload.decimal_field).to eq 123_456.78
   end
 
   it "should accept negative numbers" do
     record.update!(decimal_field: "-12,34")
-    expect(record.reload.decimal_field).to eq -12.34
+    expect(record.reload.decimal_field).to eq(-12.34)
 
     record.update!(decimal_field: "-12.34")
-    expect(record.reload.decimal_field).to eq -12.34
+    expect(record.reload.decimal_field).to eq(-12.34)
   end
 
   it "should accept trailing chars" do

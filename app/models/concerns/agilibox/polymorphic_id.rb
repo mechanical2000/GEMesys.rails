@@ -11,7 +11,7 @@ module Agilibox::PolymorphicId
     def guid
       return nil if new_record?
 
-      "#{self.class.base_class}-#{self.id}"
+      "#{self.class.base_class}-#{id}"
     end
   end # included
 end # module
@@ -26,7 +26,10 @@ Module.new do
   end
 
   def relation_guid=(guid)
-    return self.relation = nil if guid.blank?
+    if guid.blank?
+      self.relation = nil
+      return
+    end
 
     type, id      = guid.split("-", 2)
     self.relation = type.constantize.find(id)

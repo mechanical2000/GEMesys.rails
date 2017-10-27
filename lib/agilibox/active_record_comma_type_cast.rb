@@ -1,7 +1,7 @@
 module Agilibox::ActiveRecordCommaTypeCast
   def cast_value(value)
     if value.is_a?(String)
-      super value.gsub(",", ".").gsub(/[^-0-9\.]/, "")
+      super value.tr(",", ".").gsub(/[^-0-9\.]/, "")
     else
       super value
     end

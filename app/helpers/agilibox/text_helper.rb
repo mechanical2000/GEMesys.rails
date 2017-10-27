@@ -13,13 +13,13 @@ module Agilibox::TextHelper
     I18n.t("number.currency.format.format")
       .gsub("%n", number(n))
       .gsub("%u", u)
-      .gsub(" ", "\u00A0")
+      .tr(" ", "\u00A0")
   end
 
   def percentage(n)
     return if n.nil?
 
-    (number(n) + " %").gsub(" ", "\u00A0")
+    (number(n) + " %").tr(" ", "\u00A0")
   end
 
   def number(n)
@@ -27,7 +27,7 @@ module Agilibox::TextHelper
 
     opts = {}
 
-    if n.class.to_s.match(/Float|Decimal/i)
+    if n.class.to_s.match?(/Float|Decimal/i)
       opts[:precision] = 2
     else
       opts[:precision] = 0
@@ -36,7 +36,7 @@ module Agilibox::TextHelper
     opts[:delimiter] = I18n.t("number.format.delimiter")
     opts[:separator] = I18n.t("number.format.separator")
 
-    number_with_precision(n, opts).gsub(" ", "\u00A0")
+    number_with_precision(n, opts).tr(" ", "\u00A0")
   end
 
   def date(d)
@@ -56,16 +56,17 @@ module Agilibox::TextHelper
   def text2html(str)
     return if str.to_s.blank?
 
-    str = str.gsub("\r", "").strip
+    str = str.delete("\r").strip
     strip_tags(str).gsub("\n", "<br />").html_safe
   end
 
   def lf2br(str)
     return if str.to_s.blank?
 
-    str.gsub("\r", "").gsub("\n", "<br />").html_safe
+    str.delete("\r").gsub("\n", "<br />").html_safe
   end
 
+  # rubocop:disable Metrics/MethodLength
   def info(object, attribute, value_or_options = nil, options = {})
     if value_or_options.nil?
       value = object.public_send(attribute)
@@ -90,15 +91,14 @@ module Agilibox::TextHelper
     klass       = object.is_a?(Module) ? object : object.class
     object_type = klass.to_s.split("::").last.underscore
 
-    value = t("yes")                          if value === true
-    value = t("no")                           if value === false
+    value = t("yes")                          if value == true
+    value = t("no")                           if value == false
     value = object.t("#{attribute}.#{value}") if nested
     value = send(helper, value)               if helper
     value = number(value)                     if value.is_a?(Numeric)
     value = l(value)                          if value.is_a?(Time)
     value = l(value)                          if value.is_a?(Date)
     value = value.to_s
-
 
     html_label     = content_tag(:strong, class: "info-label") { label }
     span_css_class = "info-value #{object_type}-#{attribute}"
@@ -120,10 +120,9 @@ module Agilibox::TextHelper
     return "" if object.tag_list.empty?
 
     object.tag_list.map { |tag|
-      content_tag(:span, class: "tag label label-primary"){
+      content_tag(:span, class: "tag label label-primary") {
         "#{icon :tag} #{tag}".html_safe
       }
     }.join(" ").html_safe
   end
-
 end

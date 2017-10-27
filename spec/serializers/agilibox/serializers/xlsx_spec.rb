@@ -1,7 +1,8 @@
 require "rails_helper"
 
 RSpec.describe Agilibox::Serializers::XLSX do
-  let(:data){
+  # rubocop:disable Style/WordArray
+  let(:data) {
     [
       ["Name", "Age"],
       ["Benoit", 27],
@@ -33,22 +34,21 @@ RSpec.describe Agilibox::Serializers::XLSX do
 
   describe "in real life" do
     xit "open it in Excel" do
-      data = [
-        ["Integer"  , 123],
-        ["Decimal"  , (0.1 + 0.2)],
-        ["True"     , true],
-        ["False"    , false],
-        ["Date"     , Date.current],
-        ["DateTime" , Time.zone.now],
-        ["nil"      , nil],
-        ["String"   , "i'm a string"],
-        ["Object"   , described_class],
-      ]
+      data = {
+        "Integer"  => 123,
+        "Decimal"  => (0.1 + 0.2),
+        "True"     => true,
+        "False"    => false,
+        "Date"     => Date.current,
+        "DateTime" => Time.zone.now,
+        "nil"      => nil,
+        "String"   => "i'm a string",
+        "Object"   => described_class,
+      }.to_a
 
       described_class.new(data).render_file(tempfile)
       Launchy.open(tempfile.path)
       sleep 60 # let Launchy open file before deleting it
     end
   end
-
 end

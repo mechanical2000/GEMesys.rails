@@ -1,4 +1,4 @@
-require 'rails_helper'
+require "rails_helper"
 
 describe Agilibox::I18nHelper, type: :helper do
   describe "ta" do

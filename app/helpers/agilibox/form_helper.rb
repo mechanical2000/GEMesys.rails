@@ -5,9 +5,9 @@ module Agilibox::FormHelper
   end
 
   def form_buttons(opts = {})
-   back_url = opts[:back_url]
-   back_url = url_for(:back).html_safe if back_url.blank?
-   back_url = URI(back_url).path       if back_url.include?("://")
+    back_url = opts[:back_url]
+    back_url = url_for(:back).html_safe if back_url.blank?
+    back_url = URI(back_url).path       if back_url.include?("://")
 
     if opts[:obj].present?
       if opts[:obj].new_record?
@@ -25,7 +25,7 @@ module Agilibox::FormHelper
       end
 
       cancel = content_tag("a", href: back_url, class: "btn btn-primary btn-sm") do
-        content_tag(:span, class: "fa fa-times"){} + " " + t("actions.cancel")
+        content_tag(:span, class: "fa fa-times") {} + " " + t("actions.cancel")
       end
 
       cancel = "" if back_url == false
@@ -34,12 +34,12 @@ module Agilibox::FormHelper
     end
   end
 
-  def horizontal_form_for(obj, opts={}, &block)
+  def horizontal_form_for(obj, opts = {}, &block)
     opts = {
       :wrapper => "horizontal_form",
       :html => {
-        :class => "form-horizontal"
-      }
+        :class => "form-horizontal",
+      },
     }.deep_merge(opts)
 
     simple_form_for(obj, opts, &block)
@@ -59,5 +59,4 @@ module Agilibox::FormHelper
       :label      => label,
     )
   end
-
 end

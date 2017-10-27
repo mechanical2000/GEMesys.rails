@@ -42,6 +42,10 @@ class Agilibox::SmallData::Filter
     end
   end
 
+  def respond_to_missing?(method)
+    strategies.key?(method.to_s) || strategies.key?(method.to_s.chomp("="))
+  end
+
   def read
     JSON.parse jar["filters"].to_s
   rescue JSON::ParserError
@@ -61,7 +65,7 @@ class Agilibox::SmallData::Filter
   end
 
   def empty?
-    ! any?
+    !any?
   end
 
   private

@@ -54,7 +54,7 @@ module Agilibox::FiltersHelper
     {
       t("time_periods.all_time")    => "",
       t("time_periods.today")       => "today",
-      t("time_periods.yesterday")   => "yesterday" ,
+      t("time_periods.yesterday")   => "yesterday",
       t("time_periods.this_week")   => "this_week",
       t("time_periods.last_week")   => "last_week",
       t("time_periods.this_month")  => "this_month",
@@ -64,5 +64,4 @@ module Agilibox::FiltersHelper
       t("time_periods.custom_date") => "custom_date",
     }
   end
-
 end

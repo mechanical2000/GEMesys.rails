@@ -1,4 +1,6 @@
-require 'rails_helper'
+require "rails_helper"
+
+# rubocop:disable Metrics/LineLength
 
 describe Agilibox::LinkHelper, type: :helper do
   it "web_link" do

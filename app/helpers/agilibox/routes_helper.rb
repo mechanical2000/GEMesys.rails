@@ -12,7 +12,7 @@ module Agilibox::RoutesHelper
       :controller => "/#{obj.class.to_s.tableize}",
       :action     => :show,
       :id         => obj.to_param,
-      :only_path  => true
+      :only_path  => true,
     }.merge(opts)
 
     routes.url_for(opts)

@@ -1,10 +1,11 @@
 module Agilibox::DefaultValuesConcern
   extend ActiveSupport::Concern
 
-  def assign_default_values; end
+  def assign_default_values
+  end
 
   def assign_default(attribute, value)
-    self.send("#{attribute}=", value) if self.send(attribute).nil?
+    send("#{attribute}=", value) if send(attribute).nil?
   end
 
   included do

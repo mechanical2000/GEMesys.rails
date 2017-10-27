@@ -51,6 +51,4 @@ describe Agilibox::SmallData::FiltersController, type: :controller do
       expect(response).to redirect_to "/agilibox/flyboy/tasks?a=b"
     end
   end
-
 end
-

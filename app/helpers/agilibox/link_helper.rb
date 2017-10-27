@@ -34,7 +34,7 @@ module Agilibox::LinkHelper
   def tel_link(text, opts = {})
     return if text.to_s.blank?
 
-    value = text.gsub(" ", "")
+    value = text.delete(" ")
     href  = "tel:#{value}"
 
     link_to(text, href, opts)
