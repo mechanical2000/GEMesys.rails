@@ -6,6 +6,7 @@
 - Add PhoneNumberSanitizer
 - Add engine_file helper to Kernel
 - Syntax improvements and refactors
+- Add H alias of Agilibox::AllHelpers
 
 ## 1.0.9
 
