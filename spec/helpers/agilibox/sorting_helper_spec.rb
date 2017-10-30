@@ -4,38 +4,38 @@ describe Agilibox::SortingHelper, type: :helper do
   describe "#sortable_column" do
     let(:params) {
       {
-        :controller => "sort",
-        :action     => "sort",
+        :controller => "dummy",
+        :action     => "show",
       }
     }
 
     it "current sort is nil" do
       link = sortable_column("text", :col)
-      expect(link).to eq %(<a class="sort" href="/?sort=col">text</a>)
+      expect(link).to eq %(<a class="sort" href="/dummy?sort=col">text</a>)
     end
 
     it "current sort is col" do
       params[:sort] = "col"
       link = sortable_column("text", :col)
-      expect(link).to eq %(<a class="sort asc" href="/?sort=-col">text ↓</a>)
+      expect(link).to eq %(<a class="sort asc" href="/dummy?sort=-col">text ↓</a>)
     end
 
     it "current sort is -col" do
       params[:sort] = "-col"
       link = sortable_column("text", :col)
-      expect(link).to eq %(<a class="sort desc" href="/?sort=col">text ↑</a>)
+      expect(link).to eq %(<a class="sort desc" href="/dummy?sort=col">text ↑</a>)
     end
 
     it "current sort is other" do
       params[:sort] = "other"
       link = sortable_column("text", :col)
-      expect(link).to eq %(<a class="sort" href="/?sort=col">text</a>)
+      expect(link).to eq %(<a class="sort" href="/dummy?sort=col">text</a>)
     end
 
     it "current sort is -other" do
       params[:sort] = "-other"
       link = sortable_column("text", :col)
-      expect(link).to eq %(<a class="sort" href="/?sort=col">text</a>)
+      expect(link).to eq %(<a class="sort" href="/dummy?sort=col">text</a>)
     end
 
     it "should raise on invalid column type" do
