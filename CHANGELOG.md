@@ -8,6 +8,7 @@
 - Syntax improvements and refactors
 - Add H alias of Agilibox::AllHelpers
 - Add TimestampHelpers
+- Add MiniModelSerializer
 
 ## 1.0.9
 
