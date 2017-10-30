@@ -1,0 +1,5 @@
+en:
+  errors:
+    not_found: "Page not found"
+    forbidden: "You must log in to access this page"
+    unauthorized: "You are not authorized to access this page"

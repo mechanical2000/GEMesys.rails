@@ -9,6 +9,7 @@
 - Add H alias of Agilibox::AllHelpers
 - Add TimestampHelpers
 - Add MiniModelSerializer
+- Add ApiControllerConcern
 
 ## 1.0.9
 

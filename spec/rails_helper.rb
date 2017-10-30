@@ -47,4 +47,8 @@ RSpec.configure do |config|
   config.use_transactional_fixtures = true
 
   config.after { Timecop.return }
+
+  def json_response
+    @json_response ||= JSON.parse(response.body)
+  end
 end

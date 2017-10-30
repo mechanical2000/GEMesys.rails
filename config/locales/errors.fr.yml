@@ -1,0 +1,5 @@
+fr:
+  errors:
+    not_found: "Page demandée non trouvée"
+    forbidden: "Vous devez être connecté pour accéder à cette page"
+    unauthorized: "Vous n'êtes pas authorisé à accéder à cette page"
