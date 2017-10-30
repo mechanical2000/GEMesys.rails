@@ -7,6 +7,7 @@
 - Add engine_file helper to Kernel
 - Syntax improvements and refactors
 - Add H alias of Agilibox::AllHelpers
+- Add TimestampHelpers
 
 ## 1.0.9
 
