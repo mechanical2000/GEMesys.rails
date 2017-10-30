@@ -2,6 +2,8 @@
 
 ## Next version
 
+## 1.0.10
+
 - Add TokenGenerator
 - Add PhoneNumberSanitizer
 - Add engine_file helper to Kernel
