@@ -1,3 +1,5 @@
+require "awesome_print"
+require "pry-rails"
 require "rails-i18n"
 
 module Agilibox
