@@ -10,9 +10,8 @@ module Agilibox::ModelI18n
   end
 
   def tv(attribute)
-    key   = attribute
     value = public_send(attribute)
-    t("#{key}.#{value}") if value.present?
+    t("#{attribute}.#{value}") if value.present?
   end
 
   class_methods do
