@@ -42,7 +42,7 @@ class Agilibox::SmallData::Filter
     end
   end
 
-  def respond_to_missing?(method)
+  def respond_to_missing?(method, *)
     strategies.key?(method.to_s) || strategies.key?(method.to_s.chomp("="))
   end
 

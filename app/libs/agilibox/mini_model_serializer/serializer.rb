@@ -17,7 +17,7 @@ class Agilibox::MiniModelSerializer::Serializer < Agilibox::MiniModelSerializer:
     end
   end
 
-  def respond_to_missing?(m)
+  def respond_to_missing?(m, *)
     object.respond_to?(m, true)
   end
 end
