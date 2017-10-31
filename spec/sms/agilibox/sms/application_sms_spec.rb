@@ -30,7 +30,7 @@ describe Agilibox::SMS::ApplicationSMS do
     TestSMS.hello_i18n_relative.deliver_now
   end
 
-  it "should should translate relative key" do
+  it "should should translate absolute key" do
     expect(I18n).to receive(:t).with("hello").and_return("Hello")
     TestSMS.hello_i18n_absolute.deliver_now
   end
