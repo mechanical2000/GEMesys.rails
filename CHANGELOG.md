@@ -3,6 +3,7 @@
 ## Next version
 
 - Add Agilibox::SMS
+- Test helpers improvements
 
 ## 1.0.10
 
