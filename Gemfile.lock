@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    agilibox (1.0.10)
+    agilibox (1.0.11)
       awesome_print
       pry-rails
       rails-i18n
