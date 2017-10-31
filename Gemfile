@@ -1,11 +1,14 @@
-source 'https://rubygems.org'
+source "https://rubygems.org"
 
 gemspec
 
 gem "rails"
 gem "pg"
 gem "puma"
+gem "dotenv-rails", require: "dotenv/rails-now"
+
 gem "axlsx"
+gem "aws-sdk-sns"
 
 group :test do
   gem "minitest"

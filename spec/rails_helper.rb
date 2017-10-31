@@ -51,4 +51,8 @@ RSpec.configure do |config|
   def json_response
     @json_response ||= JSON.parse(response.body)
   end
+
+  def sms_deliveries
+    Agilibox::SMS::Strategies::Test.deliveries
+  end
 end

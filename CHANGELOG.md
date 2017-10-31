@@ -2,6 +2,8 @@
 
 ## Next version
 
+- Add Agilibox::SMS
+
 ## 1.0.10
 
 - Add TokenGenerator
