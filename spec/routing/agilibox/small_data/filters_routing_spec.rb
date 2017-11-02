@@ -6,7 +6,7 @@ RSpec.describe ::Agilibox::SmallData::FiltersController, type: :routing do
 
     it "routes to #create" do
       expect(post "/small_data/filters").to \
-      route_to("agilibox/small_data/filters#create")
+        route_to("agilibox/small_data/filters#create")
     end
   end
 end
