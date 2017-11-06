@@ -55,6 +55,9 @@ Layout/MultilineMethodCallIndentation:
 Layout/SpaceAroundOperators:
   Enabled: false
 
+Layout/SpaceInLambdaLiteral:
+  EnforcedStyle: require_space
+
 Layout/SpaceInsideHashLiteralBraces:
   EnforcedStyle: no_space
 
