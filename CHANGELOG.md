@@ -2,6 +2,8 @@
 
 ## Next version
 
+- `.checkboxes-dropdown` CSS fix
+
 ## 1.0.11
 
 - Add Agilibox::SMS
