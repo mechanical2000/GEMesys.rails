@@ -38,6 +38,13 @@ describe Agilibox::SortingHelper, type: :helper do
       expect(link).to eq %(<a class="sort" href="/dummy?sort=col">text</a>)
     end
 
+    it "should keep other params" do
+      params[:q]    = "q"
+      params[:sort] = "col"
+      link = sortable_column("text", :col)
+      expect(link).to eq %(<a class="sort asc" href="/dummy?q=q&amp;sort=-col">text ↓</a>)
+    end
+
     it "should raise on invalid column type" do
       # old handles_sortable_columns syntax
       expect {

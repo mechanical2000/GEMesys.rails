@@ -23,7 +23,7 @@ module Agilibox::SortingHelper
       klass          = "sort"
     end
 
-    url_params = params.to_h.symbolize_keys.merge(sort: new_sort_param)
+    url_params = (params.try(:permit!) || params).to_h.symbolize_keys.merge(sort: new_sort_param)
 
     link_to(name, url_params, class: klass)
   end

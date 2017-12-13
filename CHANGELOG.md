@@ -3,6 +3,7 @@
 ## Next version
 
 - `.checkboxes-dropdown` CSS fix
+- Fix sorting helper
 
 ## 1.0.11
 
