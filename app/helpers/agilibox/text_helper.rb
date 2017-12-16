@@ -115,6 +115,7 @@ module Agilibox::TextHelper
       [html_label, separator_html, html_value].join.html_safe
     end
   end # def info
+  # rubocop:enable Metrics/MethodLength
 
   def tags(object)
     return "" if object.tag_list.empty?

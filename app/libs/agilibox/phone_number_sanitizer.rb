@@ -6,8 +6,7 @@ class Agilibox::PhoneNumberSanitizer
   end
 
   def call
-    sanitized = phone_number.to_s.gsub(/[^0-9\+]+/, "")
-    sanitized if sanitized.present?
+    phone_number.to_s.gsub(/[^0-9\+]+/, "").presence
   end
 
   def self.call(*args)

@@ -50,5 +50,5 @@ group :development, :test do
   gem "factory_bot_rails"
   gem "byebug"
   gem "rspec-rails" # must be in both environments for generators
-  gem "rubocop"
+  gem "rubocop", "~> 0.52.0"
 end

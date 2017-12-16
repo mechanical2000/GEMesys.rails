@@ -8,6 +8,7 @@ RSpec.describe Agilibox::Serializers::XLSX do
       ["Benoit", 27],
     ]
   }
+  # rubocop:enable Style/WordArray
 
   let(:serializer) {
     Agilibox::Serializers::XLSX.new(data)

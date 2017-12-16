@@ -1,8 +1,6 @@
 require "rails_helper"
 
 # rubocop:disable Metrics/LineLength
-# rubocop:disable Style/SingleLineMethods
-# rubocop:disable Layout/EmptyLineBetweenDefs
 
 describe Agilibox::TextHelper, type: :helper do
   it "hours" do
@@ -130,3 +128,5 @@ describe Agilibox::TextHelper, type: :helper do
     end
   end
 end
+
+# rubocop:enable Metrics/LineLength

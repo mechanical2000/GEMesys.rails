@@ -31,3 +31,5 @@ describe Agilibox::LinkHelper, type: :helper do
     expect(twitter_link("http://twitter.com/BenoitMC")).to eq %(<a href="http://twitter.com/BenoitMC">http://twitter.com/BenoitMC</a>)
   end
 end
+
+# rubocop:enable Metrics/LineLength

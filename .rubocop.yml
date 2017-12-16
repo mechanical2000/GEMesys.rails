@@ -36,6 +36,19 @@ Gemspec/OrderedDependencies:
 Layout/AlignParameters:
   EnforcedStyle: with_fixed_indentation
 
+Layout/ClassStructure:
+  Enabled: true # Disabled by default
+
+Layout/EmptyLineBetweenDefs:
+  Enabled: true
+  Exclude:
+    - /**/spec/**/*
+
+# Buggy
+# TODO : Remove to enable
+Layout/EmptyLinesAroundArguments:
+  Enabled: false
+
 Layout/FirstArrayElementLineBreak:
   Enabled: true  # Disabled by default
 
@@ -109,6 +122,16 @@ Metrics/MethodLength:
 Metrics/ModuleLength:
   Enabled: false
 
+Style/SingleLineMethods:
+  Enabled: true
+  Exclude:
+    - /**/spec/**/*
+
+
+
+
+
+
 Naming/PredicateName:
   Enabled: false
 
@@ -125,6 +148,9 @@ Performance/Casecmp:
 
 Rails:
   Enabled: true  # Disabled by default
+
+Rails/InverseOf:
+  Enabled: false
 
 Rails/OutputSafety:
   Enabled: false
@@ -174,8 +200,16 @@ Style/Documentation:
 Style/EmptyMethod:
   EnforcedStyle: expanded
 
+Style/ExtendSelf:
+  Enabled: false
+
 Style/FrozenStringLiteralComment:
   EnforcedStyle: never
+
+# Buggy with date(xxx, format: "xxx")
+# TODO : Enable when fixed ?
+Style/FormatStringToken:
+  Enabled: false
 
 Style/GuardClause:
   MinBodyLength: 3
@@ -197,6 +231,11 @@ Style/LambdaCall:
 
 Style/MethodCalledOnDoEndBlock:
   Enabled: true  # Disabled by default
+
+# Buggy
+# TODO : Remove to enable
+Style/MixinUsage:
+  Enabled: false
 
 Style/ModuleFunction:
   EnforcedStyle: extend_self
