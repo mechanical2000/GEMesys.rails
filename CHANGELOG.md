@@ -2,6 +2,8 @@
 
 ## Next version
 
+- Modal JS fix
+
 ## 1.0.12
 
 - `.checkboxes-dropdown` CSS fix

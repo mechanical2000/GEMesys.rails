@@ -94,7 +94,11 @@ window.modal =
       return false
 
     forms: ->
-      modal.openUrl(this.action, this.method, new FormData(this))
+      if String(this.method).toLowerCase() == "get"
+        data = $(this).serialize()
+      else
+        data = new FormData(this)
+      modal.openUrl(this.action, this.method, data)
       modal._set_closable_for_element(this)
       return false
 
