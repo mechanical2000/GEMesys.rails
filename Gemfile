@@ -2,12 +2,12 @@ source "https://rubygems.org"
 
 gemspec
 
-gem "rails"
+gem "rails", "~> 5.0.6"
 gem "pg"
 gem "puma"
 gem "dotenv-rails", require: "dotenv/rails-now"
 
-gem "axlsx"
+gem "axlsx", github: "randym/axlsx"
 gem "aws-sdk-sns"
 
 group :test do
