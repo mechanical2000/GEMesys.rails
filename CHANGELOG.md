@@ -2,6 +2,8 @@
 
 ## Next version
 
+## 1.0.13
+
 - Modal JS fix
 
 ## 1.0.12
