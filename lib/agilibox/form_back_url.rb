@@ -1,9 +1,9 @@
 module Agilibox::FormBackUrl
   def back_url_tag
     tag(:input,
-      :type => "hidden",
-      :name => "back_url",
-      :value => (params[:back_url] || request.referer),
+      :type  => "hidden",
+      :name  => "back_url",
+      :value => (params[:back_url].presence || request.referer),
     )
   end
 
