@@ -31,7 +31,7 @@ module Agilibox::FiltersHelper
 
   def filters_form(options = {}, &block)
     if options.key?(:buttons)
-      buttons = optins.delete(:buttons)
+      buttons = options.delete(:buttons)
     else
       buttons = true
     end
