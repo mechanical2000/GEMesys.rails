@@ -2,6 +2,8 @@
 
 ## Next version
 
+- Sorting helper improvements
+
 ## 1.0.13
 
 - Modal JS fix

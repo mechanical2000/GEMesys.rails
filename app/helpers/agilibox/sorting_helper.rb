@@ -1,5 +1,5 @@
 module Agilibox::SortingHelper
-  def sortable_column(name, column)
+  def sortable_column(name, column, options = {})
     unless column.is_a?(Symbol)
       raise ArgumentError, "invalid column, please use symbol"
     end
@@ -23,9 +23,14 @@ module Agilibox::SortingHelper
       klass          = "sort"
     end
 
-    url_params = (params.try(:permit!) || params).to_h.symbolize_keys.merge(sort: new_sort_param)
+    unless (url_params = options.delete(:url_params))
+      url_params = (params.try(:permit!) || params).to_h.symbolize_keys
+    end
+    url_params[:sort] = new_sort_param
 
-    link_to(name, url_params, class: klass)
+    html_options = {class: klass}.merge(options)
+
+    link_to(name, url_params, html_options)
   end
 
   def sortable_column_order(sort_param = params[:sort])

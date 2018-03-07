@@ -51,6 +51,17 @@ describe Agilibox::SortingHelper, type: :helper do
         sortable_column("text", column: "col")
       }.to raise_error ArgumentError
     end
+
+    it "should allow customer :url_params" do
+      params.clear
+      link = sortable_column("text", :col, url_params: {controller: :dummy, action: :show})
+      expect(link).to eq %(<a class="sort" href="/dummy?sort=col">text</a>)
+    end
+
+    it "should allow link_to attributes" do
+      link = sortable_column("text", :col, remote: true)
+      expect(link).to eq %(<a class="sort" data-remote="true" href="/dummy?sort=col">text</a>)
+    end
   end # describe "#sortable_column"
 
   describe "#sortable_column_order" do
