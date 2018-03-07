@@ -2,7 +2,11 @@
 
 ## Next version
 
+## 1.0.14
+
 - Sorting helper improvements
+- FormBackUrl fixes
+- FiltersHelper fixes
 
 ## 1.0.13
 
