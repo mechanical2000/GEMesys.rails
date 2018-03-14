@@ -11,3 +11,4 @@ spec/dummy/.sass-cache
 .env*
 !.env.sample
 coverage/
+.rubocop-http*
