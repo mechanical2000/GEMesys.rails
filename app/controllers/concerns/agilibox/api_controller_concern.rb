@@ -12,16 +12,18 @@ module Agilibox::ApiControllerConcern
     render options.merge(json: json)
   end
 
-  def render_json_error(message_or_object, options = {})
-    if message_or_object.is_a?(ActiveRecord::Base)
-      message = message_or_object.errors.full_messages.join(", ")
+  def render_json_error(any_object, options = {})
+    if any_object.is_a?(ActiveRecord::Base)
+      json = {error: any_object.errors.full_messages.join(", ")}
+    elsif any_object.is_a?(String)
+      json = {error: any_object}
     else
-      message = message_or_object
+      json = any_object
     end
 
     options[:status] ||= :unprocessable_entity
 
-    render_json({error: message}, options)
+    render_json(json, options)
   end
 
   def render_not_found

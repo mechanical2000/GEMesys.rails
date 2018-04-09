@@ -2,6 +2,8 @@
 
 ## Next version
 
+- `ApiControllerConcern#render_json_error` improvements
+
 ## 1.0.14
 
 - Sorting helper improvements

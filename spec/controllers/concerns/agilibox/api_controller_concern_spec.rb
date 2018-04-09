@@ -117,6 +117,15 @@ describe Agilibox::ApiControllerConcern, type: :controller do
     )
   end
 
+  it "should render error with json" do
+    action { render_json_error custom_error_key: "my custom error" }
+    expect(response.status).to eq 422
+    expect(json_response).to eq(
+      "current_user"     => nil,
+      "custom_error_key" => "my custom error",
+    )
+  end
+
   it "should render for found on ActiveRecord not found error" do
     action { DummyModel.find(123_456_789) }
     expect(json_response).to eq(
