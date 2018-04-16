@@ -3,6 +3,7 @@
 ## Next version
 
 - `ApiControllerConcern#render_json_error` improvements
+- Add Agilibox::Service object
 
 ## 1.0.14
 
