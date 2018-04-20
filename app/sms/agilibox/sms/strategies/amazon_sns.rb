@@ -1,18 +1,18 @@
 class Agilibox::SMS::Strategies::AmazonSNS < Agilibox::SMS::Strategies::Base
   class << self
-    attr_writer :region
+    attr_writer :sns_region
 
     def sns_region
       @sns_region ||= (ENV["SNS_REGION"] || ENV["AWS_REGION"])
     end
 
-    attr_writer :access_key_id
+    attr_writer :sns_access_key_id
 
     def sns_access_key_id
       @sns_access_key_id ||= (ENV["SNS_ACCESS_KEY_ID"] || ENV["AWS_ACCESS_KEY_ID"])
     end
 
-    attr_writer :secret_access_key
+    attr_writer :sns_secret_access_key
 
     def sns_secret_access_key
       @sns_secret_access_key ||= (ENV["SNS_SECRET_ACCESS_KEY"] || ENV["AWS_SECRET_ACCESS_KEY"])
