@@ -1,7 +1,5 @@
 require "rails_helper"
 
-# rubocop:disable Metrics/LineLength
-
 describe Agilibox::LinkHelper, type: :helper do
   it "web_link" do
     expect(web_link("")).to be nil
@@ -31,5 +29,3 @@ describe Agilibox::LinkHelper, type: :helper do
     expect(twitter_link("http://twitter.com/BenoitMC")).to eq %(<a href="http://twitter.com/BenoitMC">http://twitter.com/BenoitMC</a>)
   end
 end
-
-# rubocop:enable Metrics/LineLength

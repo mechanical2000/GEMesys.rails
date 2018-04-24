@@ -1,5 +1,7 @@
 class Agilibox::SmallData::FilterStrategyByTimePeriod < ::Agilibox::SmallData::FilterStrategyByKeyValue
   def apply(query, value) # rubocop:disable Metrics/MethodLength
+    value = value.to_s
+
     if value == "today"
       a = Time.zone.now.beginning_of_day
       b = Time.zone.now.end_of_day
@@ -28,10 +30,10 @@ class Agilibox::SmallData::FilterStrategyByTimePeriod < ::Agilibox::SmallData::F
       return query
     end
 
-    criteria = "#{query.model.table_name}.#{key}"
+    column = key.is_a?(Symbol) ? "#{query.model.table_name}.#{key}" : key.to_s
 
     query
-      .where("#{criteria} >= ?", a.to_date)
-      .where("#{criteria} <= ?", b.to_date)
+      .where("DATE(#{column}) >= ?", a.to_date)
+      .where("DATE(#{column}) <= ?", b.to_date)
   end
 end
