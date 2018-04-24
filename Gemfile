@@ -9,6 +9,7 @@ gem "dotenv-rails", require: "dotenv/rails-now"
 
 gem "axlsx", github: "randym/axlsx"
 gem "aws-sdk-sns"
+gem "loofah", ">= 2.2.2" # fix Github security warning
 
 group :test do
   gem "minitest"
