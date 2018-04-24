@@ -2,6 +2,8 @@
 
 ## Next version
 
+## 1.0.15
+
 - `ApiControllerConcern#render_json_error` improvements
 - Add Agilibox::Service object
 - Fix SMS AmazonSNS strategy bug
