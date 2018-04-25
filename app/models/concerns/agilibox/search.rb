@@ -3,9 +3,9 @@ module Agilibox::Search
 
   class_methods do
     def default_search_fields
-      columns.map do |column|
-        "#{table_name}.#{column.name}"
-      end
+      columns
+        .select { |column| column.type.in?([:string, :text]) }
+        .map    { |column| "#{table_name}.#{column.name}" }
     end # def default_search_fields
 
     def search(q, *fields)
@@ -18,13 +18,9 @@ module Agilibox::Search
         }.join(" OR ")
       }.map { |e| "(#{e})" }.join(" AND ")
 
-      sql_params_a = words.map.with_index do |word, index|
-        ["w#{index}".to_sym, "%#{word}%"]
-      end
+      sql_params = words.map.with_index { |word, index| ["w#{index}".to_sym, "%#{word}%"] }.to_h
 
-      sql_params_h = Hash[sql_params_a]
-
-      where(sql_query, sql_params_h)
+      where(sql_query, sql_params)
     end # def search
   end # class_methods
 end # class Agilibox::Search

@@ -2,6 +2,8 @@
 
 ## Next version
 
+- Search concern improvements
+
 ## 1.0.15
 
 - `ApiControllerConcern#render_json_error` improvements

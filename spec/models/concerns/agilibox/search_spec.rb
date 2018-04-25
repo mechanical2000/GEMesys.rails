@@ -29,4 +29,12 @@ describe Agilibox::Search do
     expect(r2).to include e1
     expect(r2).to include e2
   end
+
+  it "default_search_fields should return string and text fields only" do
+    expect(DummyModel.default_search_fields.sort).to eq %w(
+      dummy_models.asso_type
+      dummy_models.string_field
+      dummy_models.text_field
+    )
+  end
 end
