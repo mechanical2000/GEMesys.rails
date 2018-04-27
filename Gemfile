@@ -11,6 +11,7 @@ gem "slim-rails"
 gem "sass-rails"
 gem "bootstrap-sass"
 gem "font-awesome-sass", ">= 5.0.0"
+gem "simple_form"
 gem "axlsx", github: "randym/axlsx"
 gem "aws-sdk-sns"
 gem "loofah", ">= 2.2.2" # fix Github security warning
