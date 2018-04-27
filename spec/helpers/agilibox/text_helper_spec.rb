@@ -32,8 +32,11 @@ describe Agilibox::TextHelper, type: :helper do
   end
 
   it "date" do
+    d = Date.parse("2012-12-21")
+
     expect(date(nil)).to be nil
-    expect(date(Date.parse("2012-12-21"))).to eq "21/12/2012"
+    expect(date(d)).to eq "21/12/2012"
+    expect(date(d, format: "%Y")).to eq "2012"
   end
 
   it "text2html" do

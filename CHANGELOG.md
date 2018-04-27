@@ -3,6 +3,7 @@
 ## Next version
 
 - Search concern improvements
+- Date helper improvements
 
 ## 1.0.15
 

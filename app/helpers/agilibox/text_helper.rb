@@ -39,9 +39,8 @@ module Agilibox::TextHelper
     number_with_precision(n, opts).tr(" ", "\u00A0")
   end
 
-  def date(d)
-    return if d.nil?
-    I18n.l(d)
+  def date(d, *args)
+    I18n.l(d, *args) unless d.nil?
   end
 
   def hours(n)
