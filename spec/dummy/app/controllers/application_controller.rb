@@ -3,4 +3,6 @@ class ApplicationController < ActionController::Base
 
   def current_user
   end
+
+  helper Agilibox::AllHelpers
 end

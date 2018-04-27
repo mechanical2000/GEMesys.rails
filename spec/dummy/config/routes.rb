@@ -1,5 +1,10 @@
 Rails.application.routes.draw do
   mount Agilibox::Engine => "/agilibox"
 
-  get "/dummy" => "dummy#show"
+  resources :tests, only: [:index] do
+    collection do
+      get :buttons
+      get :filters
+    end
+  end
 end

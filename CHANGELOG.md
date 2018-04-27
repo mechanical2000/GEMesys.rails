@@ -3,6 +3,11 @@
 ## Next version
 
 - Search concern improvements
+- Date helper improvements
+- Add `boolean_icon` helper
+- Add i18n attributes
+- Add `Agilibox::PluckToHash`
+- Switch to FontAwesome 5 + `icon` helper improvements
 
 ## 1.0.15
 

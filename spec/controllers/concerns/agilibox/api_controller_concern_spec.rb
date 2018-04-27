@@ -1,13 +1,16 @@
 require "rails_helper"
 
 describe Agilibox::ApiControllerConcern, type: :controller do
-  before do
-    @controller = DummyController.new
+  controller(::ApplicationController) do
+    include Agilibox::ApiControllerConcern
+
+    def index
+    end
   end
 
   def action(&block)
-    controller.define_singleton_method(:show, &block)
-    get :show
+    controller.define_singleton_method(:index, &block)
+    get :index
   end
 
   it "allow to call #render_json without argument" do
@@ -83,13 +86,13 @@ describe Agilibox::ApiControllerConcern, type: :controller do
   end
 
   it "should render forbiddden if not logged in" do
-    allow_any_instance_of(DummyController).to receive(:current_user).and_return(nil)
+    allow(controller).to receive(:current_user).and_return(nil)
     action { render_forbidden_or_unauthorized }
     expect(response).to be_forbidden
   end
 
   it "should render unauthorized if logged in" do
-    allow_any_instance_of(DummyController).to receive(:current_user).and_return("user")
+    allow(controller).to receive(:current_user).and_return("user")
     action { render_forbidden_or_unauthorized }
     expect(response).to be_unauthorized
   end

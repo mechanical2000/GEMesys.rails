@@ -5,7 +5,7 @@ module Agilibox::FiltersHelper
     options[:value] ||= "submit"
 
     text = options.delete(:text) || t("actions.filter")
-    icon = options.delete(:icon) || "filter"
+    icon = options.delete(:icon) || :filter
 
     content_tag(:button, options) do
       icon(icon) + " " + text
@@ -18,7 +18,7 @@ module Agilibox::FiltersHelper
     options[:value] ||= "reset"
 
     text = options.delete(:text) || t("actions.reset")
-    icon = options.delete(:icon) || "rotate-left"
+    icon = options.delete(:icon) || :undo
 
     content_tag(:button, options) do
       icon(icon) + " " + text

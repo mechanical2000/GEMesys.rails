@@ -3,6 +3,8 @@ require "rails_helper"
 # rubocop:disable Metrics/LineLength
 
 describe Agilibox::TextHelper, type: :helper do
+  include Agilibox::FontAwesomeHelper
+
   it "hours" do
     expect(hours(nil)).to be nil
     expect(hours(1)).to eq "1,00 heure"
@@ -32,9 +34,32 @@ describe Agilibox::TextHelper, type: :helper do
   end
 
   it "date" do
+    d = Date.parse("2012-12-21")
+
     expect(date(nil)).to be nil
-    expect(date(Date.parse("2012-12-21"))).to eq "21/12/2012"
+    expect(date(d)).to eq "21/12/2012"
+    expect(date(d, format: "%Y")).to eq "2012"
   end
+
+  describe "#boolean_icon" do
+    it "should return nil if nil" do
+      expect(boolean_icon nil).to eq nil
+    end
+
+    it "should return check icon if true" do
+      expect(boolean_icon true).to eq %(<span class="fa-check fas icon" style="color: green"></span>)
+    end
+
+    it "should return times icon if false" do
+      expect(boolean_icon false).to eq %(<span class="fa-times fas icon" style="color: red"></span>)
+    end
+
+    it "should raise an error on invalid value" do
+      expect {
+        boolean_icon 123
+      }.to raise_error(RuntimeError)
+    end
+  end # describe "#boolean_icon"
 
   it "text2html" do
     expect(text2html(nil)).to be nil
