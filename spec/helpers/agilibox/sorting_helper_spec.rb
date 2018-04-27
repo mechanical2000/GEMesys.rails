@@ -1,48 +1,50 @@
 require "rails_helper"
 
 describe Agilibox::SortingHelper, type: :helper do
+  Rails.application.routes.draw { resources :anonymous }
+
   describe "#sortable_column" do
     let(:params) {
       {
-        :controller => "dummy",
-        :action     => "show",
+        :controller => "anonymous",
+        :action     => "index",
       }
     }
 
     it "current sort is nil" do
       link = sortable_column("text", :col)
-      expect(link).to eq %(<a class="sort" href="/dummy?sort=col">text</a>)
+      expect(link).to eq %(<a class="sort" href="/anonymous?sort=col">text</a>)
     end
 
     it "current sort is col" do
       params[:sort] = "col"
       link = sortable_column("text", :col)
-      expect(link).to eq %(<a class="sort asc" href="/dummy?sort=-col">text ↓</a>)
+      expect(link).to eq %(<a class="sort asc" href="/anonymous?sort=-col">text ↓</a>)
     end
 
     it "current sort is -col" do
       params[:sort] = "-col"
       link = sortable_column("text", :col)
-      expect(link).to eq %(<a class="sort desc" href="/dummy?sort=col">text ↑</a>)
+      expect(link).to eq %(<a class="sort desc" href="/anonymous?sort=col">text ↑</a>)
     end
 
     it "current sort is other" do
       params[:sort] = "other"
       link = sortable_column("text", :col)
-      expect(link).to eq %(<a class="sort" href="/dummy?sort=col">text</a>)
+      expect(link).to eq %(<a class="sort" href="/anonymous?sort=col">text</a>)
     end
 
     it "current sort is -other" do
       params[:sort] = "-other"
       link = sortable_column("text", :col)
-      expect(link).to eq %(<a class="sort" href="/dummy?sort=col">text</a>)
+      expect(link).to eq %(<a class="sort" href="/anonymous?sort=col">text</a>)
     end
 
     it "should keep other params" do
       params[:q]    = "q"
       params[:sort] = "col"
       link = sortable_column("text", :col)
-      expect(link).to eq %(<a class="sort asc" href="/dummy?q=q&amp;sort=-col">text ↓</a>)
+      expect(link).to eq %(<a class="sort asc" href="/anonymous?q=q&amp;sort=-col">text ↓</a>)
     end
 
     it "should raise on invalid column type" do
@@ -54,13 +56,13 @@ describe Agilibox::SortingHelper, type: :helper do
 
     it "should allow customer :url_params" do
       params.clear
-      link = sortable_column("text", :col, url_params: {controller: :dummy, action: :show})
-      expect(link).to eq %(<a class="sort" href="/dummy?sort=col">text</a>)
+      link = sortable_column("text", :col, url_params: {controller: :anonymous, action: :index})
+      expect(link).to eq %(<a class="sort" href="/anonymous?sort=col">text</a>)
     end
 
     it "should allow link_to attributes" do
       link = sortable_column("text", :col, remote: true)
-      expect(link).to eq %(<a class="sort" data-remote="true" href="/dummy?sort=col">text</a>)
+      expect(link).to eq %(<a class="sort" data-remote="true" href="/anonymous?sort=col">text</a>)
     end
   end # describe "#sortable_column"
 
