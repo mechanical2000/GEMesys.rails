@@ -46,8 +46,8 @@ module Agilibox::TextHelper
   def boolean_icon(bool)
     return if bool.nil?
 
-    return content_tag(:span, class: "fa fa-check", style: "color: green") {} if bool == true
-    return content_tag(:span, class: "fa fa-times", style: "color: red")   {} if bool == false
+    return icon(:check, style: "color: green") if bool == true
+    return icon(:times, style: "color: red")   if bool == false
 
     raise "#{bool} is not a boolean"
   end

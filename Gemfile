@@ -10,7 +10,7 @@ gem "dotenv-rails", require: "dotenv/rails-now"
 gem "slim-rails"
 gem "sass-rails"
 gem "bootstrap-sass"
-gem "font-awesome-sass", "~> 4.7.0"
+gem "font-awesome-sass", ">= 5.0.0"
 gem "axlsx", github: "randym/axlsx"
 gem "aws-sdk-sns"
 gem "loofah", ">= 2.2.2" # fix Github security warning

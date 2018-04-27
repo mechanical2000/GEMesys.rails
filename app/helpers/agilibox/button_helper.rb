@@ -48,7 +48,7 @@ module Agilibox::ButtonHelper
 
   def read_button(url, options = {})
     options = {
-      :icon   => "info-circle",
+      :icon   => :info_circle,
       :action => :read,
     }.merge(options)
 
@@ -57,7 +57,7 @@ module Agilibox::ButtonHelper
 
   def download_button(url, options = {})
     options = {
-      :icon     => "cloud-download",
+      :icon     => :cloud_download_alt,
       :action   => :download,
       :download => url,
     }.merge(options)
@@ -75,7 +75,7 @@ module Agilibox::ButtonHelper
     end
 
     options = {
-      :icon     => "cloud-download",
+      :icon     => :download,
       :action   => action,
       :download => url,
     }.merge(options)
@@ -85,7 +85,7 @@ module Agilibox::ButtonHelper
 
   def import_button(url, options = {})
     options = {
-      :icon     => "cloud-upload",
+      :icon     => :upload,
       :action   => :import,
     }.merge(options)
 
@@ -94,7 +94,7 @@ module Agilibox::ButtonHelper
 
   def update_button(url, options = {})
     options = {
-      :icon   => :pencil,
+      :icon   => :pencil_alt,
       :action => :update,
     }.merge(options)
 
@@ -136,7 +136,7 @@ module Agilibox::ButtonHelper
 
   def snooze_button(url, options = {})
     options = {
-      :icon    => :"clock-o",
+      :icon    => :clock,
       :action  => :snooze,
       :confirm => true,
       :method  => :patch,

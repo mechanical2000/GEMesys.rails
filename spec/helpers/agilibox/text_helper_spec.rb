@@ -3,6 +3,8 @@ require "rails_helper"
 # rubocop:disable Metrics/LineLength
 
 describe Agilibox::TextHelper, type: :helper do
+  include Agilibox::FontAwesomeHelper
+
   it "hours" do
     expect(hours(nil)).to be nil
     expect(hours(1)).to eq "1,00 heure"
@@ -45,11 +47,11 @@ describe Agilibox::TextHelper, type: :helper do
     end
 
     it "should return check icon if true" do
-      expect(boolean_icon true).to eq %(<span class="fa fa-check" style="color: green"></span>)
+      expect(boolean_icon true).to eq %(<span class="fa-check fas icon" style="color: green"></span>)
     end
 
     it "should return times icon if false" do
-      expect(boolean_icon false).to eq %(<span class="fa fa-times" style="color: red"></span>)
+      expect(boolean_icon false).to eq %(<span class="fa-times fas icon" style="color: red"></span>)
     end
 
     it "should raise an error on invalid value" do
