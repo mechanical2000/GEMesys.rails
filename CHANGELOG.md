@@ -5,6 +5,7 @@
 - Search concern improvements
 - Date helper improvements
 - Add `boolean_icon` helper
+- Add i18n attributes
 
 ## 1.0.15
 
