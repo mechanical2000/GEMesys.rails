@@ -6,6 +6,7 @@
 - Date helper improvements
 - Add `boolean_icon` helper
 - Add i18n attributes
+- Add `Agilibox::PluckToHash`
 
 ## 1.0.15
 

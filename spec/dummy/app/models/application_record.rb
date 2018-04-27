@@ -6,4 +6,5 @@ class ApplicationRecord < ActiveRecord::Base
   include Agilibox::ModelToS
   include Agilibox::ModelI18n
   include Agilibox::PolymorphicId
+  include Agilibox::PluckToHash
 end
