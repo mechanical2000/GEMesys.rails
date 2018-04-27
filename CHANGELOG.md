@@ -1,6 +1,6 @@
 # Changelog
 
-## Next version
+## 1.1.0
 
 - Search concern improvements
 - Date helper improvements
