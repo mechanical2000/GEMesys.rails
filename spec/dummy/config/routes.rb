@@ -5,6 +5,8 @@ Rails.application.routes.draw do
     collection do
       get :buttons
       get :filters
+      get :search
+      get :checkboxes_dropdown
     end
   end
 end

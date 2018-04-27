@@ -1,2 +1,2 @@
 $(document).on "turbolinks:load", ->
-  $("select.select2").select2()
+  $("select.select2").map -> $(this).select2()
