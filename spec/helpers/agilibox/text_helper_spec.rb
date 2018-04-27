@@ -39,6 +39,26 @@ describe Agilibox::TextHelper, type: :helper do
     expect(date(d, format: "%Y")).to eq "2012"
   end
 
+  describe "#boolean_icon" do
+    it "should return nil if nil" do
+      expect(boolean_icon nil).to eq nil
+    end
+
+    it "should return check icon if true" do
+      expect(boolean_icon true).to eq %(<span class="fa fa-check" style="color: green"></span>)
+    end
+
+    it "should return times icon if false" do
+      expect(boolean_icon false).to eq %(<span class="fa fa-times" style="color: red"></span>)
+    end
+
+    it "should raise an error on invalid value" do
+      expect {
+        boolean_icon 123
+      }.to raise_error(RuntimeError)
+    end
+  end # describe "#boolean_icon"
+
   it "text2html" do
     expect(text2html(nil)).to be nil
     expect(text2html(" \n")).to be nil

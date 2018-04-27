@@ -43,6 +43,15 @@ module Agilibox::TextHelper
     I18n.l(d, *args) unless d.nil?
   end
 
+  def boolean_icon(bool)
+    return if bool.nil?
+
+    return content_tag(:span, class: "fa fa-check", style: "color: green") {} if bool == true
+    return content_tag(:span, class: "fa fa-times", style: "color: red")   {} if bool == false
+
+    raise "#{bool} is not a boolean"
+  end
+
   def hours(n)
     return if n.nil?
 
