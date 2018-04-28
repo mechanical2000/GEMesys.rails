@@ -1,5 +1,9 @@
 # Changelog
 
+## Next version
+
+- Add `Agilibox::MiniFormObject`
+
 ## 1.1.0
 
 - Search concern improvements
