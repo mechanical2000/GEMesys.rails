@@ -1,6 +1,6 @@
 # Changelog
 
-## Next version
+## 1.2.0
 
 - Add `Agilibox::MiniFormObject`
 - Replace time period filter by date+datetime period filters
