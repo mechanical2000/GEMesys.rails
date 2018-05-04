@@ -4,6 +4,7 @@
 
 - Add `Agilibox::MiniFormObject`
 - Replace time period filter by date+datetime period filters
+- JS Modal improvements
 
 ## 1.1.0
 

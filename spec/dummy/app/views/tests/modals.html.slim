@@ -1,0 +1,53 @@
+- next_url = url_for(page_id: params[:page_id].to_i.next)
+
+p = "current page id is #{params[:page_id].to_i}"
+p = "request method is #{request.method}"
+
+<hr />
+
+p: a href=next_url
+  = "no data modal link"
+
+p: a href=next_url data-modal="normal"
+  = "normal modal link"
+
+p: a href=next_url data-modal="nested"
+  = "nested modal link"
+
+p: a href=next_url data-modal="off"
+  = "off modal link"
+
+p: a href="mailto:user@example.org"
+  = "mailto link"
+
+p: a href="tel:+123"
+  = "tel link"
+
+p: a href="sms:+123"
+  = "sms link"
+
+p: a href="javascript:void(0)"
+  = "javascript link"
+
+p: a href="https://www.google.fr/" target="_blank"
+  = "target blank link"
+
+p: a href=next_url data-method="post"
+  = "data method link"
+
+p: a href=next_url data-remote="true"
+  = "data remote link"
+
+<hr />
+
+= form_tag next_url, method: :post
+  p: button = "no data modal form"
+
+= form_tag next_url, method: :post, data: {modal: "normal"}
+  p: button = "normal modal form"
+
+= form_tag next_url, method: :post, data: {modal: "nested"}
+  p: button = "nested modal form"
+
+= form_tag next_url, method: :post, data: {modal: "off"}
+  p: button = "off modal form"
