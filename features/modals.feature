@@ -115,3 +115,16 @@ Feature: Modals
     When I click on "data method link"
     Then I see "current page id is 2" in modal
     Then I see "request method is POST" in modal
+
+  Scenario: data method link without modal
+    Then I see "current page id is 0" out of modal
+    When I click on "data method link"
+    Then I see "current page id is 1" out of modal
+    Then I see "request method is POST" out of modal
+
+  Scenario: normal modal link + data method link
+    Then I see "current page id is 0" out of modal
+    When I click on "normal modal link"
+    Then I see "current page id is 1" in modal
+    When I click on "data method link"
+    Then I see "current page id is 2" out of modal
