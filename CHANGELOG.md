@@ -5,6 +5,11 @@
 - Add `Agilibox::MiniFormObject`
 - Replace time period filter by date+datetime period filters
 - JS Modal improvements
+- Change Cucumber config :
+  - add Chrome Headless support
+  - rename `phantomjs_window_size` to `window_size`
+  - refactoring
+  - you now need to add `Agilibox::CucumberConfig.require_poltergeist!` or `Agilibox::CucumberConfig.require_chrome_headless!` to your `env.rb`
 
 ## 1.1.0
 

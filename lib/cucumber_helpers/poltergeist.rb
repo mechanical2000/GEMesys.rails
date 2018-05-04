@@ -6,16 +6,15 @@ raise "invalid phantomjs version" if `#{phantomjs_binary} -v`.strip != phantomjs
 # You can download phantomjs here : https://bitbucket.org/ariya/phantomjs/downloads/
 # Semaphore setup commmand : change-phantomjs-version 2.1.1
 
-Capybara.register_driver :poltergeist do |app|
+Capybara.register_driver :agilibox_poltergeist do |app|
   Capybara::Poltergeist::Driver.new(app,
     :debug       => false,
-    :window_size => Agilibox::CucumberConfig.phantomjs_window_size,
+    :window_size => Agilibox::CucumberConfig.window_size,
     :timeout     => 60,
     :phantomjs   => phantomjs_binary,
   )
 end
 
-Capybara.default_driver        = :poltergeist
-Capybara.javascript_driver     = :poltergeist
-Capybara.current_driver        = :poltergeist
-Capybara.default_max_wait_time = 3
+Capybara.default_driver    = :agilibox_poltergeist
+Capybara.javascript_driver = :agilibox_poltergeist
+Capybara.current_driver    = :agilibox_poltergeist
