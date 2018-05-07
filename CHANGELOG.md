@@ -1,5 +1,9 @@
 # Changelog
 
+## Next version
+
+- Fix flash partial
+
 ## 1.2.0
 
 - Add `Agilibox::MiniFormObject`
