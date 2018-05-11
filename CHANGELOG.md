@@ -1,6 +1,6 @@
 # Changelog
 
-## Next version
+## 1.2.1
 
 - Fix flash partial
 - Filter by date/datetime period now allows custom periods
