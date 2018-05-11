@@ -3,7 +3,7 @@ class Agilibox::Sorter
 
   attr_reader :collection, :sort_param, :column, :direction
 
-  def initialize(collection, sort_param)
+  def initialize(collection, sort_param = nil)
     @collection         = collection
     @sort_param         = sort_param
     @column, @direction = sortable_column_order(sort_param.to_s)

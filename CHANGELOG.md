@@ -4,6 +4,7 @@
 
 - Fix flash partial
 - Filter by date/datetime period now allows custom periods
+- Sorter class improvements
 
 ## 1.2.0
 
