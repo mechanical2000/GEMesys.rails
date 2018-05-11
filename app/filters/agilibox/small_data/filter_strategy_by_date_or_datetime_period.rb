@@ -34,17 +34,23 @@ class Agilibox::SmallData::FilterStrategyByDateOrDatetimePeriod < ::Agilibox::Sm
     elsif value == "last_year"
       a = (now - 1.year).beginning_of_year
       b = (now - 1.year).end_of_year
+    elsif (m = value.match(/last\.([0-9]+)\.(days?|weeks?|months?|years?)/))
+      a = now - m[1].to_i.public_send(m[2])
+      b = now
     else
       return query
     end
 
     if now.is_a?(Time)
-      a = a.beginning_of_day
-      b = b.end_of_day
+      a = a.beginning_of_day if a
+      b = b.end_of_day       if b
     end
 
     column = key.is_a?(Symbol) ? "#{query.model.table_name}.#{key}" : key.to_s
 
-    query.where("#{column} >= ? AND #{column} <= ?", a, b)
+    query = query.where("#{column} >= ?", a) if a
+    query = query.where("#{column} <= ?", b) if b
+
+    query
   end
 end
