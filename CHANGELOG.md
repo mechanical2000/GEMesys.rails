@@ -1,6 +1,6 @@
 # Changelog
 
-## Next version
+## 1.2.2
 
 - Add CollectionUpdate
 - Rename Agilibox::SortableUUIDGenerator::generate to ::call
