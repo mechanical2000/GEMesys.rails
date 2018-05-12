@@ -1,5 +1,9 @@
 # Changelog
 
+## Next version
+
+- Add CollectionUpdate
+
 ## 1.2.1
 
 - Fix flash partial
