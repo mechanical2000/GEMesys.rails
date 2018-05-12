@@ -3,6 +3,7 @@
 ## Next version
 
 - Add CollectionUpdate
+- Rename Agilibox::SortableUUIDGenerator::generate to ::call
 
 ## 1.2.1
 
