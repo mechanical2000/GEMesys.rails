@@ -2,7 +2,7 @@ source "https://rubygems.org"
 
 gemspec
 
-gem "rails", "~> 5.0.6"
+gem "rails", "~> 5.1.6"
 gem "pg"
 gem "puma"
 gem "dotenv-rails", require: "dotenv/rails-now"
@@ -15,7 +15,7 @@ gem "coffee-rails"
 gem "jquery-rails"
 gem "turbolinks"
 gem "simple_form"
-
+gem "httparty"
 gem "axlsx", github: "randym/axlsx"
 gem "aws-sdk-sns"
 gem "loofah", ">= 2.2.2" # fix Github security warning
@@ -30,11 +30,9 @@ group :test do
   gem "capybara"
   gem "poltergeist"
   gem "selenium-webdriver"
-  gem "spring-commands-rspec"
-  gem "spring-commands-cucumber"
   gem "guard"
   gem "guard-cucumber"
-  gem "guard-rspec", "4.5.2" # https://github.com/guard/guard-rspec/issues/334
+  gem "guard-rspec"
   gem "guard-rubocop"
   gem "timecop"
   gem "simplecov", require: false
@@ -52,7 +50,6 @@ group :development do
 end
 
 group :development, :test do
-  gem "spring"
   gem "launchy"
   gem "rails-erd"
   gem "thor"
