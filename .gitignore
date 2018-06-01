@@ -9,6 +9,6 @@ spec/dummy/public/uploads/
 spec/dummy/.sass-cache
 .DS_Store
 .env*
-!.env.sample
+!.env.example
 coverage/
 .rubocop-http*

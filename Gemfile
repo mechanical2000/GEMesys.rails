@@ -15,7 +15,7 @@ gem "coffee-rails"
 gem "jquery-rails"
 gem "turbolinks"
 gem "simple_form"
-
+gem "httparty"
 gem "axlsx", github: "randym/axlsx"
 gem "aws-sdk-sns"
 gem "loofah", ">= 2.2.2" # fix Github security warning
