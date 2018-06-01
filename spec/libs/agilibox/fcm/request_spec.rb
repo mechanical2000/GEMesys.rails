@@ -79,7 +79,7 @@ describe Agilibox::FCM::Request do
     expect(fcm.invalid_token?).to be true
   end
 
-  it "I should receive a notification in real life", ignore_ci: true do
+  xit "I should receive a notification in real life", ignore_ci: true do
     expect(to = ENV["TEST_FCM_DEVICE_TOKEN"]).to be_present
     Agilibox::FCM::Notifier.call(to: to, body: "Notification from RSpec !")
   end
