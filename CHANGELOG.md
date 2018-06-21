@@ -3,6 +3,7 @@
 ## Next version
 
 - ApiControllerConcern : add `model_errors` in json response
+- `json_response` is now a `HashWithIndifferentAccess`
 
 ## 1.2.3
 
