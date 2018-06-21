@@ -2,6 +2,8 @@
 
 ## Next version
 
+- `ApiControllerConcern` refactor + helpers
+
 ## 1.3.0
 
 - ApiControllerConcern : add `model_errors` in json response

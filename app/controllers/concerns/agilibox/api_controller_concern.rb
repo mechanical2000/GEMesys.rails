@@ -14,14 +14,10 @@ module Agilibox::ApiControllerConcern
 
   def render_json_error(any_object, options = {})
     if any_object.is_a?(ActiveModel::Validations)
-      model_errors = any_object.errors
-        .map { |a, m| [a, message: m, full_message: any_object.errors.full_message(a, m)] }
-        .uniq(&:first)
-        .to_h
-
-      error = model_errors.values.map { |e| e[:full_message] }.join(", ")
-
-      json = {error: error, model_errors: model_errors}
+      json = {
+        :error        => json_error_string_for_model(any_object),
+        :model_errors => json_errors_hash_for_model(any_object),
+      }
     elsif any_object.is_a?(String)
       json = {error: any_object}
     else
@@ -31,6 +27,17 @@ module Agilibox::ApiControllerConcern
     options[:status] ||= :unprocessable_entity
 
     render_json(json, options)
+  end
+
+  def json_errors_hash_for_model(object)
+    object.errors
+      .map { |a, m| [a, message: m, full_message: object.errors.full_message(a, m)] }
+      .uniq(&:first)
+      .to_h
+  end
+
+  def json_error_string_for_model(object)
+    json_errors_hash_for_model(object).values.map { |e| e[:full_message] }.join(", ")
   end
 
   def render_not_found

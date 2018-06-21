@@ -107,28 +107,59 @@ describe Agilibox::ApiControllerConcern, type: :controller do
     expect(response.status).to eq 500
   end
 
-  it "should render error with object and keep only first error of each attribute" do
+  it "should render error with object" do
+    expect(controller).to receive(:json_error_string_for_model) \
+      .with(instance_of(DummyModel)).at_least(:once).and_return("aaa")
+
+    expect(controller).to receive(:json_errors_hash_for_model) \
+      .with(instance_of(DummyModel)).at_least(:once).and_return("bbb")
+
+    action {
+      render_json_error DummyModel.new
+    }
+
+    expect(response.status).to eq 422
+    expect(json_response).to eq(
+      "current_user" => nil,
+      "error"        => "aaa",
+      "model_errors" => "bbb",
+    )
+  end
+
+  it "json_errors_hash_for_model should return errors and keep only first error of each attr" do
     action {
       dummy = DummyModel.new
       dummy.errors.add(:base, "my model error")
       dummy.errors.add(:string_field, :blank)
       dummy.errors.add(:string_field, :invalid)
-      render_json_error dummy
+      render_json json_errors_hash_for_model(dummy)
     }
-    expect(response.status).to eq 422
+
+    expect(json_response).to eq(
+      "current_user" => nil,
+      "base" => {
+        "message"     => "my model error",
+        "full_message"=> "my model error",
+      },
+      "string_field" => {
+        "message"      => "doit être rempli(e)",
+        "full_message" => "String field doit être rempli(e)",
+      },
+    )
+  end
+
+  it "json_error_string_for_model should return errors and keep only first error of each attr" do
+    action {
+      dummy = DummyModel.new
+      dummy.errors.add(:base, "my model error")
+      dummy.errors.add(:string_field, :blank)
+      dummy.errors.add(:string_field, :invalid)
+      render_json error: json_error_string_for_model(dummy)
+    }
+
     expect(json_response).to eq(
       "current_user" => nil,
       "error"        => "my model error, String field doit être rempli(e)",
-      "model_errors" => {
-        "base" => {
-          "message"     => "my model error",
-          "full_message"=> "my model error",
-        },
-        "string_field" => {
-          "message"      => "doit être rempli(e)",
-          "full_message" => "String field doit être rempli(e)",
-        },
-      },
     )
   end
 
