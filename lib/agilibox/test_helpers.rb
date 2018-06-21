@@ -1,6 +1,6 @@
 module Agilibox::TestHelpers
   def json_response
-    @json_response ||= JSON.parse(response.body)
+    @json_response ||= JSON.parse(response.body).with_indifferent_access
   end
 
   def email_deliveries

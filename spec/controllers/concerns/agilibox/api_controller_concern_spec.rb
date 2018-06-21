@@ -107,16 +107,28 @@ describe Agilibox::ApiControllerConcern, type: :controller do
     expect(response.status).to eq 500
   end
 
-  it "should render error with object" do
+  it "should render error with object and keep only first error of each attribute" do
     action {
       dummy = DummyModel.new
       dummy.errors.add(:base, "my model error")
+      dummy.errors.add(:string_field, :blank)
+      dummy.errors.add(:string_field, :invalid)
       render_json_error dummy
     }
     expect(response.status).to eq 422
     expect(json_response).to eq(
       "current_user" => nil,
-      "error"        => "my model error",
+      "error"        => "my model error, String field doit être rempli(e)",
+      "model_errors" => {
+        "base" => {
+          "message"     => "my model error",
+          "full_message"=> "my model error",
+        },
+        "string_field" => {
+          "message"      => "doit être rempli(e)",
+          "full_message" => "String field doit être rempli(e)",
+        },
+      },
     )
   end
 
