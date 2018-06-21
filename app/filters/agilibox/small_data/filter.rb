@@ -61,7 +61,7 @@ class Agilibox::SmallData::Filter
   end
 
   def any?
-    read.select { |k, v| strategies.keys.include?(k.to_s) && v.present? }.any?
+    read.select { |k, v| strategies.key?(k.to_s) && v.present? }.any?
   end
 
   def empty?
