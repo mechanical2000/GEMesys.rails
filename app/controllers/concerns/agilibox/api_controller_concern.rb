@@ -13,8 +13,15 @@ module Agilibox::ApiControllerConcern
   end
 
   def render_json_error(any_object, options = {})
-    if any_object.is_a?(ActiveRecord::Base)
-      json = {error: any_object.errors.full_messages.join(", ")}
+    if any_object.is_a?(ActiveModel::Validations)
+      model_errors = any_object.errors
+        .map { |a, m| [a, message: m, full_message: any_object.errors.full_message(a, m)] }
+        .uniq(&:first)
+        .to_h
+
+      error = model_errors.values.map { |e| e[:full_message] }.join(", ")
+
+      json = {error: error, model_errors: model_errors}
     elsif any_object.is_a?(String)
       json = {error: any_object}
     else

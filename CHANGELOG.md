@@ -1,5 +1,9 @@
 # Changelog
 
+## Next version
+
+- ApiControllerConcern : add `model_errors` in json response
+
 ## 1.2.3
 
 - Add FCM
