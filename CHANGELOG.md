@@ -2,6 +2,8 @@
 
 ## Next version
 
+- Add `Agilibox::ActiveModelCustomErrorMessages`
+
 ## 1.3.1
 
 - `ApiControllerConcern` refactor + helpers
