@@ -2,6 +2,8 @@
 
 ## Next version
 
+## 1.3.3
+
 - Fix error messages
 
 ## 1.3.2
