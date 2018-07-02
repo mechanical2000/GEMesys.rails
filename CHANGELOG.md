@@ -2,6 +2,8 @@
 
 ## Next version
 
+- Fix error messages
+
 ## 1.3.2
 
 - Add `Agilibox::ActiveModelCustomErrorMessages`

@@ -63,7 +63,7 @@ describe Agilibox::ApiControllerConcern, type: :controller do
     expect(response).to be_not_found
     expect(json_response).to eq(
       "current_user" => nil,
-      "error"        => "Page demandée non trouvée",
+      "error"        => "La page demandée n'existe pas ou plus",
     )
   end
 
@@ -72,7 +72,7 @@ describe Agilibox::ApiControllerConcern, type: :controller do
     expect(response).to be_forbidden
     expect(json_response).to eq(
       "current_user" => nil,
-      "error"        => "Vous devez être connecté pour accéder à cette page",
+      "error"        => "Vous n'êtes pas autorisé à accéder à cette page",
     )
   end
 
@@ -81,7 +81,7 @@ describe Agilibox::ApiControllerConcern, type: :controller do
     expect(response).to be_unauthorized
     expect(json_response).to eq(
       "current_user" => nil,
-      "error"        => "Vous n'êtes pas authorisé à accéder à cette page",
+      "error"        => "Vous devez être connecté pour accéder à cette page",
     )
   end
 
@@ -176,7 +176,7 @@ describe Agilibox::ApiControllerConcern, type: :controller do
     action { DummyModel.find(123_456_789) }
     expect(json_response).to eq(
       "current_user" => nil,
-      "error"        => "Page demandée non trouvée",
+      "error"        => "La page demandée n'existe pas ou plus",
     )
   end
 end
