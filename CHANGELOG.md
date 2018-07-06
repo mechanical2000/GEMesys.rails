@@ -2,6 +2,8 @@
 
 ## Next version
 
+- Support FontAwesome v4
+
 ## 1.3.3
 
 - Fix error messages
