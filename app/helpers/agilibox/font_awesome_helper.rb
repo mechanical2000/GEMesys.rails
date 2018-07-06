@@ -3,7 +3,7 @@ module Agilibox::FontAwesomeHelper
     id = id.to_s.tr("_", "-").to_sym
 
     if fa_style.nil?
-      fa_style = Agilibox::FontAwesomeHelper.database.dig(id, :styles).to_a.first
+      fa_style = Agilibox::FontAwesomeHelper.default_fa_style_for_id(id)
     end
 
     css_classes = options.delete(:class).to_s.split(" ")
@@ -42,6 +42,16 @@ module Agilibox::FontAwesomeHelper
     def version
       require "font_awesome/sass/version"
       FontAwesome::Sass::VERSION
+    end
+
+    def default_fa_style_for_id(id)
+      return if version.start_with?("4")
+
+      if version.start_with?("5")
+        return Agilibox::FontAwesomeHelper.database.dig(id, :styles).to_a.first
+      end
+
+      raise "invalid font-awesome-sass version"
     end
   end # class << self
 end

@@ -1,7 +1,11 @@
 require "rails_helper"
 
 describe Agilibox::FontAwesomeHelper do
-  describe "#icon" do
+  describe "#icon v5" do
+    before do
+      expect(described_class.version).to start_with "5"
+    end
+
     it "should generate icon and autodetect fas style" do
       expect(icon :user).to eq %(<span class="fa-user fas icon"></span>)
     end
@@ -71,5 +75,27 @@ describe Agilibox::FontAwesomeHelper do
 
       expect(described_class.database_path).to exist
     end
-  end # describe "database"
+  end # describe "#icon v5"
+
+  describe "#icon v4" do
+    before do
+      expect(described_class).to receive(:version).and_return("4.0.0")
+    end
+
+    it "should work" do
+      expect(icon :user).to eq %(<span class="fa fa-user icon"></span>)
+    end
+  end # describe "#icon v4"
+
+  it "should raise on previous version" do
+    expect(described_class).to receive(:version).at_least(:once).and_return("3.0.0")
+
+    expect { icon :user }.to raise_error(RuntimeError, "invalid font-awesome-sass version")
+  end
+
+  it "should raise on future version" do
+    expect(described_class).to receive(:version).at_least(:once).and_return("6.0.0")
+
+    expect { icon :user }.to raise_error(RuntimeError, "invalid font-awesome-sass version")
+  end
 end
