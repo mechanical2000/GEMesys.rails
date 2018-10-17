@@ -2,6 +2,8 @@
 
 ## Next version
 
+## 1.3.5
+
 - Add `Agilibox::Monkey`
 
 ## 1.3.4
