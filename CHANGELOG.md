@@ -2,6 +2,8 @@
 
 ## Next version
 
+- Remove deprecated `Agilibox::SortableUUIDGenerator::generate`
+
 ## 1.3.5
 
 - Add `Agilibox::Monkey`

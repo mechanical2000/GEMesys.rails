@@ -8,9 +8,4 @@ class Agilibox::SortableUUIDGenerator
     suffix = SecureRandom.hex(8)
     (prefix + suffix).gsub(REGEX_WITHOUT_DASHES, '\1-\2-\3-\4-\5')
   end
-
-  def self.generate
-    warn "#{self}::generate is deprecared, please use ::call"
-    call
-  end
 end

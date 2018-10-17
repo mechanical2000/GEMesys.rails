@@ -5,7 +5,7 @@ module Agilibox::ActiveRecordUUIDConcern
 
   def assign_default_uuid
     if id.nil? && self.class.columns_hash["id"].type == :uuid
-      self.id = ::Agilibox::SortableUUIDGenerator.generate
+      self.id = ::Agilibox::SortableUUIDGenerator.call
     end
   end
 
