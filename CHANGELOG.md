@@ -3,6 +3,7 @@
 ## Next version
 
 - Remove deprecated `Agilibox::SortableUUIDGenerator::generate`
+- `Agilibox::ActiveRecordUUIDConcern` improvements
 
 ## 1.3.5
 

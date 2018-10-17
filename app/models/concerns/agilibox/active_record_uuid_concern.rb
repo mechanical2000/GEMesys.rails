@@ -4,9 +4,11 @@ module Agilibox::ActiveRecordUUIDConcern
   private
 
   def assign_default_uuid
-    if id.nil? && self.class.columns_hash["id"].type == :uuid
-      self.id = ::Agilibox::SortableUUIDGenerator.call
+    unless self.class.columns_hash["id"].type == :uuid
+      raise "invalid id type, please change to uuid"
     end
+
+    self.id ||= ::Agilibox::SortableUUIDGenerator.call
   end
 
   included do

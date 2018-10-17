@@ -1,6 +1,6 @@
 class CreateDummyModels < ActiveRecord::Migration[5.0]
   def change
-    create_table :dummy_models do |t|
+    create_table :dummy_models, id: :uuid do |t|
       t.string   :string_field
       t.text     :text_field
       t.integer  :integer_field
@@ -8,7 +8,7 @@ class CreateDummyModels < ActiveRecord::Migration[5.0]
       t.boolean  :boolean_field
       t.date     :date_field
       t.datetime :datetime_field
-      t.integer  :asso_id
+      t.uuid     :asso_id
       t.string   :asso_type
       t.timestamps
     end
