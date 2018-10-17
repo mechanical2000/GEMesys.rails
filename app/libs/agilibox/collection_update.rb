@@ -2,7 +2,7 @@ class Agilibox::CollectionUpdate < Agilibox::Service
   initialize_with :scope, :params_array
 
   def call
-    update
+    update # rubocop:disable Rails/SaveBang
   end
 
   def update!
