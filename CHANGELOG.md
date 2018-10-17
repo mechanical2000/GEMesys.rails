@@ -5,6 +5,7 @@
 - Remove deprecated `Agilibox::SortableUUIDGenerator::generate`
 - `Agilibox::ActiveRecordUUIDConcern` improvements
 - `Agilibox::DefaultValuesConcern` improvements
+- Fix FontAwesome version error
 
 ## 1.3.5
 

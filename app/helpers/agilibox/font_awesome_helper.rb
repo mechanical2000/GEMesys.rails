@@ -34,7 +34,7 @@ module Agilibox::FontAwesomeHelper
 
     def download_database!
       require "open-uri"
-      url  = "https://raw.githubusercontent.com/FortAwesome/Font-Awesome/master/advanced-options/metadata/icons.yml"
+      url  = "https://raw.githubusercontent.com/FortAwesome/Font-Awesome/#{FontAwesome::Sass::VERSION}/advanced-options/metadata/icons.yml"
       data = URI.parse(url).open.read
       File.write(database_path, data)
     end
