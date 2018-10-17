@@ -3,8 +3,10 @@ class ApplicationRecord < ActiveRecord::Base
 
   include Agilibox::ActiveRecordUUIDConcern
   include Agilibox::DefaultValuesConcern
-  include Agilibox::ModelToS
   include Agilibox::ModelI18n
-  include Agilibox::PolymorphicId
+  include Agilibox::ModelToS
   include Agilibox::PluckToHash
+  include Agilibox::PolymorphicId
+  include Agilibox::Search
+  include Agilibox::TimestampHelpers
 end

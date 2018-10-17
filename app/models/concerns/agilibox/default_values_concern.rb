@@ -9,6 +9,6 @@ module Agilibox::DefaultValuesConcern
   end
 
   included do
-    after_initialize :assign_default_values
+    after_initialize :assign_default_values, if: :new_record?
   end
 end
