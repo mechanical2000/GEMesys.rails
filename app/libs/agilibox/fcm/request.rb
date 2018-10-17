@@ -28,7 +28,7 @@ class Agilibox::FCM::Request < Agilibox::Service
   end
 
   def ok?
-    response_json[:success] > 0 && response_json[:failure].zero?
+    response_json[:success].positive? && response_json[:failure].zero?
   end
 
   def error?
