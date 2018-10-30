@@ -8,7 +8,7 @@ class Agilibox::SmallData::Filter
   end
 
   def strategies
-    self.class::STRATEGIES
+    self.class::STRATEGIES.with_indifferent_access
   end
 
   def apply(query)
