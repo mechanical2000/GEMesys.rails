@@ -2,6 +2,8 @@
 
 ## Next version
 
+## 1.4.0
+
 - Add `Agilibox::Email`
 - Add `Agilibox.parent_controller` config
 - Add `Agilibox.parent_mailer` config
