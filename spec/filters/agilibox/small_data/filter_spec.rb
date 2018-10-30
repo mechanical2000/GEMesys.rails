@@ -11,6 +11,14 @@ describe Agilibox::SmallData::Filter do
     }
   end
 
+  describe "strategies" do
+    it "should allow indifferent access" do
+      f = TestFilter.new("filters" => {}.to_json)
+      expect(f.strategies["state"]).to be_present
+      expect(f.strategies[:state]).to be_present
+    end
+  end # describe "strategies"
+
   describe "write" do
     it "should write the provided hash as json in the jar" do
       f.write(filter)
