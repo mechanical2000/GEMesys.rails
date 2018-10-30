@@ -13,5 +13,6 @@ module Agilibox
   end
 end
 
+require_relative "config"
 require_relative "engine_file"
 require_relative "core_and_rails_ext"

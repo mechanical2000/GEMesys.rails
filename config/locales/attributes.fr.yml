@@ -94,3 +94,15 @@ fr:
 
   labels:
     <<: *attributes
+
+  activemodel:
+    attributes:
+      agilibox/email:
+        from: "Expéditeur"
+        reply_to: "Répondre à"
+        to: "Destinataire"
+        cc: "Copie"
+        subject: "Objet"
+        body: "Message"
+        attachments: "Pièces jointes"
+        attachment_names: "Pièces jointes"

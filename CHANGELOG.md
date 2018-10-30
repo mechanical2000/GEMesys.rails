@@ -2,6 +2,10 @@
 
 ## Next version
 
+- Add `Agilibox::Email`
+- Add `Agilibox.parent_controller` config
+- Add `Agilibox.parent_mailer` config
+
 ## 1.3.6
 
 - Remove deprecated `Agilibox::SortableUUIDGenerator::generate`

@@ -1,5 +1,3 @@
-module Agilibox
-  class ApplicationController < ActionController::Base
-    protect_from_forgery with: :exception
-  end
+class Agilibox::ApplicationController < Agilibox.parent_controller
+  protect_from_forgery with: :exception
 end

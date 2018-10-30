@@ -94,3 +94,15 @@ en:
 
   labels:
     <<: *attributes
+
+  activemodel:
+    attributes:
+      agilibox/email:
+        from: "From"
+        reply_to: "Reply to"
+        to: "To"
+        cc: "Copy"
+        subject: "Subject"
+        body: "Message"
+        attachments: "Attachments"
+        attachment_names: "Attachments"
