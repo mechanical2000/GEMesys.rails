@@ -5,6 +5,7 @@
 - Add `Agilibox::Email`
 - Add `Agilibox.parent_controller` config
 - Add `Agilibox.parent_mailer` config
+- Filters improvements
 
 ## 1.3.6
 
