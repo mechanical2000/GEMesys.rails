@@ -71,6 +71,17 @@ describe Agilibox::FCM::Request do
     expect(fcm.invalid_token?).to be true
   end
 
+  it "should catch json parse error" do
+    fcm = described_class.new({})
+    response = OpenStruct.new(body: "invalid json")
+    expect(HTTParty).to receive(:post).and_return(response)
+    fcm.call
+    expect(fcm.ok?).to be false
+    expect(fcm.error?).to be true
+    expect(fcm.errors).to eq ["InvalidJsonResponse"]
+    expect(fcm.invalid_token?).to be false
+  end
+
   it "should parse response in real life", ignore_ci: true do
     fcm = described_class.(to: "i_am_an_invalid_token", data: {})
     expect(fcm.ok?).to be false

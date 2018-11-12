@@ -25,6 +25,9 @@ class Agilibox::FCM::Request < Agilibox::Service
     @response_json = JSON.parse(response_body).deep_symbolize_keys
 
     self
+  rescue JSON::ParserError
+    @response_json = {success: 0, failure: 1, results: [{:error => "InvalidJsonResponse"}]}
+    self
   end
 
   def ok?
