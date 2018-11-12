@@ -2,6 +2,8 @@
 
 ## Next version
 
+- Fix FontAwesome helper
+
 ## 1.4.1
 
 - FCM request handle JSON errors
