@@ -2,6 +2,8 @@
 
 ## Next version
 
+## 1.4.1
+
 - FCM request handle JSON errors
 
 ## 1.4.0
