@@ -2,6 +2,8 @@
 
 ## Next version
 
+- FCM request handle JSON errors
+
 ## 1.4.0
 
 - Add `Agilibox::Email`
