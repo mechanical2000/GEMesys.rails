@@ -2,6 +2,8 @@
 
 ## Next version
 
+## 1.4.2
+
 - Fix FontAwesome helper
 
 ## 1.4.1
