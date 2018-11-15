@@ -2,6 +2,8 @@
 
 ## Next version
 
+- `form_buttons` helper fixes and improvements
+
 ## 1.4.2
 
 - Fix FontAwesome helper

@@ -1,4 +1,6 @@
 module Agilibox::FormHelper
+  include Agilibox::I18nHelper
+
   # Hidden submit to be the default triggered on <enter> keypress on a form
   def form_hidden_submit
     tag(:input, type: "submit", class: "hidden-submit")
@@ -6,8 +8,8 @@ module Agilibox::FormHelper
 
   def form_buttons(opts = {})
     back_url = opts[:back_url]
-    back_url = url_for(:back).html_safe if back_url.blank?
-    back_url = URI(back_url).path       if back_url.include?("://")
+    back_url = url_for(:back).html_safe if back_url.nil?
+    back_url = URI(back_url).path       if back_url.to_s.include?("://")
 
     if opts[:obj].present?
       if opts[:obj].new_record?
@@ -19,13 +21,13 @@ module Agilibox::FormHelper
       submit_action = :save
     end
 
-    content_tag("div", class: "actions") do
-      submit = content_tag(:button, type: :submit, class: "btn btn-sm btn-success") do
-        content_tag(:span, class: "fa fa-save") {} + " " + t("actions.#{submit_action}")
+    content_tag("div", class: "actions form-actions") do
+      submit = content_tag(:button, type: :submit, class: "btn btn-sm btn-success form-submit") do
+        content_tag(:span, class: "fa fa-save") {} + " " + ta(submit_action)
       end
 
-      cancel = content_tag("a", href: back_url, class: "btn btn-primary btn-sm") do
-        content_tag(:span, class: "fa fa-times") {} + " " + t("actions.cancel")
+      cancel = content_tag("a", href: back_url, class: "btn btn-primary btn-sm form-cancel") do
+        content_tag(:span, class: "fa fa-times") {} + " " + ta(:cancel)
       end
 
       cancel = "" if back_url == false
