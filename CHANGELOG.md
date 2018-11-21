@@ -1,6 +1,8 @@
 # Changelog
 
 ## Next version
+
+## 1.4.4
 - Fix i18n error on `info` helper
 
 ## 1.4.3
