@@ -1,6 +1,7 @@
 # Changelog
 
 ## Next version
+- Fix i18n error on `info` helper
 
 ## 1.4.3
 - `form_buttons` helper fixes and improvements

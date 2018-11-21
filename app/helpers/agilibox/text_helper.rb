@@ -95,7 +95,7 @@ module Agilibox::TextHelper
     separator   = options[:separator] || " : "
     helper      = options[:helper]
     i18n_key    = "#{object.class.to_s.tableize.singularize}/#{attribute}"
-    nested      = I18n.t("activerecord.attributes.#{i18n_key}").is_a?(Hash)
+    nested      = I18n.t("activerecord.attributes.#{i18n_key}", default: "").is_a?(Hash)
     klass       = object.is_a?(Module) ? object : object.class
     object_type = klass.to_s.split("::").last.underscore
 
