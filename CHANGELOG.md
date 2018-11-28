@@ -1,6 +1,7 @@
 # Changelog
 
 ## Next version
+- Add `GetHTTP`
 
 ## 1.4.4
 - Fix i18n error on `info` helper
