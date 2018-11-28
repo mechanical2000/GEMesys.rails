@@ -2,6 +2,7 @@
 
 ## Next version
 - Add `GetHTTP`
+- Add BS4 search form
 
 ## 1.4.4
 - Fix i18n error on `info` helper

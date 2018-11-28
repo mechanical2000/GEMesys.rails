@@ -47,9 +47,7 @@ module Agilibox::FormHelper
     simple_form_for(obj, opts, &block)
   end
 
-  def search_form(opts = {})
-    action = opts.delete(:action) || request.fullpath
-
+  def search_form(action: request.fullpath)
     render "agilibox/search/form", action: action
   end
 
