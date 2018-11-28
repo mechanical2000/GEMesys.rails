@@ -1,7 +1,7 @@
 require "rails_helper"
 
 describe Agilibox::FormHelper, type: :helper do
-  describe "form_buttons" do
+  describe "#form_buttons" do
     it "should include back link and submit button" do
       html = form_buttons
       expect(html).to include "form-submit"
@@ -18,5 +18,5 @@ describe Agilibox::FormHelper, type: :helper do
       html = form_buttons(back_url: false)
       expect(html).to_not include "form-cancel"
     end
-  end
+  end # describe "#form_buttons"
 end

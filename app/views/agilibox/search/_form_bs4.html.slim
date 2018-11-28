@@ -1,0 +1,8 @@
+form.search.bs4 method="get" action=action
+  = form_hidden_submit
+
+  .input-group.search
+    input.form-control.form-control-sm type="text" name="q" placeholder=ta(:search) value=params[:q]
+    span.input-group-append
+      button.btn.btn-sm.bg-light.border.search-reset.reset type="submit" = icon(:times)
+      button.btn.btn-sm.bg-light.border.search-submit type="submit" = icon(:search)
