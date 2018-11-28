@@ -1,6 +1,8 @@
 # Changelog
 
 ## Next version
+
+## 1.5.0
 - Add `GetHTTP`
 - Add BS4 search form
 
