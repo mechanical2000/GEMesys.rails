@@ -2,6 +2,11 @@
 
 ## Next version
 
+## 1.5.1
+- Add CSS helpers
+- Add Cucumber common steps
+- Add Cucumber select2 helper
+
 ## 1.5.0
 - Add `GetHTTP`
 - Add BS4 search form
