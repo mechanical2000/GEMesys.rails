@@ -2,6 +2,7 @@
 
 ## Next version
 - GetHTTP service improvements
+- New common steps + improvements
 
 ## 1.5.1
 - Add CSS helpers

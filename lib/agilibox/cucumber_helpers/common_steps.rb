@@ -1,17 +1,17 @@
-# Clicks
+# Clicks / Keyboard
 
 When("I click on {string}") do |text|
-  click_on text
+  find("a, button, label", text: text).click
 end
 
 When("I click on first {string}") do |text|
   expect(page).to have_content(text)
-  all("a, button, label", text: text).first.click
+  all("a, button, input[type=button], label", text: text).first.click
 end
 
 When("I click on last {string}") do |text|
   expect(page).to have_content(text)
-  all("a, button, label", text: text).last.click
+  all("a, button, input[type=button], label", text: text).last.click
 end
 
 When("I click on {string} element") do |selector|
@@ -26,6 +26,10 @@ end
 When("I click on last {string} element") do |selector|
   expect(page).to have_selector(selector)
   all(selector).last.click
+end
+
+When("I press key {string}") do |key|
+  find("body").send_keys(key.length == 1 ? key : key.to_sym)
 end
 
 # Routes
