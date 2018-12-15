@@ -1,6 +1,7 @@
 # Changelog
 
 ## Next version
+- GetHTTP service improvements
 
 ## 1.5.1
 - Add CSS helpers

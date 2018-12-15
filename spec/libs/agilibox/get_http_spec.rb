@@ -22,6 +22,7 @@ describe Agilibox::GetHTTP do
     it_should_catch_and_reraise Errno::ENETDOWN
     it_should_catch_and_reraise Errno::ENETRESET
     it_should_catch_and_reraise Errno::ENETUNREACH
+    it_should_catch_and_reraise IOError
     it_should_catch_and_reraise Net::HTTPBadResponse
     it_should_catch_and_reraise Net::HTTPError
     it_should_catch_and_reraise Net::HTTPFatalError

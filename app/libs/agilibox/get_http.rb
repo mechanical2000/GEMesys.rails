@@ -3,6 +3,7 @@ class Agilibox::GetHTTP < Agilibox::Service
   end
 
   EXCEPTIONS_TO_RERAISE = [
+    IOError,
     Net::HTTPBadResponse,
     Net::HTTPExceptions,
     Net::HTTPHeaderSyntaxError,
