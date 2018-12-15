@@ -1,6 +1,8 @@
 # Changelog
 
 ## Next version
+
+## 1.5.2
 - GetHTTP service improvements
 - New common steps + improvements
 
