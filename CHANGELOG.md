@@ -1,6 +1,7 @@
 # Changelog
 
 ## Next version
+- Fix FontAwesome >=5.6
 
 ## 1.5.2
 - GetHTTP service improvements
