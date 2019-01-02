@@ -1,6 +1,8 @@
 # Changelog
 
 ## Next version
+
+## 1.5.3
 - Fix FontAwesome >=5.6
 
 ## 1.5.2
