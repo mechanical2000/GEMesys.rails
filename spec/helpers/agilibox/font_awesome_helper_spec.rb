@@ -75,6 +75,18 @@ describe Agilibox::FontAwesomeHelper do
 
       expect(described_class.database_path).to exist
     end
+
+    it "should return database_url for <5.5.0" do
+      expected = "https://raw.githubusercontent.com/FortAwesome/Font-Awesome/5.5.0/advanced-options/metadata/icons.yml"
+      expect(described_class).to receive(:version).and_return("5.5.0.0")
+      expect(described_class.database_url).to eq expected
+    end
+
+    it "should return database_url for >=5.6.0" do
+      expected = "https://raw.githubusercontent.com/FortAwesome/Font-Awesome/5.6.0/metadata/icons.yml"
+      expect(described_class).to receive(:version).and_return("5.6.0.0")
+      expect(described_class.database_url).to eq expected
+    end
   end # describe "#icon v5"
 
   describe "#icon v4" do
