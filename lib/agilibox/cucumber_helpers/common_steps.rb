@@ -1,17 +1,17 @@
 # Clicks / Keyboard
 
 When("I click on {string}") do |text|
-  find("a, button, label", text: text).click
+  find(:agilibox_clickable, text).click
 end
 
 When("I click on first {string}") do |text|
   expect(page).to have_content(text)
-  all("a, button, input[type=button], label", text: text).first.click
+  all(:agilibox_clickable, text).first.click
 end
 
 When("I click on last {string}") do |text|
   expect(page).to have_content(text)
-  all("a, button, input[type=button], label", text: text).last.click
+  all(:agilibox_clickable, text).last.click
 end
 
 When("I click on {string} element") do |selector|
