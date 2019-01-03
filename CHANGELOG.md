@@ -1,6 +1,8 @@
 # Changelog
 
 ## Next version
+
+## 1.5.4
 - Cucumber "click on" steps improvement
 
 ## 1.5.3
