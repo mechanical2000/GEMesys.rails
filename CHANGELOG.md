@@ -1,6 +1,7 @@
 # Changelog
 
 ## Next version
+- Cucumber "click on" steps improvement
 
 ## 1.5.3
 - Fix FontAwesome >=5.6
