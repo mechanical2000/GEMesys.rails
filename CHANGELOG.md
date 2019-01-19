@@ -1,6 +1,7 @@
 # Changelog
 
 ## Next version
+- Add ModelI18n::raise_on_missing_translations option
 
 ## 1.5.4
 - Cucumber "click on" steps improvement
