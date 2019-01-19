@@ -1,6 +1,8 @@
 # Changelog
 
 ## Next version
+
+## 1.5.5
 - Add ModelI18n::raise_on_missing_translations option
 
 ## 1.5.4
