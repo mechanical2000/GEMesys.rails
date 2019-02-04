@@ -46,7 +46,7 @@ class Agilibox::SmallData::FilterStrategyByDateOrDatetimePeriod < ::Agilibox::Sm
       b = b.end_of_day       if b
     end
 
-    column = key.is_a?(Symbol) ? "#{query.model.table_name}.#{key}" : key.to_s
+    column = column_for(query)
 
     query = query.where("#{column} >= ?", a) if a
     query = query.where("#{column} <= ?", b) if b
