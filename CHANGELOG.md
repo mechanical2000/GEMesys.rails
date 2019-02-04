@@ -1,6 +1,8 @@
 # Changelog
 
 ## Next version
+
+## 1.5.6
 - Various fixes on filters
 
 ## 1.5.5
