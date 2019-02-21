@@ -1,6 +1,7 @@
 # Changelog
 
 ## Next version
+- checkboxes-dropdown CSS improvements
 
 ## 1.5.6
 - Various fixes on filters

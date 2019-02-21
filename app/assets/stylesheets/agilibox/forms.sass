@@ -1,5 +1,7 @@
 .checkboxes-dropdown
   .checkbox
+    display: block
+
     label
       position: static
       margin: 0
@@ -9,6 +11,15 @@
       position: static
       margin: 0 0.5em 0 0
       width: auto
+
+  .dropdown-menu
+    width: 350px
+    max-height: 400px
+    max-height: calc(100vh - 300px)
+    overflow: auto
+
+    @media (min-height: 700px)
+      max-height: 400px
 
 // Chrome and Safari does not trigger display:none submit buttons on <enter> key press
 .hidden-submit
