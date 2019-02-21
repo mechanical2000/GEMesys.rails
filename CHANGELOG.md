@@ -1,6 +1,7 @@
 # Changelog
 
 ## Next version
+- `download_button` and `export_button` fixes
 - checkboxes-dropdown CSS improvements
 
 ## 1.5.6
