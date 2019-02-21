@@ -1,6 +1,8 @@
 # Changelog
 
 ## Next version
+
+## 1.5.7
 - `download_button` and `export_button` fixes
 - checkboxes-dropdown CSS improvements
 - Change searchbar CSS
