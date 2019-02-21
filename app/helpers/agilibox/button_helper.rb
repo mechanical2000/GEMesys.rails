@@ -2,7 +2,7 @@ module Agilibox::ButtonHelper
   def bs_button(url, options = {})
     action = options.delete(:action)
     icon   = options.delete(:icon)
-    text   = options.delete(:text) || t("actions.#{action}")
+    text   = options.delete(:text) || ta(action)
     title  = options.delete(:title) || text
 
     text   = %(#{icon icon} <span class="text">#{text}</span>).html_safe
@@ -59,7 +59,8 @@ module Agilibox::ButtonHelper
     options = {
       :icon     => :cloud_download_alt,
       :action   => :download,
-      :download => url,
+      :download => File.basename(url),
+      :target   => "_blank",
     }.merge(options)
 
     bs_button(url, options)
@@ -77,10 +78,9 @@ module Agilibox::ButtonHelper
     options = {
       :icon     => :download,
       :action   => action,
-      :download => url,
     }.merge(options)
 
-    bs_button(url, options)
+    download_button(url, options)
   end
 
   def import_button(url, options = {})
