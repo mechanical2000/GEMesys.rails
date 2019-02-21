@@ -3,6 +3,7 @@
 ## Next version
 - `download_button` and `export_button` fixes
 - checkboxes-dropdown CSS improvements
+- Change searchbar CSS
 
 ## 1.5.6
 - Various fixes on filters
