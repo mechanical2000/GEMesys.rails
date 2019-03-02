@@ -1,6 +1,8 @@
 # Changelog
 
 ## Next version
+
+## 1.5.8
 - Add GetHTTP#response
 
 ## 1.5.7

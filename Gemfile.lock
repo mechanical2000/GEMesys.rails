@@ -11,7 +11,7 @@ GIT
 PATH
   remote: .
   specs:
-    agilibox (1.5.7)
+    agilibox (1.5.8)
       awesome_print
       pry-rails
       rails-i18n
@@ -418,7 +418,6 @@ DEPENDENCIES
   httparty
   jquery-rails
   launchy
-  loofah (>= 2.2.2)
   meta_request
   minitest
   pg
