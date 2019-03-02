@@ -28,7 +28,6 @@ describe Agilibox::GetHTTP do
     it_should_catch_and_reraise Net::HTTPFatalError
     it_should_catch_and_reraise Net::HTTPHeaderSyntaxError
     it_should_catch_and_reraise Net::HTTPRetriableError
-    it_should_catch_and_reraise Net::HTTPServerException
     it_should_catch_and_reraise Net::OpenTimeout
     it_should_catch_and_reraise Net::ReadTimeout
     it_should_catch_and_reraise OpenSSL::SSL::SSLError
@@ -57,8 +56,9 @@ describe Agilibox::GetHTTP do
 
   describe "IRL" do
     it "should work" do
-      body = described_class.call("http://example.org/")
-      expect(body).to include "Example Domain"
+      instance = described_class.new("http://example.org/")
+      expect(instance.response).to be_a Net::HTTPResponse
+      expect(instance.call).to include "Example Domain"
     end
 
     it "should follow redirects" do
