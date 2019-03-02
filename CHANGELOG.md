@@ -1,6 +1,7 @@
 # Changelog
 
 ## Next version
+- Add GetHTTP#response
 
 ## 1.5.7
 - `download_button` and `export_button` fixes

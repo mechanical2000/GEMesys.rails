@@ -18,7 +18,6 @@ gem "simple_form"
 gem "httparty"
 gem "axlsx", github: "randym/axlsx"
 gem "aws-sdk-sns"
-gem "loofah", ">= 2.2.2" # fix Github security warning
 
 group :test do
   gem "minitest"
@@ -59,5 +58,5 @@ group :development, :test do
   gem "factory_bot_rails"
   gem "byebug"
   gem "rspec-rails" # must be in both environments for generators
-  gem "rubocop", "0.62.0", require: false
+  gem "rubocop", "0.65.0", require: false
 end

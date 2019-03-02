@@ -24,21 +24,31 @@ class Agilibox::GetHTTP < Agilibox::Service
     uri
   end
 
+  def response
+    @response ||= fetch_response
+  end
+
   def call
-    response = Timeout.timeout(TIMEOUT) do
+    response.body
+  end
+
+  private
+
+  def fetch_response
+    http_response = Timeout.timeout(TIMEOUT) do
       Net::HTTP.get_response(uri)
     end
 
-    if response.code.start_with?("3")
-      @url = response["Location"]
-      return call
+    if http_response.code.start_with?("3")
+      @url = http_response["Location"]
+      return fetch_response
     end
 
-    unless response.code.start_with?("2")
-      raise Error, "invalid response code : #{response.code}"
+    unless http_response.code.start_with?("2")
+      raise Error, "invalid response code : #{http_response.code}"
     end
 
-    response.body
+    http_response
   rescue *EXCEPTIONS_TO_RERAISE => e
     raise Error, e.message
   end
