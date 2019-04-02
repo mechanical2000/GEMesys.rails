@@ -1,6 +1,7 @@
 # Changelog
 
 ## Next version
+- I18n fix
 
 ## 1.5.8
 - Add GetHTTP#response

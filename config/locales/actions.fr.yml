@@ -61,7 +61,7 @@ fr:
     import_pdf : "Import PDF"
     send       : "Envoyer"
     comment    : "Commenter"
-    add_line   : "Ajoute une ligne"
+    add_line   : "Ajouter une ligne"
     remove_line: "Supprimer la ligne"
     pay        : "Payer"
     paid       : "Payée"
