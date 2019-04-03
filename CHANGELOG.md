@@ -2,6 +2,7 @@
 
 ## Next version
 - I18n fix
+- Add `bs_progress_bar` helper
 
 ## 1.5.8
 - Add GetHTTP#response
