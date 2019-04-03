@@ -1,6 +1,8 @@
 # Changelog
 
 ## Next version
+
+## 1.5.9
 - I18n fix
 - Add `bs_progress_bar` helper
 

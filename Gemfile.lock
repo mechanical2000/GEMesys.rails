@@ -11,7 +11,7 @@ GIT
 PATH
   remote: .
   specs:
-    agilibox (1.5.8)
+    agilibox (1.5.9)
       awesome_print
       pry-rails
       rails-i18n
