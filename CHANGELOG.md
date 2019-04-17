@@ -1,6 +1,7 @@
 # Changelog
 
 ## Next version
+- Cucumber Helpers : add cuprite support
 
 ## 1.5.9
 - I18n fix
