@@ -1,6 +1,8 @@
 # Changelog
 
 ## Next version
+
+## 1.5.10
 - Cucumber Helpers : add cuprite support
 
 ## 1.5.9
