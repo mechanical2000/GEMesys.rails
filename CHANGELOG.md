@@ -3,6 +3,7 @@
 ## Next version
 - Add `nbsp` helper
 - Add `PluckDistinct` model concern
+- Add pagination helpers
 
 ## 1.5.10
 - Cucumber Helpers : add cuprite support
