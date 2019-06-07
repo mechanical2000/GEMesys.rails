@@ -3,6 +3,14 @@ module Agilibox::TextHelper
   include ::ActionView::Helpers::SanitizeHelper
   include ::ActionView::Helpers::TextHelper
 
+  def nbsp(text = :no_argument)
+    if text == :no_argument
+      " "
+    else
+      text.to_s.gsub(" ", nbsp)
+    end
+  end
+
   def euros(n)
     currency(n, "€")
   end

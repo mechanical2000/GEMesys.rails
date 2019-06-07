@@ -1,6 +1,7 @@
 # Changelog
 
 ## Next version
+- Add `nbsp` helper
 
 ## 1.5.10
 - Cucumber Helpers : add cuprite support

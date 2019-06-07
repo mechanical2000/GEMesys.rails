@@ -5,6 +5,16 @@ require "rails_helper"
 describe Agilibox::TextHelper, type: :helper do
   include Agilibox::FontAwesomeHelper
 
+  describe "#nbsp" do
+    it "should return nbsp with no argument" do
+      expect(nbsp).to eq " "
+    end
+
+    it "should convert spaces to nbsp with argument" do
+      expect(nbsp "hello world").to eq "hello world"
+    end
+  end # describe "#nbsp"
+
   it "hours" do
     expect(hours(nil)).to be nil
     expect(hours(1)).to eq "1,00 heure"
