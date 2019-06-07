@@ -1,6 +1,8 @@
 # Changelog
 
 ## Next version
+
+## 1.5.11
 - Add `nbsp` helper
 - Add `PluckDistinct` model concern
 - Add pagination helpers
