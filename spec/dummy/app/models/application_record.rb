@@ -5,6 +5,7 @@ class ApplicationRecord < ActiveRecord::Base
   include Agilibox::DefaultValuesConcern
   include Agilibox::ModelI18n
   include Agilibox::ModelToS
+  include Agilibox::PluckDistinct
   include Agilibox::PluckToHash
   include Agilibox::PolymorphicId
   include Agilibox::Search
