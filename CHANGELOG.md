@@ -2,6 +2,7 @@
 
 ## Next version
 - Add `nbsp` helper
+- Add `PluckDistinct` model concern
 
 ## 1.5.10
 - Cucumber Helpers : add cuprite support
