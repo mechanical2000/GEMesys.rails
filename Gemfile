@@ -28,8 +28,7 @@ group :test do
   gem "cucumber-rails", require: false
   gem "capybara"
   gem "poltergeist"
-  gem "selenium-webdriver"
-  gem "chromedriver-helper"
+  gem "cuprite"
   gem "guard"
   gem "guard-cucumber"
   gem "guard-rspec"
@@ -58,6 +57,7 @@ group :development, :test do
   gem "factory_bot_rails"
   gem "byebug"
   gem "rspec-rails" # must be in both environments for generators
-  gem "rubocop", "0.69.0", require: false
-  gem "rubocop-performance", "1.3.0", require: false
+  gem "rubocop", "0.73.0", require: false
+  gem "rubocop-performance", "1.4.0", require: false
+  gem "rubocop-rails", "2.2.1", require: false
 end
