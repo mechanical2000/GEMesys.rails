@@ -1,6 +1,8 @@
 # Changelog
 
 ## Next version
+
+## 1.5.12
 - Cuprite config improvements
 
 ## 1.5.11
