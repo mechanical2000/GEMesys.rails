@@ -19,9 +19,11 @@ module Agilibox::FontAwesomeHelper
   end
 
   class << self
+    # rubocop:disable Rails/HelperInstanceVariable
     def database
       @database ||= YAML.safe_load(database_yml).deep_symbolize_keys
     end
+    # rubocop:enable Rails/HelperInstanceVariable
 
     def database_path
       Rails.root.join("tmp", "fa_database_#{version}.yml")
