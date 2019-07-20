@@ -1,6 +1,7 @@
 # Changelog
 
 ## Next version
+- Cuprite config improvements
 
 ## 1.5.11
 - Add `nbsp` helper
