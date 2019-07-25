@@ -114,6 +114,11 @@ describe Agilibox::TextHelper, type: :helper do
       expect(info dummy_instance, :state).to eq %(<div class="info"><strong class="info-label">État</strong><span class="info-separator"> : </span><span class="info-value dummy_model-state">Brouillon</span></div>)
     end
 
+    it "should accept nested blank values" do
+      def dummy_instance.state; nil; end
+      expect(info dummy_instance, :state).to eq %(<div class="info blank"><strong class="info-label">État</strong><span class="info-separator"> : </span><span class="info-value dummy_model-state"></span></div>)
+    end
+
     it "should override value" do
       expect(info dummy_instance, :string_field, "zzzzz").to include "zzzzz"
     end

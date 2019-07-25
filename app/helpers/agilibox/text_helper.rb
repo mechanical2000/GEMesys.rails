@@ -107,13 +107,13 @@ module Agilibox::TextHelper
     klass       = object.is_a?(Module) ? object : object.class
     object_type = klass.to_s.split("::").last.underscore
 
-    value = t("yes")                          if value == true
-    value = t("no")                           if value == false
-    value = object.t("#{attribute}.#{value}") if nested
-    value = send(helper, value)               if helper
-    value = number(value)                     if value.is_a?(Numeric)
-    value = l(value)                          if value.is_a?(Time)
-    value = l(value)                          if value.is_a?(Date)
+    value = t("yes")             if value == true
+    value = t("no")              if value == false
+    value = object.tv(attribute) if nested
+    value = send(helper, value)  if helper
+    value = number(value)        if value.is_a?(Numeric)
+    value = l(value)             if value.is_a?(Time)
+    value = l(value)             if value.is_a?(Date)
     value = value.to_s
 
     html_label     = content_tag(:strong, class: "info-label") { label }

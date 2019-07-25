@@ -1,6 +1,7 @@
 # Changelog
 
 ## Next version
+- Fix `info` helper with nested blank value
 
 ## 1.5.12
 - Cuprite config improvements
