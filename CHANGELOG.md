@@ -1,6 +1,8 @@
 # Changelog
 
 ## Next version
+
+## 1.5.13
 - Fix `info` helper with nested blank value
 
 ## 1.5.12
