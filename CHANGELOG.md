@@ -1,6 +1,7 @@
 # Changelog
 
 ## Next version
+- Remove `GetHTTP`
 
 ## 1.5.13
 - Fix `info` helper with nested blank value
