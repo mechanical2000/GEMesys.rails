@@ -101,6 +101,7 @@ module Agilibox::TextHelper
     label       = options[:label]     || object.t(attribute)
     tag         = options[:tag]       || :div
     separator   = options[:separator] || " : "
+    separator   = " :<br/>".html_safe if separator == :br
     helper      = options[:helper]
     i18n_key    = "#{object.class.to_s.tableize.singularize}/#{attribute}"
     nested      = I18n.t("activerecord.attributes.#{i18n_key}", default: "").is_a?(Hash)

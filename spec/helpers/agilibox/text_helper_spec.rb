@@ -109,6 +109,10 @@ describe Agilibox::TextHelper, type: :helper do
       expect(info dummy_instance, :string_field, separator: "->").to eq %(<div class="info"><strong class="info-label">String field</strong><span class="info-separator">-&gt;</span><span class="info-value dummy_model-string_field">abc</span></div>)
     end
 
+    it "should accept :br separator" do
+      expect(info dummy_instance, :string_field, separator: :br).to eq %(<div class="info"><strong class="info-label">String field</strong><span class="info-separator"> :<br/></span><span class="info-value dummy_model-string_field">abc</span></div>)
+    end
+
     it "should accept nested values" do
       def dummy_instance.state; "draft"; end
       expect(info dummy_instance, :state).to eq %(<div class="info"><strong class="info-label">État</strong><span class="info-separator"> : </span><span class="info-value dummy_model-state">Brouillon</span></div>)

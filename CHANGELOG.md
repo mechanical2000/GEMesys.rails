@@ -6,6 +6,7 @@
 - Add `Agilibox::TapMethods`
 - Filters CSS : add flex-wrap
 - Add `bs_card` helper
+- Add `:br` separator to `info` helper
 
 ## 1.5.13
 - Fix `info` helper with nested blank value
