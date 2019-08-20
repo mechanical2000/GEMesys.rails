@@ -1,6 +1,8 @@
 # Changelog
 
 ## Next version
+
+## 1.6.0
 - Remove `GetHTTP`
 - I18n fixes
 - Add `Agilibox::TapMethods`
