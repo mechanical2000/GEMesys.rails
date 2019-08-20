@@ -3,6 +3,7 @@
 ## Next version
 - Remove `GetHTTP`
 - I18n fixes
+- Add `Agilibox::TapMethods`
 
 ## 1.5.13
 - Fix `info` helper with nested blank value
