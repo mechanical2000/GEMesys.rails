@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resources :tests, only: [:index] do
     collection do
       get :buttons
+      get :cards
       get :filters
       get :search
       get :checkboxes_dropdown
