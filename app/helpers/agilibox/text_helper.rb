@@ -5,7 +5,7 @@ module Agilibox::TextHelper
 
   def nbsp(text = :no_argument)
     if text == :no_argument
-      " "
+      "\u00A0"
     else
       text.to_s.gsub(" ", nbsp)
     end
@@ -21,13 +21,13 @@ module Agilibox::TextHelper
     I18n.t("number.currency.format.format")
       .gsub("%n", number(n))
       .gsub("%u", u)
-      .tr(" ", "\u00A0")
+      .tr(" ", nbsp)
   end
 
   def percentage(n)
     return if n.nil?
 
-    (number(n) + " %").tr(" ", "\u00A0")
+    number(n) + nbsp + "%"
   end
 
   def number(n)
@@ -44,7 +44,7 @@ module Agilibox::TextHelper
     opts[:delimiter] = I18n.t("number.format.delimiter")
     opts[:separator] = I18n.t("number.format.separator")
 
-    number_with_precision(n, opts).tr(" ", "\u00A0")
+    number_with_precision(n, opts).tr(" ", nbsp)
   end
 
   def date(d, *args)

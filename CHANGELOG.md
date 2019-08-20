@@ -7,6 +7,7 @@
 - Filters CSS : add flex-wrap
 - Add `bs_card` helper
 - Add `:br` separator to `info` helper
+- TextHelper refactors
 
 ## 1.5.13
 - Fix `info` helper with nested blank value
