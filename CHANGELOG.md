@@ -9,6 +9,7 @@
 - Add `:br` separator to `info` helper
 - TextHelper refactors
 - Update dummy app to Rails 5.2
+- Replace AXLSX by SpreadsheetArchitect
 
 ## 1.5.13
 - Fix `info` helper with nested blank value

@@ -1,6 +1,6 @@
 require "rails_helper"
 
-RSpec.describe Agilibox::Serializers::XLSX do
+RSpec.describe Agilibox::Serializers::AXLSX do
   # rubocop:disable Style/WordArray
   let(:data) {
     [
@@ -29,9 +29,7 @@ RSpec.describe Agilibox::Serializers::XLSX do
     it "should write xlsx content" do
       serializer.render_file(tempfile)
       file_content = File.open(tempfile, "rb").read
-      expect(file_content).to include "workbook"
-      expect(file_content).to include "worksheet"
-      expect(file_content).to include "xml"
+      expect(file_content).to eq serializer.render_inline
     end
   end
 

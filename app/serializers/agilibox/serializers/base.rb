@@ -6,6 +6,12 @@ class Agilibox::Serializers::Base
     @options = options
   end
 
+  def formatted_data
+    data.map do |line|
+      line.map { |value| self.class.format(value) }
+    end
+  end
+
   def render_inline
     raise NotImplementedError
   end
