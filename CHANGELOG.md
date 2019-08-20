@@ -5,6 +5,7 @@
 - I18n fixes
 - Add `Agilibox::TapMethods`
 - Filters CSS : add flex-wrap
+- Add `bs_card` helper
 
 ## 1.5.13
 - Fix `info` helper with nested blank value

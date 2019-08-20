@@ -9,7 +9,7 @@ gem "dotenv-rails", require: "dotenv/rails-now"
 
 gem "slim-rails"
 gem "sass-rails"
-gem "bootstrap-sass"
+gem "bootstrap"
 gem "font-awesome-sass", ">= 5.0.0"
 gem "coffee-rails"
 gem "jquery-rails"
@@ -29,10 +29,6 @@ group :test do
   gem "capybara"
   gem "poltergeist"
   gem "cuprite"
-  gem "guard"
-  gem "guard-cucumber"
-  gem "guard-rspec"
-  gem "guard-rubocop"
   gem "timecop"
   gem "simplecov", require: false
   gem "pundit-matchers"
@@ -42,10 +38,6 @@ end
 group :development do
   gem "desktop_delivery"
   gem "better_errors"
-  gem "meta_request"
-
-  # Please do not use this gem, it create Rails reloader problems
-  # gem "binding_of_caller"
 end
 
 group :development, :test do
