@@ -8,6 +8,7 @@
 - Add `bs_card` helper
 - Add `:br` separator to `info` helper
 - TextHelper refactors
+- Update dummy app to Rails 5.2
 
 ## 1.5.13
 - Fix `info` helper with nested blank value
