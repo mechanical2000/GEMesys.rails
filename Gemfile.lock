@@ -64,12 +64,12 @@ GEM
       public_suffix (>= 2.0.2, < 4.0)
     arel (9.0.0)
     ast (2.4.0)
-    autoprefixer-rails (9.6.1)
+    autoprefixer-rails (9.6.1.1)
       execjs
     awesome_print (1.8.0)
     aws-eventstream (1.0.3)
-    aws-partitions (1.203.0)
-    aws-sdk-core (3.63.0)
+    aws-partitions (1.206.0)
+    aws-sdk-core (3.64.0)
       aws-eventstream (~> 1.0, >= 1.0.2)
       aws-partitions (~> 1.0)
       aws-sigv4 (~> 1.1)
@@ -181,6 +181,10 @@ GEM
     json (2.2.0)
     launchy (2.4.3)
       addressable (~> 2.3)
+    listen (3.1.5)
+      rb-fsevent (~> 0.9, >= 0.9.4)
+      rb-inotify (~> 0.9, >= 0.9.7)
+      ruby_dep (~> 1.2)
     loofah (2.2.3)
       crass (~> 1.0.2)
       nokogiri (>= 1.5.9)
@@ -263,6 +267,9 @@ GEM
       thor (>= 0.19.0, < 2.0)
     rainbow (3.0.0)
     rake (12.3.3)
+    rb-fsevent (0.10.3)
+    rb-inotify (0.10.0)
+      ffi (~> 1.0)
     regexp_parser (1.6.0)
     rodf (1.1.0)
       builder (>= 3.0)
@@ -307,6 +314,7 @@ GEM
       rubocop (>= 0.72.0)
     ruby-graphviz (1.2.4)
     ruby-progressbar (1.10.1)
+    ruby_dep (1.5.0)
     rubyzip (1.2.3)
     sass-rails (6.0.0)
       sassc-rails (~> 2.1, >= 2.1.1)
@@ -388,6 +396,7 @@ DEPENDENCIES
   httparty
   jquery-rails
   launchy
+  listen
   minitest
   pg
   poltergeist
