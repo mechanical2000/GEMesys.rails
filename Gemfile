@@ -29,7 +29,6 @@ group :test do
   gem "shoulda-matchers"
   gem "cucumber-rails", require: false
   gem "capybara"
-  gem "poltergeist"
   gem "cuprite"
   gem "timecop"
   gem "simplecov", require: false
