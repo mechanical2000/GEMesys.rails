@@ -1,6 +1,8 @@
 # Changelog
 
 ## Next version
+
+## 1.6.1
 - Add `SetupJobConcern`
 
 ## 1.6.0
