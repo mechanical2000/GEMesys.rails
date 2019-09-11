@@ -1,6 +1,7 @@
 # Changelog
 
 ## Next version
+- Add `SetupJobConcern`
 
 ## 1.6.0
 - Remove `GetHTTP`
