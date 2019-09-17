@@ -19,7 +19,7 @@ World(CapybaraWaitTurbolinksRequests)
 # Auto wait turbolinks requests between steps
 AfterStep do |_scenario|
   if turbolinks_defined?
-    evaluate_script %(
+    execute_script %(
       $(document).on("turbolinks:before-visit", function(){
         $("html").addClass("turbolinks-load")
       })

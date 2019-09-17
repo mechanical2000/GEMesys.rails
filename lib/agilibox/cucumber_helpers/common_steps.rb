@@ -105,7 +105,7 @@ end
 When("I fill in {string} with {string} file") do |id, file|
   expect(page).to have_selector(".form-group.file", visible: :all)
 
-  evaluate_script %(
+  execute_script %(
     $(".form-group.file").css("display", "block")
   )
 
