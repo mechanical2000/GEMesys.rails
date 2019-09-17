@@ -2,6 +2,9 @@
 
 ## Next version
 
+## 1.6.2
+- Fix cucumber/capybara helpers
+
 ## 1.6.1
 - Add `SetupJobConcern`
 
