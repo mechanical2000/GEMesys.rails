@@ -1,6 +1,7 @@
 # Changelog
 
 ## Next version
+- ActiveRecord/ActiveModel type cast : refactor + add date + add boolean
 
 ## 1.6.2
 - Fix cucumber/capybara helpers
