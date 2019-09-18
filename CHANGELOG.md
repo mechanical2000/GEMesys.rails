@@ -1,6 +1,8 @@
 # Changelog
 
 ## Next version
+
+## 1.7.0
 - ActiveRecord/ActiveModel type cast : refactor + add date + add boolean
 
 ## 1.6.2
