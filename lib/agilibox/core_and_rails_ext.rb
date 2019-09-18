@@ -1,3 +1,3 @@
 require_relative "active_model_custom_error_messages"
-require_relative "active_record_comma_type_cast"
+require_relative "active_model_type_cast"
 require_relative "form_back_url"
