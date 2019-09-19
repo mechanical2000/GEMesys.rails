@@ -1,6 +1,7 @@
 # Changelog
 
 ## Next version
+- Fix FontAwesome helper
 
 ## 1.7.1
 - Cuprite : improve config + increase timeout

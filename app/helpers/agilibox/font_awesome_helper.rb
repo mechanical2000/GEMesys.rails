@@ -35,10 +35,10 @@ module Agilibox::FontAwesomeHelper
     end
 
     def database_url
-      short_version = version[0, 5]
+      short_version = version.split(".")[0, 3].join(".") # 1.20.14.2 => 1.20.14
       url = "https://raw.githubusercontent.com/FortAwesome/Font-Awesome/#{short_version}/metadata/icons.yml"
 
-      if short_version < "5.6.0"
+      if Gem::Version.new(short_version) < Gem::Version.new("5.6.0")
         url = url.gsub("/metadata", "/advanced-options/metadata")
       end
 
