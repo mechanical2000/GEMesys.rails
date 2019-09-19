@@ -7,6 +7,18 @@ class << Agilibox::CucumberConfig = Class.new
     @phantomjs_version ||= "2.1.1"
   end
 
+  attr_writer :cuprite_timeout
+
+  def cuprite_timeout
+    @cuprite_timeout ||= 15
+  end
+
+  attr_writer :cuprite_process_timeout
+
+  def cuprite_process_timeout
+    @cuprite_process_timeout ||= 15
+  end
+
   attr_writer :window_size
 
   def window_size
