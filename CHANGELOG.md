@@ -1,6 +1,8 @@
 # Changelog
 
 ## Next version
+
+## 1.7.2
 - Fix FontAwesome helper
 
 ## 1.7.1
