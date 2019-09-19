@@ -1,6 +1,8 @@
 # Changelog
 
 ## Next version
+
+## 1.7.1
 - Cuprite : improve config + increase timeout
 
 ## 1.7.0
