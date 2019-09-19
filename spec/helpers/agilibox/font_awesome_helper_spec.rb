@@ -66,7 +66,7 @@ describe Agilibox::FontAwesomeHelper do
     end
 
     it "should cache database in a file" do
-      FileUtils.rm(described_class.database_path)
+      FileUtils.rm_f(described_class.database_path)
       expect(described_class.database_path).to_not exist
 
       expect(described_class).to receive(:download_database!).once.and_call_original
