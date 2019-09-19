@@ -1,6 +1,7 @@
 # Changelog
 
 ## Next version
+- Cuprite : improve config + increase timeout
 
 ## 1.7.0
 - ActiveRecord/ActiveModel type cast : refactor + add date + add boolean

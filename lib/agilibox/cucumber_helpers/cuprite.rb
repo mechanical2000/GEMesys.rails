@@ -9,7 +9,8 @@ Capybara.register_driver :agilibox_cuprite do |app|
     :headless => (ENV["CHROME_HEADLESS"].to_s != "false"),
     :inspector => true,
     :js_errors => true,
-    :process_timeout => 5,
+    :process_timeout => Agilibox::CucumberConfig.cuprite_process_timeout,
+    :timeout => Agilibox::CucumberConfig.cuprite_timeout,
     :window_size => Agilibox::CucumberConfig.window_size,
   )
 end
