@@ -1,6 +1,8 @@
 # Changelog
 
 ## Next version
+- Do not require auth in FiltersController
+- Refactor FiltersController Pundit after_actions
 
 ## 1.7.2
 - Fix FontAwesome helper

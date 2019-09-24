@@ -2,7 +2,6 @@ module Agilibox::BootstrapHelper
   class << self
     attr_writer :card_classes
 
-    # rubocop:disable Rails/HelperInstanceVariable
     def card_classes
       @card_classes ||= {
         :card   => "card",
@@ -11,7 +10,6 @@ module Agilibox::BootstrapHelper
         :footer => "card-footer",
       }
     end
-    # rubocop:enable Rails/HelperInstanceVariable
   end
 
   def bs_progress_bar(percentage)
