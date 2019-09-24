@@ -1,12 +1,10 @@
 class Agilibox::SmallData::FiltersController < ::Agilibox::ApplicationController
+  skip_before_action :verify_authenticity_token, raise: false
+  skip_before_action :authenticate_user!,        raise: false
   skip_after_action  :verify_authorized,         raise: false
   skip_after_action  :verify_policy_scoped,      raise: false
-  skip_before_action :verify_authenticity_token, raise: false
 
   def create
-    skip_authorization if respond_to?(:skip_authorization)
-    skip_policy_scope  if respond_to?(:skip_policy_scope)
-
     filters = ::Agilibox::SmallData::Filter.new(cookies)
     new_filters = params.fetch(:filters, {}).permit!.to_h
     filters.merge new_filters
