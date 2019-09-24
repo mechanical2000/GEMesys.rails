@@ -1,6 +1,8 @@
 # Changelog
 
 ## Next version
+
+## 1.7.3
 - Do not require auth in FiltersController
 - Refactor FiltersController Pundit after_actions
 
