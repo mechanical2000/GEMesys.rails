@@ -1,6 +1,8 @@
 # Changelog
 
 ## Next version
+
+## 1.7.4
 - Add `tap_update_columns`and `tap_update_column`
 
 ## 1.7.3
