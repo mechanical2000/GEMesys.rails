@@ -20,4 +20,14 @@ module Agilibox::TapMethods
     validate!(context)
     self
   end
+
+  def tap_update_columns(attributes)
+    update_columns(attributes) # rubocop:disable Rails/SkipsModelValidations
+    self
+  end
+
+  def tap_update_column(name, value)
+    update_column(name, value) # rubocop:disable Rails/SkipsModelValidations
+    self
+  end
 end

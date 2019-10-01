@@ -1,6 +1,7 @@
 # Changelog
 
 ## Next version
+- Add `tap_update_columns`and `tap_update_column`
 
 ## 1.7.3
 - Do not require auth in FiltersController
