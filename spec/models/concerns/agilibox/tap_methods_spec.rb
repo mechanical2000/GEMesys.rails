@@ -44,4 +44,16 @@ describe Agilibox::TapMethods do
     result = instance.tap_validate!(:context)
     expect(result).to eq instance
   end
+
+  it "#tap_update_columns with context" do
+    expect(instance).to receive(:update_columns).with(string_field: "val").and_call_original
+    result = instance.tap_update_columns(string_field: "val")
+    expect(result).to eq instance
+  end
+
+  it "#tap_update_column with context" do
+    expect(instance).to receive(:update_column).with(:string_field, "val").and_call_original
+    result = instance.tap_update_column(:string_field, "val")
+    expect(result).to eq instance
+  end
 end
