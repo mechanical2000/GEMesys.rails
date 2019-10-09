@@ -1,6 +1,8 @@
 require "awesome_print"
 require "pry-rails"
 require "rails-i18n"
+require "nilify_blanks"
+require "tapenade"
 
 module Agilibox
   class Engine < ::Rails::Engine

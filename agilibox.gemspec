@@ -19,4 +19,6 @@ Gem::Specification.new do |s|
   s.add_dependency "rails-i18n"
   s.add_dependency "awesome_print"
   s.add_dependency "pry-rails"
+  s.add_dependency "nilify_blanks"
+  s.add_dependency "tapenade"
 end
