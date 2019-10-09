@@ -9,6 +9,5 @@ class ApplicationRecord < ActiveRecord::Base
   include Agilibox::PluckToHash
   include Agilibox::PolymorphicId
   include Agilibox::Search
-  include Agilibox::TapMethods
   include Agilibox::TimestampHelpers
 end

@@ -2,6 +2,8 @@
 
 ## Next version
 - SMS improvements
+- Replace TapMethods by Tapenade gem
+- Add nilify_blanks dependency
 
 ## 1.7.4
 - Add `tap_update_columns`and `tap_update_column`
