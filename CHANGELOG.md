@@ -1,6 +1,8 @@
 # Changelog
 
 ## Next version
+
+## 1.8.0
 - SMS improvements
 - Replace TapMethods by Tapenade gem
 - Add nilify_blanks dependency
