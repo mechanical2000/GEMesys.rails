@@ -27,8 +27,6 @@ class Agilibox::SMS::Strategies::AmazonSNS < Agilibox::SMS::Strategies::Base
     )
   end
 
-  private
-
   def call
     from = data[:from] || Agilibox::SMS.default_from
 

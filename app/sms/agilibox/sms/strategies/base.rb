@@ -5,18 +5,11 @@ class Agilibox::SMS::Strategies::Base
     @data = data
   end
 
-  def deliver_now
-    call
-  end
-
-  # TODO : Delay
-  def deliver_later
-    deliver_now
-  end
-
-  private
-
   def call
     raise NotImplementedError
+  end
+
+  def self.call(*args)
+    new(*args).call
   end
 end

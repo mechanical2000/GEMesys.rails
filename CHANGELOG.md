@@ -1,6 +1,7 @@
 # Changelog
 
 ## Next version
+- SMS improvements
 
 ## 1.7.4
 - Add `tap_update_columns`and `tap_update_column`

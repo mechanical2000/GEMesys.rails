@@ -25,6 +25,29 @@ describe Agilibox::SMS::ApplicationSMS do
     expect(sms[:body]).to eq "Hello"
   end
 
+  it "should return strategy" do
+    message = TestSMS.hello
+    expect(message.strategy).to eq Agilibox::SMS::Strategies::Test
+  end
+
+  it "should set strategy" do
+    message = TestSMS.hello
+    message.strategy = "zzz"
+    expect(message.strategy).to eq "zzz"
+  end
+
+  it "should set strategy" do
+    message = TestSMS.hello
+    message.strategy("zzz")
+    expect(message.strategy).to eq "zzz"
+  end
+
+  it "should set strategy from symbol" do
+    message = TestSMS.hello
+    message.strategy = :test
+    expect(message.strategy).to eq Agilibox::SMS::Strategies::Test
+  end
+
   it "should should translate relative key" do
     expect(I18n).to receive(:t).with("test_sms.hello_i18n_relative.hello").and_return("Hello")
     TestSMS.hello_i18n_relative.deliver_now

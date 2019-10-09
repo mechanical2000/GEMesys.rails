@@ -21,7 +21,7 @@ class Agilibox::SMS::ApplicationSMS
   end
 
   def sms(data)
-    Agilibox::SMS.strategy.new(data)
+    Agilibox::SMS::Message.new(data)
   end
 
   class << self

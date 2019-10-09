@@ -1,6 +1,8 @@
 module Agilibox::SMS
   class << self
-    attr_writer :strategy
+    def strategy=(value)
+      @strategy = parse_strategy(value)
+    end
 
     def strategy
       @strategy ||= default_strategy
@@ -10,6 +12,14 @@ module Agilibox::SMS
 
     def default_from
       @default_from ||= Rails.application.class.to_s.chomp("::Application")
+    end
+
+    def parse_strategy(value)
+      if value.is_a?(Symbol)
+        "Agilibox::SMS::Strategies::#{value.to_s.camelcase}".constantize
+      else
+        value
+      end
     end
 
     private
