@@ -11,7 +11,7 @@ describe Agilibox::SMS::Strategies::Test do
 
   it "should add sms to deliveries" do
     expect {
-      described_class.new(sms).deliver_now
+      described_class.call(sms)
     }.to change(described_class.deliveries, :count).by(1)
 
     expect(described_class.deliveries.first).to eq sms
