@@ -1,6 +1,7 @@
 # Changelog
 
 ## Next version
+- Remove phantomjs/poltergeist support
 
 ## 1.8.0
 - SMS improvements
