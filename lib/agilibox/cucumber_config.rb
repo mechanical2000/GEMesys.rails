@@ -1,12 +1,6 @@
 class << Agilibox::CucumberConfig = Class.new
   undef new
 
-  attr_writer :phantomjs_version
-
-  def phantomjs_version
-    @phantomjs_version ||= "2.1.1"
-  end
-
   attr_writer :cuprite_timeout
 
   def cuprite_timeout
@@ -37,12 +31,8 @@ class << Agilibox::CucumberConfig = Class.new
 
   def require_all_helpers!
     files = Dir.glob Agilibox::Engine.root.join("lib", "agilibox", "cucumber_helpers", "*.rb")
-    files.delete_if { |f| f.match?(/poltergeist|chrome|cuprite|_steps/) }
+    files.delete_if { |f| f.match?(/chrome|cuprite|_steps/) }
     files.each { |file| require file }
-  end
-
-  def require_poltergeist!
-    require Agilibox::Engine.root.join("lib", "agilibox", "cucumber_helpers", "poltergeist.rb")
   end
 
   def require_chrome_headless!

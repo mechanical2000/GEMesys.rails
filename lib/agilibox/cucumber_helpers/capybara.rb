@@ -1,5 +1,5 @@
 Capybara.register_driver :agilibox_no_driver do |_app|
-  raise "You need to add Agilibox::CucumberConfig.require_poltergeist! or "\
+  raise "You need to add Agilibox::CucumberConfig.require_cuprite! or "\
     "Agilibox::CucumberConfig.require_chrome_headless! " \
     "to your features/support/env.rb"
 end
