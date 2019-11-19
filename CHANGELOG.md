@@ -1,6 +1,8 @@
 # Changelog
 
 ## Next version
+
+## 1.9.0
 - Remove phantomjs/poltergeist support
 - BackUrlConcern transforms absolute URLs to relative
 
