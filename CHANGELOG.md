@@ -2,6 +2,7 @@
 
 ## Next version
 - Remove phantomjs/poltergeist support
+- BackUrlConcern transforms absolute URLs to relative
 
 ## 1.8.0
 - SMS improvements

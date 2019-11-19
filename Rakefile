@@ -35,3 +35,7 @@ end
 
 
 task default: :test
+
+task "assets:precompile" do
+  Rake::Task["app:assets:precompile"].invoke
+end
