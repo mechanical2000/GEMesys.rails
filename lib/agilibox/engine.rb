@@ -12,6 +12,10 @@ module Agilibox
       Mime::Type.register "application/vnd.ms-excel", :xls
       Mime::Type.register "application/vnd.ms-excel", :xlsx
     end
+
+    # initializer "agilibox_errors_middleware" do
+    #   require "agilibox/errors_middleware"
+    # end
   end
 end
 
