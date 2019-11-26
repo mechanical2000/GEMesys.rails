@@ -1,6 +1,7 @@
 # Changelog
 
 ## Next version
+- Add ErrorsMiddleware
 
 ## 1.9.0
 - Remove phantomjs/poltergeist support
