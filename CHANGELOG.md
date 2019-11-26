@@ -1,6 +1,8 @@
 # Changelog
 
 ## Next version
+
+## 1.9.1
 - Add ErrorsMiddleware
 
 ## 1.9.0
