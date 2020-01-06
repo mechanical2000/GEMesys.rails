@@ -15,4 +15,4 @@ module Agilibox::FormBackUrl
   end
 end
 
-ActionView::Helpers::FormTagHelper.send(:prepend, Agilibox::FormBackUrl)
+ActionView::Helpers::FormTagHelper.prepend(Agilibox::FormBackUrl)

@@ -5,4 +5,4 @@ module Agilibox::ActiveModelCustomErrorMessages
   end
 end
 
-ActiveModel::Errors.send(:prepend, Agilibox::ActiveModelCustomErrorMessages)
+ActiveModel::Errors.prepend(Agilibox::ActiveModelCustomErrorMessages)

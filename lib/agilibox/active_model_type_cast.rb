@@ -46,7 +46,7 @@ module Agilibox::ActiveModelTypeCast
   end
 end
 
-ActiveModel::Type::Date.send(:prepend, Agilibox::ActiveModelTypeCast::Date)
-ActiveModel::Type::Boolean.send(:prepend, Agilibox::ActiveModelTypeCast::Boolean)
-ActiveModel::Type::Decimal.send(:prepend, Agilibox::ActiveModelTypeCast::Decimal)
-ActiveModel::Type::Float.send(:prepend, Agilibox::ActiveModelTypeCast::Decimal)
+ActiveModel::Type::Date.prepend(Agilibox::ActiveModelTypeCast::Date)
+ActiveModel::Type::Boolean.prepend(Agilibox::ActiveModelTypeCast::Boolean)
+ActiveModel::Type::Decimal.prepend(Agilibox::ActiveModelTypeCast::Decimal)
+ActiveModel::Type::Float.prepend(Agilibox::ActiveModelTypeCast::Decimal)
