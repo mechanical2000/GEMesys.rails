@@ -13,7 +13,7 @@ module Agilibox::BackUrlConcern
       default_back_url,
       main_app.try(:root_path),
       "/",
-    ].select(&:present?).first
+    ].find(&:present?)
 
     uri = URI.parse(url)
     uri.host = nil

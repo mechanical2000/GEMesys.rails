@@ -53,7 +53,7 @@ describe Agilibox::FontAwesomeHelper do
 
   describe "database methods" do
     it "should return database path" do
-      base_path = Rails.root.join("tmp", "fa_database_").to_s
+      base_path = Rails.root.join("tmp/fa_database_").to_s
       expect(described_class.database_path.to_s).to start_with base_path
     end
 

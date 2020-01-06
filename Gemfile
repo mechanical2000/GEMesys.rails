@@ -2,7 +2,7 @@ source "https://rubygems.org"
 
 gemspec
 
-gem "rails", "~> 5.2.3"
+gem "rails", "~> 5.2.4"
 gem "pg"
 gem "puma"
 gem "dotenv-rails", require: "dotenv/rails-now"
@@ -52,7 +52,7 @@ group :development, :test do
   gem "factory_bot_rails"
   gem "byebug"
   gem "rspec-rails" # must be in both environments for generators
-  gem "rubocop", "0.73.0", require: false
-  gem "rubocop-performance", "1.4.0", require: false
-  gem "rubocop-rails", "2.2.1", require: false
+  gem "rubocop", "0.78.0", require: false
+  gem "rubocop-performance", "1.5.2", require: false
+  gem "rubocop-rails", "2.4.1", require: false
 end
