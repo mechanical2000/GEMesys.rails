@@ -1,13 +1,15 @@
 class Agilibox::ErrorsMiddleware
   MAINTENANCE_ERRORS = [
-    PG::ConnectionBad,
-    PG::UnableToSend,
+    "ActiveRecord::ConnectionTimeoutError",
+    "connections on port 5432",
+    "PG::UnableToSend",
   ]
 
   NOT_ACCEPTABLE_ERRORS = [
-    ActionController::UnknownFormat,
-    ActionController::UnknownHttpMethod,
-    ActionView::MissingTemplate,
+    "ActionController::BadRequest",
+    "ActionController::UnknownFormat",
+    "ActionController::UnknownHttpMethod",
+    "ActionView::MissingTemplate",
   ]
 
   def initialize(app)
@@ -16,10 +18,18 @@ class Agilibox::ErrorsMiddleware
 
   def call(env)
     @app.call(env)
-  rescue *MAINTENANCE_ERRORS
-    respond_with 503, "Maintenance en cours."
-  rescue *NOT_ACCEPTABLE_ERRORS
-    respond_with 406, "Not acceptable."
+  rescue StandardError => e
+    error = "#{e.class} : #{e.message}"
+
+    if MAINTENANCE_ERRORS.any? { |pattern| error.match?(pattern) }
+      return respond_with 503, "Maintenance en cours."
+    end
+
+    if NOT_ACCEPTABLE_ERRORS.any? { |pattern| error.match?(pattern) }
+      return respond_with 406, "Not acceptable."
+    end
+
+    raise e
   end
 
   private
