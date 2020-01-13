@@ -2,6 +2,9 @@
 
 ## Next version
 
+## 1.9.2
+- ErrorsMiddleware improvements
+
 ## 1.9.1
 - Add ErrorsMiddleware
 
