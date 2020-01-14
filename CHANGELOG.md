@@ -2,6 +2,9 @@
 
 ## Next version
 
+## 1.9.3
+- No change
+
 ## 1.9.2
 - ErrorsMiddleware improvements
 
