@@ -11,7 +11,7 @@ GIT
 PATH
   remote: .
   specs:
-    agilibox (1.9.3)
+    agilibox (1.9.4)
       awesome_print
       nilify_blanks
       pry-rails
