@@ -1,6 +1,7 @@
 # Changelog
 
 ## Next version
+- Cucumber : disable Zonebie
 
 ## 1.9.3
 - No change
