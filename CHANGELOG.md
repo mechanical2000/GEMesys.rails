@@ -1,6 +1,7 @@
 # Changelog
 
 ## Next version
+- Fix warnings on Rails 6
 
 ## 1.9.4
 - Cucumber : disable Zonebie

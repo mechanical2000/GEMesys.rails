@@ -1,6 +1,10 @@
 module Agilibox::RoutesHelper
   def engine_polymorphic_path(obj, opts = {})
-    engine = obj.class.parents[-2]
+    if Rails::VERSION::STRING >= "6.0.0"
+      engine = obj.class.module_parents[-2]
+    else
+      engine = obj.class.parents[-2]
+    end
 
     if engine.nil?
       routes = main_app
