@@ -38,7 +38,7 @@ module Agilibox::SortingHelper
 
     if sort_param.present?
       if sort_param.start_with?("-")
-        column     = sort_param[1..-1].to_sym
+        column     = sort_param[1..].to_sym
         direction  = :desc
       else
         column     = sort_param.to_sym
