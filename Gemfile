@@ -2,7 +2,7 @@ source "https://rubygems.org"
 
 gemspec
 
-gem "rails", "~> 5.2.4"
+gem "rails", "~> 6.0.3"
 gem "pg"
 gem "puma"
 gem "dotenv-rails", require: "dotenv/rails-now"

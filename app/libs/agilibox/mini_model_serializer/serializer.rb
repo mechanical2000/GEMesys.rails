@@ -4,7 +4,7 @@ class Agilibox::MiniModelSerializer::Serializer < Agilibox::MiniModelSerializer:
   end
 
   def call
-    serialize attributes.map { |k| [k, send(k)] }.to_h
+    serialize(attributes.index_with { |k| send(k) })
   end
 
   private
