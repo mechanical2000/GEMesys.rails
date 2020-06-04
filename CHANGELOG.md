@@ -1,6 +1,8 @@
 # Changelog
 
 ## Next version
+
+## 1.9.5
 - Fix warnings on Rails 6
 
 ## 1.9.4
