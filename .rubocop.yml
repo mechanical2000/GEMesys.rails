@@ -1,1 +1,5 @@
 inherit_from: http://rubocop.agilidee.com/0.83.0.yml
+
+# Rails 6 only
+Rails/IndexWith:
+  Enabled: false
