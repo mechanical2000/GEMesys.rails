@@ -93,13 +93,16 @@ module Agilibox::TextHelper
       value = value_or_options
     end
 
+    value = t("yes") if value == true
+    value = t("no")  if value == false
+
     if value.blank?
       value = options[:default]
       return if value == :hide
     end
 
     label       = options[:label]     || object.t(attribute)
-    tag         = options[:tag]       || :div
+    info_tag    = options[:tag]       || :div
     separator   = options[:separator] || " : "
     separator   = " :<br/>".html_safe if separator == :br
     helper      = options[:helper]
@@ -108,8 +111,6 @@ module Agilibox::TextHelper
     klass       = object.is_a?(Module) ? object : object.class
     object_type = klass.to_s.split("::").last.underscore
 
-    value = t("yes")             if value == true
-    value = t("no")              if value == false
     value = object.tv(attribute) if nested
     value = send(helper, value)  if helper
     value = number(value)        if value.is_a?(Numeric)
@@ -117,10 +118,10 @@ module Agilibox::TextHelper
     value = l(value)             if value.is_a?(Date)
     value = value.to_s
 
-    html_label     = content_tag(:strong, class: "info-label") { label }
+    html_label     = tag.strong(class: "info-label") { label }
     span_css_class = "info-value #{object_type}-#{attribute}"
-    html_value     = content_tag(:span, class: span_css_class) { value }
-    separator_html = content_tag(:span, class: "info-separator") { separator }
+    html_value     = tag.span(class: span_css_class) { value }
+    separator_html = tag.span(class: "info-separator") { separator }
 
     if value.blank?
       container_css_class = "info blank"
@@ -128,7 +129,7 @@ module Agilibox::TextHelper
       container_css_class = "info"
     end
 
-    content_tag(tag, class: container_css_class) do
+    content_tag(info_tag, class: container_css_class) do
       [html_label, separator_html, html_value].join.html_safe
     end
   end # def info
@@ -138,7 +139,7 @@ module Agilibox::TextHelper
     return "" if object.tag_list.empty?
 
     object.tag_list.map { |tag|
-      content_tag(:span, class: "tag label label-primary") {
+      tag.span(class: "tag label label-primary") {
         "#{icon :tag} #{tag}".html_safe
       }
     }.join(" ").html_safe

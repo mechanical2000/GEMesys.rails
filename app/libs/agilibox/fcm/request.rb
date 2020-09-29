@@ -39,7 +39,7 @@ class Agilibox::FCM::Request < Agilibox::Service
   end
 
   def errors
-    response_json[:results].map { |r| r[:error] }.compact
+    response_json[:results].pluck(:error).compact
   end
 
   def invalid_token?

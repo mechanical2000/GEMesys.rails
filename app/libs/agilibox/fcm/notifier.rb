@@ -3,6 +3,7 @@ class Agilibox::FCM::Notifier < Agilibox::Service
 
   # rubocop:disable Metrics/ParameterLists
   def initialize(to:, title: nil, body:, badge: 0, sound: "default", data: {})
+    super()
     @to    = to
     @title = title
     @body  = body

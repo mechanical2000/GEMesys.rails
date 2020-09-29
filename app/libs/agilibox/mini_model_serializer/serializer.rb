@@ -18,6 +18,6 @@ class Agilibox::MiniModelSerializer::Serializer < Agilibox::MiniModelSerializer:
   end
 
   def respond_to_missing?(m, *)
-    object.respond_to?(m, true)
+    super || object.respond_to?(m, true)
   end
 end

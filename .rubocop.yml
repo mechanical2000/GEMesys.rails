@@ -1,4 +1,7 @@
-inherit_from: http://rubocop.agilidee.com/0.83.0.yml
+inherit_from: http://rubocop.agilidee.com/0.91.0.yml
+
+Lint/ConstantDefinitionInBlock:
+  Enabled: false
 
 # Rails 6 only
 Rails/IndexWith:

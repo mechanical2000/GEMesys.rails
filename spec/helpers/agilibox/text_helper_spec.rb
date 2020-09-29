@@ -93,7 +93,8 @@ describe Agilibox::TextHelper, type: :helper do
 
       def l.date; Date.parse("2015-01-25"); end
       def l.time; Time.zone.parse("2015-01-25  17:09:23"); end
-      def l.paid?; true; end
+      def l.active?; true; end
+      def l.inactive?; false; end
       l
     }
 
@@ -140,7 +141,8 @@ describe Agilibox::TextHelper, type: :helper do
     end
 
     it "should work with booleans" do
-      expect(info dummy_instance, :paid?).to include "Oui"
+      expect(info dummy_instance, :active?).to include "Oui"
+      expect(info dummy_instance, :inactive?).to include "Non"
     end
 
     it "should accept helper" do

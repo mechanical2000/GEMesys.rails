@@ -15,7 +15,7 @@ module Agilibox::FontAwesomeHelper
 
     attributes = options.merge(class: css_classes.sort.join(" ")).sort.to_h
 
-    content_tag(:span, attributes) {}
+    tag.span(attributes) {}
   end
 
   class << self
