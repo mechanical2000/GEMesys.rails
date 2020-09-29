@@ -93,6 +93,9 @@ module Agilibox::TextHelper
       value = value_or_options
     end
 
+    value = t("yes") if value == true
+    value = t("no")  if value == false
+
     if value.blank?
       value = options[:default]
       return if value == :hide
@@ -108,8 +111,6 @@ module Agilibox::TextHelper
     klass       = object.is_a?(Module) ? object : object.class
     object_type = klass.to_s.split("::").last.underscore
 
-    value = t("yes")             if value == true
-    value = t("no")              if value == false
     value = object.tv(attribute) if nested
     value = send(helper, value)  if helper
     value = number(value)        if value.is_a?(Numeric)

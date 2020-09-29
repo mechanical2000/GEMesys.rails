@@ -1,6 +1,7 @@
 # Changelog
 
 ## Next version
+- Fix info helper with false
 
 ## 1.9.5
 - Fix warnings on Rails 6
