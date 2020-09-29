@@ -2,6 +2,7 @@ class Agilibox::SmallData::FilterStrategyByKeyValue < ::Agilibox::SmallData::Fil
   attr_reader :key
 
   def initialize(key = nil)
+    super()
     @key = key
   end
 

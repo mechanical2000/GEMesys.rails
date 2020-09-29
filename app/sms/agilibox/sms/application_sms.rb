@@ -36,7 +36,7 @@ class Agilibox::SMS::ApplicationSMS
     end
 
     def respond_to_missing?(m, *)
-      public_instance_methods.include?(m)
+      super || public_instance_methods.include?(m)
     end
   end # class << self
 end

@@ -37,7 +37,7 @@ module Agilibox::ApiControllerConcern
   end
 
   def json_error_string_for_model(object)
-    json_errors_hash_for_model(object).values.map { |e| e[:full_message] }.join(", ")
+    json_errors_hash_for_model(object).values.pluck(:full_message).join(", ")
   end
 
   def render_not_found

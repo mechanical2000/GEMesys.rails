@@ -2,6 +2,7 @@
 
 ## Next version
 - Fix info helper with false
+- Update Rubocop + fix offences
 
 ## 1.9.5
 - Fix warnings on Rails 6

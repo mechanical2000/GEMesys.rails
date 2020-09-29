@@ -5,7 +5,7 @@ module Agilibox::PaginationHelper
   end
 
   def pagination_infos(collection)
-    content_tag(:p, class: "pagination-infos") { page_entries_info(collection) }
+    tag.p(class: "pagination-infos") { page_entries_info(collection) }
   end
 
   def pagination_and_infos(collection)
