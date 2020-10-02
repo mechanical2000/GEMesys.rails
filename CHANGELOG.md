@@ -1,6 +1,7 @@
 # Changelog
 
 ## Next version
+- Change XLSX export
 
 ## v1.9.6
 - Fix info helper with false

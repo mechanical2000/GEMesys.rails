@@ -1,6 +1,7 @@
 class Agilibox::Serializers::XLSX < Agilibox::Serializers::Base
   def render_inline
-    SpreadsheetArchitect.to_xlsx(data: formatted_data)
+    headers, *data = formatted_data
+    SpreadsheetArchitect.to_xlsx(headers: headers, data: data, freeze_headers: true)
   end
 
   def render_file(file_path)
