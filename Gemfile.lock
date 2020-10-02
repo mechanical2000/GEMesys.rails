@@ -11,7 +11,7 @@ GIT
 PATH
   remote: .
   specs:
-    agilibox (1.9.6)
+    agilibox (1.9.7)
       awesome_print
       nilify_blanks
       pry-rails
@@ -79,25 +79,25 @@ GEM
     addressable (2.7.0)
       public_suffix (>= 2.0.2, < 5.0)
     ast (2.4.1)
-    autoprefixer-rails (10.0.0.2)
+    autoprefixer-rails (10.0.1.0)
       execjs
     awesome_print (1.8.0)
     aws-eventstream (1.1.0)
-    aws-partitions (1.376.0)
-    aws-sdk-core (3.108.0)
+    aws-partitions (1.379.0)
+    aws-sdk-core (3.109.0)
       aws-eventstream (~> 1, >= 1.0.2)
       aws-partitions (~> 1, >= 1.239.0)
       aws-sigv4 (~> 1.1)
       jmespath (~> 1.0)
-    aws-sdk-sns (1.31.0)
-      aws-sdk-core (~> 3, >= 3.99.0)
+    aws-sdk-sns (1.32.0)
+      aws-sdk-core (~> 3, >= 3.109.0)
       aws-sigv4 (~> 1.1)
     aws-sigv4 (1.2.2)
       aws-eventstream (~> 1, >= 1.0.2)
     axlsx_styler (1.1.0)
       activesupport (>= 3.1)
       caxlsx (>= 2.0.2)
-    better_errors (2.8.1)
+    better_errors (2.8.2)
       coderay (>= 1.0.0)
       erubi (>= 1.0.0)
       rack (>= 0.9.0)
@@ -320,7 +320,7 @@ GEM
       rspec-core (~> 3.9.0)
       rspec-expectations (~> 3.9.0)
       rspec-mocks (~> 3.9.0)
-    rspec-core (3.9.2)
+    rspec-core (3.9.3)
       rspec-support (~> 3.9.3)
     rspec-expectations (3.9.2)
       diff-lcs (>= 1.2.0, < 2.0)
@@ -374,7 +374,7 @@ GEM
       tilt
     shoulda-matchers (4.4.1)
       activesupport (>= 4.2.0)
-    simple_form (5.0.2)
+    simple_form (5.0.3)
       actionpack (>= 5.0)
       activemodel (>= 5.0)
     simplecov (0.19.0)

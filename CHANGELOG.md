@@ -1,6 +1,8 @@
 # Changelog
 
 ## Next version
+
+## v1.9.7
 - Change XLSX export
 
 ## v1.9.6
