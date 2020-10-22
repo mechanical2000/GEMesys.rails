@@ -1,6 +1,8 @@
 # Changelog
 
 ## Next version
+
+## v1.9.9
 - Add error to ErrorsMiddleware
 
 ## v1.9.8
