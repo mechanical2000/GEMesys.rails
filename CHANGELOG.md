@@ -2,7 +2,7 @@
 
 ## Next version
 
-## v1.9.9
+## v1.9.8
 - Fix `tags` helper
 
 ## v1.9.7
