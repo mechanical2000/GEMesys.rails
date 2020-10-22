@@ -2,6 +2,9 @@
 
 ## Next version
 
+## v1.9.9
+- Fix `tags` helper
+
 ## v1.9.7
 - Change XLSX export
 
