@@ -10,6 +10,7 @@ class Agilibox::ErrorsMiddleware
     "ActionController::UnknownFormat",
     "ActionController::UnknownHttpMethod",
     "ActionView::MissingTemplate",
+    "Mime::Type::InvalidMimeType",
   ]
 
   def initialize(app)

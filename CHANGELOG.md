@@ -1,6 +1,7 @@
 # Changelog
 
 ## Next version
+- Add error to ErrorsMiddleware
 
 ## v1.9.8
 - Fix `tags` helper
