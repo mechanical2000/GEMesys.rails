@@ -1,6 +1,7 @@
 # Changelog
 
 ## Next version
+- Fix some Ruby 2.7 warnings
 
 ## v1.9.10
 - Fix some Ruby 2.7 warnings
