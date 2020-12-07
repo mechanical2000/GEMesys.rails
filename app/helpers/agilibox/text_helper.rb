@@ -47,8 +47,8 @@ module Agilibox::TextHelper
     number_with_precision(n, opts).tr(" ", nbsp)
   end
 
-  def date(d, *args)
-    I18n.l(d, *args) unless d.nil?
+  def date(d, **args)
+    I18n.l(d, **args) unless d.nil?
   end
 
   def boolean_icon(bool)
