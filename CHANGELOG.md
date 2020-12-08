@@ -1,6 +1,7 @@
 # Changelog
 
 ## Next version
+- Fix syntax error on Ruby < 2.7
 
 ## v1.9.13
 - Add apparition capybara driver
