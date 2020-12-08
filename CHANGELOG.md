@@ -1,6 +1,8 @@
 # Changelog
 
 ## Next version
+
+## v1.9.14
 - Fix syntax error on Ruby < 2.7
 
 ## v1.9.13
