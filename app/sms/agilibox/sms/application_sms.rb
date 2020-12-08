@@ -11,13 +11,13 @@ class Agilibox::SMS::ApplicationSMS
     options[:action_name]
   end
 
-  def t(key, *args)
+  def t(key, **args)
     if key.start_with?(".")
       path = self.class.to_s.underscore.tr("/", ".")
       key  = "#{path}.#{action_name}#{key}"
     end
 
-    I18n.t(key, *args)
+    I18n.t(key, **args)
   end
 
   def sms(data)
