@@ -31,8 +31,12 @@ class << Agilibox::CucumberConfig = Class.new
 
   def require_all_helpers!
     files = Dir.glob Agilibox::Engine.root.join("lib", "agilibox", "cucumber_helpers", "*.rb")
-    files.delete_if { |f| f.match?(/chrome|cuprite|_steps/) }
+    files.delete_if { |f| f.match?(/apparition|chrome|cuprite|_steps/) }
     files.each { |file| require file }
+  end
+
+  def require_apparition!
+    require Agilibox::Engine.root.join("lib", "agilibox", "cucumber_helpers", "apparition.rb")
   end
 
   def require_chrome_headless!
