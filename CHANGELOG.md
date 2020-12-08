@@ -2,6 +2,9 @@
 
 ## Next version
 
+## v1.9.12
+- Fix some Ruby 2.7 warnings
+
 ## v1.9.11
 - Fix some Ruby 2.7 warnings
 
