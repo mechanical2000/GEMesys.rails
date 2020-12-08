@@ -1,6 +1,7 @@
 # Changelog
 
 ## Next version
+- Add apparition capybara driver
 
 ## v1.9.12
 - Fix some Ruby 2.7 warnings
