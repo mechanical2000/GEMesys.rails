@@ -2,8 +2,8 @@ class Agilibox::Service
   include Agilibox::InitializeWith
 
   if RUBY_VERSION >= "2.7.0"
-    def self.call(...)
-      new(...).call
+    def self.call(*args, **kwargs)
+      new(*args, **kwargs).call
     end
   else
     def self.call(*args)
