@@ -1,6 +1,6 @@
 require "rails_helper"
 
-# rubocop:disable Metrics/LineLength
+# rubocop:disable Layout/LineLength
 
 describe Agilibox::TextHelper, type: :helper do
   include Agilibox::FontAwesomeHelper
@@ -175,4 +175,4 @@ describe Agilibox::TextHelper, type: :helper do
   end
 end
 
-# rubocop:enable Metrics/LineLength
+# rubocop:enable Layout/LineLength

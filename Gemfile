@@ -18,7 +18,6 @@ gem "turbolinks"
 gem "simple_form"
 gem "httparty"
 gem "spreadsheet_architect"
-gem "axlsx", github: "randym/axlsx"
 gem "aws-sdk-sns"
 gem "sprockets", "< 4" # TODO : Remove
 
