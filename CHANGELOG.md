@@ -1,6 +1,8 @@
 # Changelog
 
 ## Next version
+
+## v1.9.13
 - Add apparition capybara driver
 
 ## v1.9.12
