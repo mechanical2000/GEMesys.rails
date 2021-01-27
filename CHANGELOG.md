@@ -1,6 +1,7 @@
 # Changelog
 
 ## Next version
+- Add `modal:before-close` event
 
 ## v1.9.14
 - Fix syntax error on Ruby < 2.7
