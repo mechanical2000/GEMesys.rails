@@ -1,6 +1,8 @@
 # Changelog
 
 ## Next version
+
+## v1.9.15
 - Add `modal:before-close` event
 
 ## v1.9.14
