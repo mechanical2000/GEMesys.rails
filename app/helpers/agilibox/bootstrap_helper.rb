@@ -35,10 +35,10 @@ module Agilibox::BootstrapHelper
     &block
   )
     global_classes = Agilibox::BootstrapHelper.card_classes
-    card_classes   = ([global_classes[:card]]   + card_class.to_s.split(" ")).compact.sort
-    header_classes = ([global_classes[:header]] + header_class.to_s.split(" ")).compact.sort
-    body_classes   = ([global_classes[:body]]   + body_class.to_s.split(" ")).compact.sort
-    footer_classes = ([global_classes[:footer]] + footer_class.to_s.split(" ")).compact.sort
+    card_classes   = ([global_classes[:card]]   + card_class.to_s.split).compact.sort
+    header_classes = ([global_classes[:header]] + header_class.to_s.split).compact.sort
+    body_classes   = ([global_classes[:body]]   + body_class.to_s.split).compact.sort
+    footer_classes = ([global_classes[:footer]] + footer_class.to_s.split).compact.sort
 
     if header
       header_html = content_tag(header_tag, class: header_classes) { header }

@@ -1,6 +1,6 @@
 class Agilibox::SmallData::FilterStrategyByDateOrDatetimePeriod < ::Agilibox::SmallData::FilterStrategyByKeyValue
   def initialize(*)
-    if self.class == Agilibox::SmallData::FilterStrategyByDateOrDatetimePeriod
+    if instance_of?(Agilibox::SmallData::FilterStrategyByDateOrDatetimePeriod)
       raise "please use FilterStrategyByDatePeriod or FilterStrategyByDatetimePeriod"
     end
 

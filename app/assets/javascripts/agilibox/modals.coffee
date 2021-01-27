@@ -34,6 +34,7 @@ window.modal =
 
   close: (event) ->
     event.preventDefault() if event
+    $(document).trigger("modal:before-close")
     $("body").removeClass("modal-open")
     $("#modal").remove()
     $(document).trigger("modal:close")
