@@ -23,11 +23,11 @@ module Agilibox::FormHelper
 
     tag.div(class: "actions form-actions") do
       submit = tag.button(type: :submit, class: "btn btn-sm btn-success form-submit") do
-        tag.span(class: "fa fa-save") {} + " " + ta(submit_action)
+        tag.span(class: "fa fa-save") + " " + ta(submit_action)
       end
 
       cancel = tag.a(href: back_url, class: "btn btn-primary btn-sm form-cancel") do
-        tag.span(class: "fa fa-times") {} + " " + ta(:cancel)
+        tag.span(class: "fa fa-times") + " " + ta(:cancel)
       end
 
       cancel = "" if back_url == false

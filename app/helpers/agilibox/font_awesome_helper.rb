@@ -6,7 +6,7 @@ module Agilibox::FontAwesomeHelper
       fa_style = Agilibox::FontAwesomeHelper.default_fa_style_for_id(id)
     end
 
-    css_classes = options.delete(:class).to_s.split(" ")
+    css_classes = options.delete(:class).to_s.split
     css_classes << "icon"
     css_classes << "fa-#{id}"
     css_classes << "fa#{fa_style.to_s[0]}"
@@ -15,7 +15,7 @@ module Agilibox::FontAwesomeHelper
 
     attributes = options.merge(class: css_classes.sort.join(" ")).sort.to_h
 
-    tag.span(**attributes) {}
+    tag.span(**attributes)
   end
 
   class << self
