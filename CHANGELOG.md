@@ -1,6 +1,7 @@
 # Changelog
 
 ## Next version
+- Fix capybara selector
 
 ## v1.9.16
 - Fix Rails 6.1 warnings
