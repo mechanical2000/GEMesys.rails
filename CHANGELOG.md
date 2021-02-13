@@ -1,6 +1,7 @@
 # Changelog
 
 ## Next version
+- Fix Rails 6.1 warnings
 
 ## v1.9.15
 - Add `modal:before-close` event

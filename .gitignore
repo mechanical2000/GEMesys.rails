@@ -14,3 +14,4 @@ spec/dummy/.sass-cache
 !.env.example
 coverage/
 .rubocop-http*
+tags

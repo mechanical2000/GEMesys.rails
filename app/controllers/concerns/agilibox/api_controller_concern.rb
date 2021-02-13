@@ -31,7 +31,8 @@ module Agilibox::ApiControllerConcern
 
   def json_errors_hash_for_model(object)
     object.errors
-      .map { |a, m| [a, message: m, full_message: object.errors.full_message(a, m)] }
+      .to_hash
+      .map { |a, m| [a, message: m.first, full_message: object.errors.full_message(a, m.first)] }
       .uniq(&:first)
       .to_h
   end
