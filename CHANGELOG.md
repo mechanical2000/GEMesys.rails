@@ -1,6 +1,8 @@
 # Changelog
 
 ## Next version
+
+## v1.9.17
 - Fix capybara selector
 
 ## v1.9.16
