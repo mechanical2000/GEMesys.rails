@@ -1,6 +1,8 @@
 # Changelog
 
 ## Next version
+
+## v1.9.16
 - Fix Rails 6.1 warnings
 
 ## v1.9.15
