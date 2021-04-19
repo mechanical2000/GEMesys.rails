@@ -1,6 +1,7 @@
 # Changelog
 
 ## Next version
+- Rails 6.1 compatibility
 
 ## v1.9.17
 - Fix capybara selector

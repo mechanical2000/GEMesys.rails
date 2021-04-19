@@ -37,4 +37,13 @@ describe Agilibox::Search do
       dummy_models.text_field
     )
   end
+
+  it "should ignore blank search" do
+    jean = DummyModel.create!(string_field: "Jean DUPONT")
+    jane = DummyModel.create!(string_field: "Jane DURAND")
+
+    results = DummyModel.search("")
+
+    expect(results).to contain_exactly(jean, jane)
+  end
 end

@@ -96,11 +96,11 @@ describe Agilibox::MiniFormObject do
 
   it "should merge errors into object errors" do
     model_instance.valid?
-    expect(model_instance.errors.keys).to eq [:string_field]
+    expect(model_instance.errors.to_hash.keys).to eq [:string_field]
 
     form_instance.valid?
-    expect(model_instance.errors.keys).to eq [:string_field, :integer_field]
-    expect(form_instance.errors.keys).to  eq [:string_field, :integer_field]
+    expect(model_instance.errors.to_hash.keys).to eq [:string_field, :integer_field]
+    expect(form_instance.errors.to_hash.keys).to  eq [:string_field, :integer_field]
   end
 
   it "should auto delegate methods to object" do

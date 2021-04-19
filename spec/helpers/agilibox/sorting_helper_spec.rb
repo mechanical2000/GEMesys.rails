@@ -1,7 +1,13 @@
 require "rails_helper"
 
 describe Agilibox::SortingHelper, type: :helper do
-  Rails.application.routes.draw { resources :anonymous }
+  before do
+    Rails.application.routes.draw { resources :anonymous }
+  end
+
+  after do
+    Rails.application.reload_routes!
+  end
 
   describe "#sortable_column" do
     let(:params) {
