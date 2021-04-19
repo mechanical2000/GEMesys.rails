@@ -1,6 +1,8 @@
 # Changelog
 
 ## Next version
+
+## v1.9.18
 - Rails 6.1 compatibility
 
 ## v1.9.17
