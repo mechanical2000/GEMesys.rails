@@ -12,6 +12,8 @@ module Agilibox::Search
       words  = q.to_s.parameterize.split("-")
       fields = default_search_fields if fields.empty?
 
+      return all if words.empty?
+
       sql_query = words.map.with_index { |_word, index|
         fields.map { |field|
           "(UNACCENT(CAST(#{field} AS TEXT)) ILIKE :w#{index})"
