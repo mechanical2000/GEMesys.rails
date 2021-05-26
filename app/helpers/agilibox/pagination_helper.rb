@@ -1,6 +1,14 @@
 module Agilibox::PaginationHelper
+  class << self
+    attr_writer :theme
+
+    def theme
+      @theme ||= "twitter-bootstrap-3"
+    end
+  end
+
   def paginate(objects, options = {})
-    options = {theme: "twitter-bootstrap-3"}.merge(options)
+    options = {theme: Agilibox::PaginationHelper.theme}.merge(options)
     super(objects, **options).gsub(/>(\s+)</, "><").html_safe
   end
 

@@ -1,6 +1,7 @@
 # Changelog
 
 ## Next version
+- Add bootstrap 4/5 pagination support
 
 ## v1.9.18
 - Rails 6.1 compatibility
