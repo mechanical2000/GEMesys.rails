@@ -1,6 +1,8 @@
 # Changelog
 
 ## Next version
+
+## v1.9.19
 - Add bootstrap 4/5 pagination support
 
 ## v1.9.18
