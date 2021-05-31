@@ -1,3 +1,3 @@
 module Agilibox
-  VERSION = "1.9.19"
+  VERSION = "1.9.20"
 end

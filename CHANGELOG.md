@@ -1,6 +1,8 @@
 # Changelog
 
 ## Next version
+
+## v1.9.20
 - Add bootstrap 5 search form
 
 ## v1.9.19
