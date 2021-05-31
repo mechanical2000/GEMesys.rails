@@ -1,6 +1,7 @@
 # Changelog
 
 ## Next version
+- Add bootstrap 5 search form
 
 ## v1.9.19
 - Add bootstrap 4/5 pagination support
