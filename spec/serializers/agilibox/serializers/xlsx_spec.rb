@@ -37,7 +37,7 @@ RSpec.describe Agilibox::Serializers::XLSX do
 
   describe "in real life" do
     xit "open it in Excel" do
-      data = {
+      types = {
         "Integer"  => 123,
         "Decimal"  => (0.1 + 0.2),
         "True"     => true,
@@ -47,7 +47,9 @@ RSpec.describe Agilibox::Serializers::XLSX do
         "nil"      => nil,
         "String"   => "i'm a string",
         "Object"   => described_class,
-      }.to_a
+      }
+
+      data = [types.keys, types.values]
 
       described_class.new(data).render_file(tempfile)
       Launchy.open(tempfile.path)

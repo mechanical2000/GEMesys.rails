@@ -1,6 +1,8 @@
 # Changelog
 
 ## Next version
+- Add date support to XLSX serializer
+- Remove AXLSX serializer
 
 ## v1.9.20
 - Add bootstrap 5 search form
