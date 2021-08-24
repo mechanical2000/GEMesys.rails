@@ -1,6 +1,8 @@
 # Changelog
 
 ## Next version
+
+## v1.10.0
 - Add date support to XLSX serializer
 - Remove AXLSX serializer
 
