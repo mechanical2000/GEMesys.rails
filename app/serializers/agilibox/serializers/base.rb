@@ -39,8 +39,8 @@ class Agilibox::Serializers::Base
       I18n.t(value.to_s)
     end
 
-    def format_datetime(value)
-      Agilibox::AllHelpers.date(value)
+    def format_date_or_time(value)
+      value
     end
 
     def format_default(value)
@@ -48,10 +48,10 @@ class Agilibox::Serializers::Base
     end
 
     def formatter_for(value)
-      return :integer  if value.is_a?(Integer)
-      return :decimal  if value.is_a?(Numeric)
-      return :boolean  if value.is_a?(TrueClass) || value.is_a?(FalseClass)
-      return :datetime if value.is_a?(Date) || value.is_a?(Time)
+      return :integer if value.is_a?(Integer)
+      return :decimal if value.is_a?(Numeric)
+      return :boolean if value.is_a?(TrueClass) || value.is_a?(FalseClass)
+      return :date_or_time if value.is_a?(Date) || value.is_a?(Time)
       return :default
     end
 
