@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    agilibox (1.10.0)
+    agilibox (1.10.1)
       awesome_print
       nilify_blanks
       pry-rails

@@ -1,6 +1,8 @@
 # Changelog
 
 ## Next version
+
+## v1.10.1
 - Fix date filters
 
 ## v1.10.0
