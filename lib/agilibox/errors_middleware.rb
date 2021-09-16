@@ -9,6 +9,7 @@ class Agilibox::ErrorsMiddleware
     "ActionController::BadRequest",
     "ActionController::UnknownFormat",
     "ActionController::UnknownHttpMethod",
+    "ActionDispatch::Cookies::CookieOverflow",
     "ActionView::MissingTemplate",
     "Mime::Type::InvalidMimeType",
   ]
