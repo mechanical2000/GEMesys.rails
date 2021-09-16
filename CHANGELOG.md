@@ -1,6 +1,7 @@
 # Changelog
 
 ## Next version
+- Fix date filters
 
 ## v1.10.0
 - Add date support to XLSX serializer
