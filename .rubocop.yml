@@ -1,7 +1,12 @@
-inherit_from: http://rubocop.agilidee.com/1.6.1.yml
+inherit_from: http://rubocop.agilidee.com/1.18.4.yml
 
 Lint/ConstantDefinitionInBlock:
   Enabled: false
+
+# Ruby 2.7 only
+Performance/MapCompact:
+  Enabled: false
+
 
 # Rails 6 only
 Rails/IndexWith:
