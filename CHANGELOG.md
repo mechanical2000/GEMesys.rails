@@ -1,6 +1,8 @@
 # Changelog
 
 ## Next version
+
+## v1.10.2
 - Filters improvements
 
 ## v1.10.1
