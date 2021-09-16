@@ -7,7 +7,7 @@ describe Agilibox::SmallData::Filter do
 
   class TestFilter < Agilibox::SmallData::Filter
     STRATEGIES = {
-      "state" => ::Agilibox::SmallData::FilterStrategyByKeyValue.new(:state),
+      "state" => Agilibox::SmallData::FilterStrategyByKeyValue.new(:state),
     }
   end
 
@@ -68,29 +68,33 @@ describe Agilibox::SmallData::Filter do
     end
   end # describe "get/set values"
 
-  describe "#any? / #empty?" do
+  describe "#any? / #empty? / #actives_count" do
     it "should work with value" do
       filter = TestFilter.new("filters" => {state: "value"}.to_json)
       expect(filter.any?).to be true
       expect(filter.empty?).to be false
+      expect(filter.actives_count).to eq 1
     end
 
     it "should work with blank value" do
       filter = TestFilter.new("filters" => {state: ""}.to_json)
       expect(filter.any?).to be false
       expect(filter.empty?).to be true
+      expect(filter.actives_count).to eq 0
     end
 
     it "should work without value" do
       filter = TestFilter.new("filters" => {}.to_json)
       expect(filter.any?).to be false
       expect(filter.empty?).to be true
+      expect(filter.actives_count).to eq 0
     end
 
     it "should ignore other filters strategies" do
       filter = TestFilter.new("filters" => {other: "value"}.to_json)
       expect(filter.any?).to be false
       expect(filter.empty?).to be true
+      expect(filter.actives_count).to eq 0
     end
-  end # describe "#any? / #empty?"
+  end # describe "#any? / #empty? / #actives_count"
 end

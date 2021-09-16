@@ -1,4 +1,6 @@
 class Agilibox::SmallData::Filter
+  include ActiveModel::Model
+
   STRATEGIES = {}
 
   attr_reader :jar
@@ -60,8 +62,12 @@ class Agilibox::SmallData::Filter
     write read.merge(new_filters)
   end
 
+  def actives_count
+    read.count { |k, v| strategies.key?(k.to_s) && v.present? }
+  end
+
   def any?
-    read.select { |k, v| strategies.key?(k.to_s) && v.present? }.any?
+    actives_count.positive?
   end
 
   def empty?
